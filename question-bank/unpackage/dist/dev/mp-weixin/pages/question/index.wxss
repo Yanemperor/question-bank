@@ -1,0 +1,35 @@
+
+.container {
+	padding: 32rpx;
+}
+.ad-banner {
+	border-radius: 8rpx;
+	width: 100%;
+	height: 300rpx;
+	background-color: #ffffff;
+}
+.subject-bg {
+	display: flex;
+	flex-wrap: wrap;
+	background-color: #ffffff;
+	margin-top: 24rpx;
+	border-radius: 8rpx;
+}
+.subject-cell {
+	width: 25%;
+	/* margin-top: 20rpx; */
+}
+.subject-cell-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 24rpx;
+	padding-bottom: 24rpx;
+}
+.subject-cell-text {
+	padding-top: 4rpx;
+	color: #333333;
+	font-size: 32rpx;
+}
+

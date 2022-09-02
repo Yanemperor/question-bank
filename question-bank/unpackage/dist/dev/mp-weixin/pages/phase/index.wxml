@@ -1,0 +1,1 @@
+<view class="container"><block wx:for="{{items}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view><view data-event-opts="{{[['tap',[['pushTabbar',['$event']]]]]}}" class="selected-view" bindtap="__e"><view class="text">{{''+item.title+''}}</view></view></view></block></view>
