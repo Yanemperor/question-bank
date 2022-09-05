@@ -14,41 +14,42 @@
 		</view>
 		<view class="cu-modal" :class="modalCard=='modalCard'?'show':''" @tap="hideCardModal">
 			<view class="cu-dialog" @tap.stop>
-				
-				<scroll-view class="page padding" :scroll-y=true :style="{'height':swiperHeight}" >				
-				<view class="cu-bar solid-bottom">
-					<view class="action">
-						<text class="cuIcon-title text-red"></text>答题卡
-					</view>					
-				</view>
-				<view class="grid col-5 ">
-					<view class="margin-tb-sm text-center" v-for="(subject,index) in subjectList" :key="index">
-						<button class="cu-btn round" :class="[subject.userAnswer.length===0?'line-grey':'bg-red']" @click="AppointedSubject(index)" >{{index+1}}</button>
+
+				<scroll-view class="page padding" :scroll-y=true :style="{'height':swiperHeight}">
+					<view class="cu-bar solid-bottom">
+						<view class="action">
+							<text class="cuIcon-title text-red"></text>答题卡
+						</view>
 					</view>
-				</view>
-				
+					<view class="grid col-5 ">
+						<view class="margin-tb-sm text-center" v-for="(subject,index) in subjectList" :key="index">
+							<button class="cu-btn round" :class="[subject.userAnswer.length===0?'line-grey':'bg-red']"
+								@click="AppointedSubject(index)">{{index+1}}</button>
+						</view>
+					</view>
+
 				</scroll-view>
 			</view>
 		</view>
 		<view class="cu-modal padding " :class="modalError=='modalError'?'show':''" @tap="hideErrorModal">
-			<view class="cu-dialog bg-white" @tap.stop>								
-				
+			<view class="cu-dialog bg-white" @tap.stop>
+
 				<view class="cu-bar solid-bottom ">
 					<view class="action">
 						<text class="cuIcon-title text-red"></text>试题纠错
-					</view>					
+					</view>
 				</view>
-				
-				<radio-group class="block" >
+
+				<radio-group class="block">
 					<view class="cu-list menu text-left">
-					<view class="cu-item cu-item-error" v-for="error in errorList" >
-						<radio :value="error"></radio>
-						<view class="title text-black margin-left">{{error}}</view>
-					</view>	
-					</view>	
-				</radio-group>				
-				
-				<view class="padding flex flex-direction ">				
+						<view class="cu-item cu-item-error" v-for="error in errorList">
+							<radio :value="error"></radio>
+							<view class="title text-black margin-left">{{error}}</view>
+						</view>
+					</view>
+				</radio-group>
+
+				<view class="padding flex flex-direction ">
 					<button class="cu-btn bg-red margin-tb-sm lg" @click="SubmitError">提 交</button>
 				</view>
 			</view>
@@ -56,68 +57,74 @@
 		<form>
 			<swiper :current="subjectIndex" class="swiper-box" @change="SwiperChange" :style="{'height':swiperHeight}">
 				<swiper-item v-for="(subject,index) in subjectList">
-					
+
 					<view v-if="index-subjectIndex>=-1&&index-subjectIndex<=1">
-										
-					<view class="cu-bar bg-white solid-bottom">
-						<view class="action text-black">
-							<text class="cuIcon-title text-red"></text>{{subject.title}}
+
+						<view class="cu-bar bg-white solid-bottom">
+							<view class="action text-black">
+								<text class="cuIcon-title text-red"></text>{{subject.title}}
+							</view>
 						</view>
-					</view>
-					<view>
+						<view>
 
-						<radio-group class="block"  @change="RadioboxChange" v-if="subject.type===1||subject.type===2">
-							<view class="cu-form-group" v-for="option in subject.options">
-								<radio :value="option.key" :checked="subject.userAnswer.indexOf(option.key) > -1?true:false"></radio>
-								<view class="title text-black">{{option.key}}.{{option.value}}</view>
-							</view>
-						</radio-group>
-
-						<checkbox-group class="block"  @change="CheckboxChange" v-else-if="subject.type===3">
-							<view class="cu-form-group" v-for="option in subject.options">
-								<checkbox :value="option.key" :class="subject.userAnswer.indexOf(option.key) > -1?'checked':''" :checked="subject.userAnswer.indexOf(option.key) > -1?true:false"></checkbox>
-								<view class="title  text-black">{{option.key}}.{{option.value}}</view>
-							</view>
-						</checkbox-group>
-
-						<view v-else-if="subject.type===4">
-							<view class="cu-form-group solid-bottom">
-								<view class="title  text-black">
-									答：
+							<radio-group class="block" @change="RadioboxChange"
+								v-if="subject.type===1||subject.type===2">
+								<view class="cu-form-group" v-for="option in subject.options">
+									<radio :value="option.key"
+										:checked="subject.userAnswer.indexOf(option.key) > -1?true:false"></radio>
+									<view class="title text-black">{{option.key}}.{{option.value}}</view>
 								</view>
-								<input placeholder="文本输入框" name="input" v-model="subject.userAnswer" @blur="textInput" ></input>
-							</view>
-						</view>
+							</radio-group>
 
-						<view v-else-if="subject.type===5">
-							<view class="cu-bar cu-bar-title bg-white margin-top">
-								<view class="action  text-black">
-									答：
+							<checkbox-group class="block" @change="CheckboxChange" v-else-if="subject.type===3">
+								<view class="cu-form-group" v-for="option in subject.options">
+									<checkbox :value="option.key"
+										:class="subject.userAnswer.indexOf(option.key) > -1?'checked':''"
+										:checked="subject.userAnswer.indexOf(option.key) > -1?true:false"></checkbox>
+									<view class="title  text-black">{{option.key}}.{{option.value}}</view>
+								</view>
+							</checkbox-group>
+
+							<view v-else-if="subject.type===4">
+								<view class="cu-form-group solid-bottom">
+									<view class="title  text-black">
+										答：
+									</view>
+									<input placeholder="文本输入框" name="input" v-model="subject.userAnswer"
+										@blur="textInput"></input>
 								</view>
 							</view>
-							<view class="cu-form-group solid margin">
-								<textarea maxlength="-1"  @blur="textInput" v-model="subject.userAnswer" placeholder="多行文本输入框"></textarea>
+
+							<view v-else-if="subject.type===5">
+								<view class="cu-bar cu-bar-title bg-white margin-top">
+									<view class="action  text-black">
+										答：
+									</view>
+								</view>
+								<view class="cu-form-group solid margin">
+									<textarea maxlength="-1" @blur="textInput" v-model="subject.userAnswer"
+										placeholder="多行文本输入框"></textarea>
+								</view>
 							</view>
+
 						</view>
 
-					</view>
-
-					<view v-show="subject.showAnswer" class="margin-top solid-top">
-						<view class="cu-bar">
-							<view class="action  text-grey">
-								<text>正确答案：</text>
-								<text class="solid-bottom  padding-left text-green">{{subject.answer}}</text>
+						<view v-show="subject.showAnswer" class="margin-top solid-top">
+							<view class="cu-bar">
+								<view class="action  text-grey">
+									<text>正确答案：</text>
+									<text class="solid-bottom  padding-left text-green">{{subject.answer}}</text>
+								</view>
+							</view>
+							<view class="cu-bar cu-bar-title">
+								<view class="action  text-grey">
+									<text>解析：</text>
+								</view>
+							</view>
+							<view class="text-content padding  text-grey">
+								{{subject.parsing}}
 							</view>
 						</view>
-						<view class="cu-bar cu-bar-title">
-							<view class="action  text-grey">
-								<text>解析：</text>
-							</view>
-						</view>
-						<view class="text-content padding  text-grey">
-							{{subject.parsing}}
-						</view>
-					</view>
 
 					</view>
 				</swiper-item>
@@ -141,7 +148,7 @@
 				<view class="cuIcon-cu-image">
 					<text class="lg cuIcon-favor" :class="[userFavor?'text-red':'text-gray']"></text>
 				</view>
-				<view  :class="[userFavor?'text-red':'text-gray']">收藏</view>
+				<view :class="[userFavor?'text-red':'text-gray']">收藏</view>
 			</view>
 
 			<view class="action" @click="ShowAnswerChange">
@@ -150,7 +157,7 @@
 				</view>
 				<view class="text-gray">解答</view>
 			</view>
-			<view class="action" @tap="showErrorModal"  data-target="modalError">
+			<view class="action" @tap="showErrorModal" data-target="modalError">
 				<view class="cuIcon-cu-image">
 					<text class="lg text-gray cuIcon-warn"></text>
 				</view>
@@ -166,29 +173,163 @@
 	export default {
 		data() {
 			return {
-				userFavor:false,//是否已收藏
+				userFavor: false, //是否已收藏
 				currentType: 0, //当前题型
-				subjectIndex: 0,//跳转索引
-				autoShowAnswer: false,//答错是否显答案
-				autoRadioNext:true,//判断题、单项题，自动移下一题
-				swiperHeight: '800px',//
+				subjectIndex: 0, //跳转索引
+				autoShowAnswer: false, //答错是否显答案
+				autoRadioNext: true, //判断题、单项题，自动移下一题
+				swiperHeight: '800px', //
 				title: '初中二年级2019期中考券',
-				subjectList:[
-					{"title":"水是液体？","type":1,"options":[{"key":"A","value":"对"},{"key":"B","value":"错"}],"answer":"A","userAnswer":"","userFavor":false,"parsing":"难到是固体不成？"},
-					{"title":"电流分有？","type":2,"options":[{"key":"A","value":"直流"},{"key":"B","value":"交流"},{"key":"C","value":"直流和交流"}],"answer":"C","userAnswer":"","userFavor":false,"parsing":"科技学依据"},
-					{"title":"酸菜鱼的味道？","type":3,"options":[{"key":"A","value":"咸味"},{"key":"B","value":"辣味"},{"key":"C","value":"甜味"},{"key":"D","value":"酸味"}],"answer":"A,B,D","userAnswer":"","userFavor":false,"parsing":"你怎么想都行，要的就是这个味，答案只能选A,B,D"},
-					{"title":"床前（____）光，疑是地上霜。","type":4,"options":[{"key":"","value":""}],"answer":"明月","userAnswer":"","userFavor":false,"parsing":"问答题没有选项，无法做答，且不参与计分"},
-					{"title":"什么美国要限制华为？","type":5,"options":[{"key":"","value":""}],"answer":"","userAnswer":"","userFavor":false,"parsing":"问答题没有选项，无法做答，且不参与计分"},
-					
-					{"title":"水是液体？","type":1,"options":[{"key":"A","value":"对"},{"key":"B","value":"错"}],"answer":"A","userAnswer":"","userFavor":false,"parsing":"难到是固体不成？"},
-					{"title":"电流分有？","type":2,"options":[{"key":"A","value":"直流"},{"key":"B","value":"交流"},{"key":"C","value":"直流和交流"}],"answer":"C","userAnswer":"","userFavor":false,"parsing":"科技学依据"},
-					{"title":"酸菜鱼的味道？","type":3,"options":[{"key":"A","value":"咸味"},{"key":"B","value":"辣味"},{"key":"C","value":"甜味"},{"key":"D","value":"酸味"}],"answer":"A,B,D","userAnswer":"","userFavor":false,"parsing":"你怎么想都行，要的就是这个味，答案只能选A,B,D"},
-					{"title":"床前（____）光，疑是地上霜。","type":4,"options":[{"key":"","value":""}],"answer":"明月","userAnswer":"","userFavor":false,"parsing":"问答题没有选项，无法做答，且不参与计分"},
-										
-				   ],
-				modalCard: null ,//显示答题卡
-				modalError:null , //纠错卡
-				errorList:['题目不完整','答案不正确','含有错别字','图片不存在','解析不完整','其他错误']
+				subjectList: [{
+						"title": "水是液体？",
+						"type": 1,
+						"options": [{
+							"key": "A",
+							"value": "对"
+						}, {
+							"key": "B",
+							"value": "错"
+						}],
+						"answer": "A",
+						"userAnswer": "",
+						"userFavor": false,
+						"parsing": "难到是固体不成？"
+					},
+					{
+						"title": "电流分有？",
+						"type": 2,
+						"options": [{
+							"key": "A",
+							"value": "直流"
+						}, {
+							"key": "B",
+							"value": "交流"
+						}, {
+							"key": "C",
+							"value": "直流和交流"
+						}],
+						"answer": "C",
+						"userAnswer": "",
+						"userFavor": false,
+						"parsing": "科技学依据"
+					},
+					{
+						"title": "酸菜鱼的味道？",
+						"type": 3,
+						"options": [{
+							"key": "A",
+							"value": "咸味"
+						}, {
+							"key": "B",
+							"value": "辣味"
+						}, {
+							"key": "C",
+							"value": "甜味"
+						}, {
+							"key": "D",
+							"value": "酸味"
+						}],
+						"answer": "A,B,D",
+						"userAnswer": "",
+						"userFavor": false,
+						"parsing": "你怎么想都行，要的就是这个味，答案只能选A,B,D"
+					},
+					{
+						"title": "床前（____）光，疑是地上霜。",
+						"type": 4,
+						"options": [{
+							"key": "",
+							"value": ""
+						}],
+						"answer": "明月",
+						"userAnswer": "",
+						"userFavor": false,
+						"parsing": "问答题没有选项，无法做答，且不参与计分"
+					},
+					{
+						"title": "什么美国要限制华为？",
+						"type": 5,
+						"options": [{
+							"key": "",
+							"value": ""
+						}],
+						"answer": "",
+						"userAnswer": "",
+						"userFavor": false,
+						"parsing": "问答题没有选项，无法做答，且不参与计分"
+					},
+
+					{
+						"title": "水是液体？",
+						"type": 1,
+						"options": [{
+							"key": "A",
+							"value": "对"
+						}, {
+							"key": "B",
+							"value": "错"
+						}],
+						"answer": "A",
+						"userAnswer": "",
+						"userFavor": false,
+						"parsing": "难到是固体不成？"
+					},
+					{
+						"title": "电流分有？",
+						"type": 2,
+						"options": [{
+							"key": "A",
+							"value": "直流"
+						}, {
+							"key": "B",
+							"value": "交流"
+						}, {
+							"key": "C",
+							"value": "直流和交流"
+						}],
+						"answer": "C",
+						"userAnswer": "",
+						"userFavor": false,
+						"parsing": "科技学依据"
+					},
+					{
+						"title": "酸菜鱼的味道？",
+						"type": 3,
+						"options": [{
+							"key": "A",
+							"value": "咸味"
+						}, {
+							"key": "B",
+							"value": "辣味"
+						}, {
+							"key": "C",
+							"value": "甜味"
+						}, {
+							"key": "D",
+							"value": "酸味"
+						}],
+						"answer": "A,B,D",
+						"userAnswer": "",
+						"userFavor": false,
+						"parsing": "你怎么想都行，要的就是这个味，答案只能选A,B,D"
+					},
+					{
+						"title": "床前（____）光，疑是地上霜。",
+						"type": 4,
+						"options": [{
+							"key": "",
+							"value": ""
+						}],
+						"answer": "明月",
+						"userAnswer": "",
+						"userFavor": false,
+						"parsing": "问答题没有选项，无法做答，且不参与计分"
+					},
+
+				],
+				modalCard: null, //显示答题卡
+				modalError: null, //纠错卡
+				errorList: ['题目不完整', '答案不正确', '含有错别字', '图片不存在', '解析不完整', '其他错误']
 			}
 		},
 		onReady() {
@@ -232,17 +373,17 @@
 
 		},
 		onLoad() {
-			
+
 			this.currentType = this.subjectList[0].type;
 			uni.setNavigationBarTitle({
 				title: this.title
-			});			
-			
+			});
+
 			//添加用户显示答案字段
-			for (var i = 0; i < this.subjectList.length; i++) {		
-				this.$set(this.subjectList[i],"showAnswer",false);				
+			for (var i = 0; i < this.subjectList.length; i++) {
+				this.$set(this.subjectList[i], "showAnswer", false);
 			}
-			
+
 		},
 		methods: {
 			showCardModal: function(e) {
@@ -258,24 +399,24 @@
 				this.modalError = null
 			},
 			SwiperChange: function(e) { //滑动事件
-			
+
 				let index = e.target.current;
-				
+
 				if (index != undefined) {
 					this.subjectIndex = index;
 					this.currentType = this.subjectList[index].type;
-					this.userFavor = this.subjectList[index].userFavor;					
-				}								
-			},			
-			RadioboxChange : function(e) { //单选选中
-			
+					this.userFavor = this.subjectList[index].userFavor;
+				}
+			},
+			RadioboxChange: function(e) { //单选选中
+
 				var items = this.subjectList[this.subjectIndex].options;
 				var values = e.detail.value;
 				this.subjectList[this.subjectIndex].userAnswer = values;
-				if(this.autoRadioNext && this.subjectIndex < this.subjectList.length - 1){
-					this.subjectIndex += 1;						
-					};
-				
+				if (this.autoRadioNext && this.subjectIndex < this.subjectList.length - 1) {
+					this.subjectIndex += 1;
+				};
+
 			},
 			CheckboxChange: function(e) { //复选选中
 
@@ -292,37 +433,33 @@
 					}
 				}
 			},
-			textInput : function(e) { //填空题
-			
+			textInput: function(e) { //填空题
+
 				this.subjectList[this.subjectIndex].userAnswer = e.detail.value;
-				
-			},			
+
+			},
 			ShowAnswerChange: function(e) { //显示答案
-			
-				if(this.subjectList[this.subjectIndex].showAnswer)
-				{
-					this.subjectList[this.subjectIndex].showAnswer=false;					
+
+				if (this.subjectList[this.subjectIndex].showAnswer) {
+					this.subjectList[this.subjectIndex].showAnswer = false;
+				} else {
+
+					this.subjectList[this.subjectIndex].showAnswer = true;
 				}
-				else{
-					
-					this.subjectList[this.subjectIndex].showAnswer=true;
-				}				
 			},
-			
+
 			FavorSubject: function(e) { //收藏题
-			
-				if(this.userFavor)
-				{
-					this.userFavor=false;
-					this.subjectList[this.subjectIndex].userFavor=false;					
+
+				if (this.userFavor) {
+					this.userFavor = false;
+					this.subjectList[this.subjectIndex].userFavor = false;
+				} else {
+
+					this.userFavor = true;
+					this.subjectList[this.subjectIndex].userFavor = true;
 				}
-				else{
-					
-					this.userFavor=true;
-					this.subjectList[this.subjectIndex].userFavor=true;	
-				}				
 			},
-			
+
 			MoveSubject: function(e) { //上一题、下一题
 
 				if (e === -1 && this.subjectIndex != 0) {
@@ -332,24 +469,25 @@
 					this.subjectIndex += 1;
 				}
 			},
-			
+
 			AppointedSubject: function(e) { //题卡指定
-				
-					this.modalCard = null;
-					this.subjectIndex = e;									
-			},			
-			
+
+				this.modalCard = null;
+				this.subjectIndex = e;
+			},
+
 			SubmitError: function(e) { //提交纠错
-				
-					this.modalError = null;														
+
+				this.modalError = null;
 			}
-			
+
 		}
 	}
 </script>
 
 <style>
 	@import "../../colorui/animation.css";
+
 	page {
 		background-color: #FFFFFF;
 	}
@@ -370,6 +508,8 @@
 	.cu-bar-title {
 		min-height: 50upx;
 	}
-	
-	.cu-list.menu>.cu-item-error{justify-content: flex-start;}
+
+	.cu-list.menu>.cu-item-error {
+		justify-content: flex-start;
+	}
 </style>

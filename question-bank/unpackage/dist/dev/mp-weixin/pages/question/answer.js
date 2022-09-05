@@ -345,6 +345,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
@@ -356,17 +363,151 @@ var _default =
       autoRadioNext: true, //判断题、单项题，自动移下一题
       swiperHeight: '800px', //
       title: '初中二年级2019期中考券',
-      subjectList: [
-      { "title": "水是液体？", "type": 1, "options": [{ "key": "A", "value": "对" }, { "key": "B", "value": "错" }], "answer": "A", "userAnswer": "", "userFavor": false, "parsing": "难到是固体不成？" },
-      { "title": "电流分有？", "type": 2, "options": [{ "key": "A", "value": "直流" }, { "key": "B", "value": "交流" }, { "key": "C", "value": "直流和交流" }], "answer": "C", "userAnswer": "", "userFavor": false, "parsing": "科技学依据" },
-      { "title": "酸菜鱼的味道？", "type": 3, "options": [{ "key": "A", "value": "咸味" }, { "key": "B", "value": "辣味" }, { "key": "C", "value": "甜味" }, { "key": "D", "value": "酸味" }], "answer": "A,B,D", "userAnswer": "", "userFavor": false, "parsing": "你怎么想都行，要的就是这个味，答案只能选A,B,D" },
-      { "title": "床前（____）光，疑是地上霜。", "type": 4, "options": [{ "key": "", "value": "" }], "answer": "明月", "userAnswer": "", "userFavor": false, "parsing": "问答题没有选项，无法做答，且不参与计分" },
-      { "title": "什么美国要限制华为？", "type": 5, "options": [{ "key": "", "value": "" }], "answer": "", "userAnswer": "", "userFavor": false, "parsing": "问答题没有选项，无法做答，且不参与计分" },
+      subjectList: [{
+        "title": "水是液体？",
+        "type": 1,
+        "options": [{
+          "key": "A",
+          "value": "对" },
+        {
+          "key": "B",
+          "value": "错" }],
 
-      { "title": "水是液体？", "type": 1, "options": [{ "key": "A", "value": "对" }, { "key": "B", "value": "错" }], "answer": "A", "userAnswer": "", "userFavor": false, "parsing": "难到是固体不成？" },
-      { "title": "电流分有？", "type": 2, "options": [{ "key": "A", "value": "直流" }, { "key": "B", "value": "交流" }, { "key": "C", "value": "直流和交流" }], "answer": "C", "userAnswer": "", "userFavor": false, "parsing": "科技学依据" },
-      { "title": "酸菜鱼的味道？", "type": 3, "options": [{ "key": "A", "value": "咸味" }, { "key": "B", "value": "辣味" }, { "key": "C", "value": "甜味" }, { "key": "D", "value": "酸味" }], "answer": "A,B,D", "userAnswer": "", "userFavor": false, "parsing": "你怎么想都行，要的就是这个味，答案只能选A,B,D" },
-      { "title": "床前（____）光，疑是地上霜。", "type": 4, "options": [{ "key": "", "value": "" }], "answer": "明月", "userAnswer": "", "userFavor": false, "parsing": "问答题没有选项，无法做答，且不参与计分" }],
+        "answer": "A",
+        "userAnswer": "",
+        "userFavor": false,
+        "parsing": "难到是固体不成？" },
+
+      {
+        "title": "电流分有？",
+        "type": 2,
+        "options": [{
+          "key": "A",
+          "value": "直流" },
+        {
+          "key": "B",
+          "value": "交流" },
+        {
+          "key": "C",
+          "value": "直流和交流" }],
+
+        "answer": "C",
+        "userAnswer": "",
+        "userFavor": false,
+        "parsing": "科技学依据" },
+
+      {
+        "title": "酸菜鱼的味道？",
+        "type": 3,
+        "options": [{
+          "key": "A",
+          "value": "咸味" },
+        {
+          "key": "B",
+          "value": "辣味" },
+        {
+          "key": "C",
+          "value": "甜味" },
+        {
+          "key": "D",
+          "value": "酸味" }],
+
+        "answer": "A,B,D",
+        "userAnswer": "",
+        "userFavor": false,
+        "parsing": "你怎么想都行，要的就是这个味，答案只能选A,B,D" },
+
+      {
+        "title": "床前（____）光，疑是地上霜。",
+        "type": 4,
+        "options": [{
+          "key": "",
+          "value": "" }],
+
+        "answer": "明月",
+        "userAnswer": "",
+        "userFavor": false,
+        "parsing": "问答题没有选项，无法做答，且不参与计分" },
+
+      {
+        "title": "什么美国要限制华为？",
+        "type": 5,
+        "options": [{
+          "key": "",
+          "value": "" }],
+
+        "answer": "",
+        "userAnswer": "",
+        "userFavor": false,
+        "parsing": "问答题没有选项，无法做答，且不参与计分" },
+
+
+      {
+        "title": "水是液体？",
+        "type": 1,
+        "options": [{
+          "key": "A",
+          "value": "对" },
+        {
+          "key": "B",
+          "value": "错" }],
+
+        "answer": "A",
+        "userAnswer": "",
+        "userFavor": false,
+        "parsing": "难到是固体不成？" },
+
+      {
+        "title": "电流分有？",
+        "type": 2,
+        "options": [{
+          "key": "A",
+          "value": "直流" },
+        {
+          "key": "B",
+          "value": "交流" },
+        {
+          "key": "C",
+          "value": "直流和交流" }],
+
+        "answer": "C",
+        "userAnswer": "",
+        "userFavor": false,
+        "parsing": "科技学依据" },
+
+      {
+        "title": "酸菜鱼的味道？",
+        "type": 3,
+        "options": [{
+          "key": "A",
+          "value": "咸味" },
+        {
+          "key": "B",
+          "value": "辣味" },
+        {
+          "key": "C",
+          "value": "甜味" },
+        {
+          "key": "D",
+          "value": "酸味" }],
+
+        "answer": "A,B,D",
+        "userAnswer": "",
+        "userFavor": false,
+        "parsing": "你怎么想都行，要的就是这个味，答案只能选A,B,D" },
+
+      {
+        "title": "床前（____）光，疑是地上霜。",
+        "type": 4,
+        "options": [{
+          "key": "",
+          "value": "" }],
+
+        "answer": "明月",
+        "userAnswer": "",
+        "userFavor": false,
+        "parsing": "问答题没有选项，无法做答，且不参与计分" }],
+
 
 
       modalCard: null, //显示答题卡
@@ -482,11 +623,9 @@ var _default =
     },
     ShowAnswerChange: function ShowAnswerChange(e) {//显示答案
 
-      if (this.subjectList[this.subjectIndex].showAnswer)
-      {
+      if (this.subjectList[this.subjectIndex].showAnswer) {
         this.subjectList[this.subjectIndex].showAnswer = false;
-      } else
-      {
+      } else {
 
         this.subjectList[this.subjectIndex].showAnswer = true;
       }
@@ -494,12 +633,10 @@ var _default =
 
     FavorSubject: function FavorSubject(e) {//收藏题
 
-      if (this.userFavor)
-      {
+      if (this.userFavor) {
         this.userFavor = false;
         this.subjectList[this.subjectIndex].userFavor = false;
-      } else
-      {
+      } else {
 
         this.userFavor = true;
         this.subjectList[this.subjectIndex].userFavor = true;

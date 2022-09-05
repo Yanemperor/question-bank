@@ -321,5 +321,7 @@ page {
 .cu-bar-title {
 	min-height: 50rpx;
 }
-.cu-list.menu>.cu-item-error{justify-content: flex-start;}
+.cu-list.menu>.cu-item-error {
+	justify-content: flex-start;
+}
 
