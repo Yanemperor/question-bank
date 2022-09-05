@@ -13,6 +13,20 @@
 			}
 		},
 		{
+			"path": "pages/question/selected",
+			"style": {
+				"navigationBarTitleText": "选择",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},
+		{
+			"path": "pages/question/answer",
+			"style": {
+				"navigationBarTitleText": "答题",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},
+		{
 			"path": "pages/my/index",
 			"style": {
 				"navigationBarTitleText": "我的",

@@ -5,7 +5,7 @@
 		</view>
 		<view class="subject-bg">
 			<view v-for="(item,index) in subjects" :key="index" class="subject-cell">
-				<view class="subject-cell-content">
+				<view class="subject-cell-content" @click="itemClick">
 					<u-image width="100rpx" height="100rpx" :src="item.img"></u-image>
 					<view class="subject-cell-text">
 						{{ item.title }}
@@ -55,7 +55,11 @@
 			});
 		},
 		methods: {
-
+			itemClick() {
+				uni.navigateTo({
+					url: "/pages/question/selected"
+				})
+			},
 			onShareAppMessage(res) {
 				if (res.from === 'button') { // 来自页面内分享按钮
 					console.log(res.target)

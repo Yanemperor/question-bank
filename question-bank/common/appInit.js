@@ -65,7 +65,7 @@ export default async function() {
 
 
 	// 初始化appVersion（仅app生效）
-	initAppVersion();
+	// initAppVersion();
 
 	// #ifdef APP-PLUS
 	// 实现，路由拦截。当应用无访问摄像头/相册权限，引导跳到设置界面

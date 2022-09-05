@@ -1,0 +1,10 @@
+
+.container {
+	padding: 32rpx;
+}
+.cell {
+	height: 100rpx;
+	width: 100%;
+	background-color: #ffffff;
+}
+

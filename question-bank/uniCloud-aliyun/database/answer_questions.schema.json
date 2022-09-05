@@ -9,7 +9,39 @@
 	},
 	"properties": {
 		"_id": {
-			"description": "ID，系统自动生成"
+			"description": "ID"
+		},
+		"title": {
+			"bsonType": "string",
+			"title": "题目"
+		},
+		"typeName": {
+			"bsonType": "string",
+			"title": "题目类型名称"
+		},
+		"paper_id": {
+			"bsonType": "string",
+			"title": "属于套试卷"
+		},
+		"No": {
+			"bsonType": "int",
+			"title": "所属试卷里第几题"
+		},
+		"answer": {
+			"bsonType": "string",
+			"title": "答案"
+		},
+		"type": {
+			"bsonType": "int",
+			"title": "题目类型"
+		},
+		"options": {
+			"bsonType": "array",
+			"title": "题目选项"
+		},
+		"parsing": {
+			"bsonType": "string",
+			"title": "解析"
 		}
 	}
 }

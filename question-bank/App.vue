@@ -1,5 +1,5 @@
 <script>
-	import initApp from '@/common/appInit.js';
+	// import initApp from '@/common/appInit.js';
 	import openApp from '@/common/openApp.js';
 	import checkIsAgree from '@/pages/uni-agree/utils/uni-agree.js';
 	export default {
@@ -15,7 +15,7 @@
 			this.globalData.$i18n = this.$i18n
 			this.globalData.$t = str => this.$t(str)
 
-			initApp();
+			// initApp();
 			
 			// #ifdef H5
 				openApp() //创建在h5端全局悬浮引导用户下载app的功能
@@ -54,6 +54,8 @@
 
 <style lang="scss">
 	@import "@/uni_modules/uview-ui/index.scss";
+	@import "colorui/main.css";
+	@import "colorui/icon.css";
 	/*每个页面公共css */
 	page {
 		background-color: #f6f6f6;

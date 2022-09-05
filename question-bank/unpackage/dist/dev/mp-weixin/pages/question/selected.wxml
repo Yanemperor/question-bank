@@ -1,0 +1,1 @@
+<view class="container"><view data-event-opts="{{[['tap',[['itemClick',['$event']]]]]}}" class="cell" bindtap="__e">选择</view></view>

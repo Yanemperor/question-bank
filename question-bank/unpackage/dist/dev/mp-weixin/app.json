@@ -2,6 +2,8 @@
   "pages": [
     "pages/phase/index",
     "pages/question/index",
+    "pages/question/selected",
+    "pages/question/answer",
     "pages/my/index",
     "pages/list/list",
     "pages/grid/grid",
