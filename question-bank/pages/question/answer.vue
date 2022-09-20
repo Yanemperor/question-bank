@@ -66,23 +66,23 @@
 							</view>
 						</view>
 						<view>
-
+							<!-- 单选 -->
 							<radio-group class="block" @change="RadioboxChange"
 								v-if="subject.type===1||subject.type===2">
-								<view class="cu-form-group" v-for="option in subject.options">
+								<label class="cu-form-group" v-for="option in subject.options" :key="option.key">
 									<radio :value="option.key"
 										:checked="subject.userAnswer.indexOf(option.key) > -1?true:false"></radio>
 									<view class="title text-black">{{option.key}}.{{option.value}}</view>
-								</view>
+								</label>
 							</radio-group>
-
+							<!-- 多选 -->
 							<checkbox-group class="block" @change="CheckboxChange" v-else-if="subject.type===3">
-								<view class="cu-form-group" v-for="option in subject.options">
+								<label class="cu-form-group" v-for="option in subject.options">
 									<checkbox :value="option.key"
 										:class="subject.userAnswer.indexOf(option.key) > -1?'checked':''"
 										:checked="subject.userAnswer.indexOf(option.key) > -1?true:false"></checkbox>
 									<view class="title  text-black">{{option.key}}.{{option.value}}</view>
-								</view>
+								</label>
 							</checkbox-group>
 
 							<view v-else-if="subject.type===4">
@@ -176,10 +176,10 @@
 				userFavor: false, //是否已收藏
 				currentType: 0, //当前题型
 				subjectIndex: 0, //跳转索引
-				autoShowAnswer: false, //答错是否显答案
+				autoShowAnswer: true, //答错是否显答案
 				autoRadioNext: true, //判断题、单项题，自动移下一题
 				swiperHeight: '800px', //
-				title: '初中二年级2019期中考券',
+				title: '测试考题一',
 				subjectList: [{
 						"title": "水是液体？",
 						"type": 1,
@@ -258,73 +258,35 @@
 						"userFavor": false,
 						"parsing": "问答题没有选项，无法做答，且不参与计分"
 					},
-
 					{
-						"title": "水是液体？",
-						"type": 1,
-						"options": [{
-							"key": "A",
-							"value": "对"
-						}, {
-							"key": "B",
-							"value": "错"
-						}],
-						"answer": "A",
-						"userAnswer": "",
-						"userFavor": false,
-						"parsing": "难到是固体不成？"
-					},
-					{
-						"title": "电流分有？",
-						"type": 2,
-						"options": [{
-							"key": "A",
-							"value": "直流"
-						}, {
-							"key": "B",
-							"value": "交流"
-						}, {
-							"key": "C",
-							"value": "直流和交流"
-						}],
+						"_id": 7,
+						"paper_id": "top_up_political_real_2014",
 						"answer": "C",
+						"title": "8.下列各项中,属于技术社会形态系列的是( )",
+						"typeName": "选择题",
+						"No": 8,
+						"type": 1,
 						"userAnswer": "",
-						"userFavor": false,
-						"parsing": "科技学依据"
-					},
-					{
-						"title": "酸菜鱼的味道？",
-						"type": 3,
+
 						"options": [{
-							"key": "A",
-							"value": "咸味"
-						}, {
-							"key": "B",
-							"value": "辣味"
-						}, {
-							"key": "C",
-							"value": "甜味"
-						}, {
-							"key": "D",
-							"value": "酸味"
-						}],
-						"answer": "A,B,D",
-						"userAnswer": "",
-						"userFavor": false,
-						"parsing": "你怎么想都行，要的就是这个味，答案只能选A,B,D"
-					},
-					{
-						"title": "床前（____）光，疑是地上霜。",
-						"type": 4,
-						"options": [{
-							"key": "",
-							"value": ""
-						}],
-						"answer": "明月",
-						"userAnswer": "",
-						"userFavor": false,
-						"parsing": "问答题没有选项，无法做答，且不参与计分"
-					},
+								"value": "封建社会",
+								"key": "A"
+							},
+							{
+								"value": "原始社会",
+								"key": "B"
+							},
+							{
+								"value": "工业社会",
+								"key": "C"
+							},
+							{
+								"value": "奴隶社会",
+								"key": "D"
+							}
+						],
+						"parsing": "[考情点拨]本题考查了社会形态的分类。[应试指导]社会形态是社会政治经济文化性质的外在表现形式,是一定生产力基础上的经济基础和上层建筑的统一体。按照不同的标准，社会形态可以有不同的分类。其中,技术社会形态是以生产力和技术发展水平以及与之相适应的产业结构为标准对社会形态所作的划分，包括渔猎社会、农业社会、工业社会、信息社会等具体的社会形态。原始社会、奴隶社会、封建社会、资本主义社会、社会主义社会等是按照生产关系的不同性质对社会形态所作的分类。"
+					}
 
 				],
 				modalCard: null, //显示答题卡
@@ -372,20 +334,38 @@
 			});
 
 		},
-		onLoad() {
-
-			this.currentType = this.subjectList[0].type;
+		onLoad(options) {
 			uni.setNavigationBarTitle({
 				title: this.title
 			});
-
-			//添加用户显示答案字段
-			for (var i = 0; i < this.subjectList.length; i++) {
-				this.$set(this.subjectList[i], "showAnswer", false);
+			if (options.json) {
+				var details = JSON.parse(options.json);
+				//添加用户显示答案字段
+				// for (var i = 0; i < details.length; i++) {
+				// 	// this.$set(details[i], "showAnswer", false);
+				// 	details[i].showAnswer = false;
+				// }
+				var temps = []
+				details.map((item, index) => {
+					temps.push(Object.assign(item, {
+						"showAnswer": false,
+						"userAnswer": ""
+					}))
+				})
+				
+				console.log("detail:", temps);
+				this.subjectList = temps;
+				this.currentType = this.subjectList[0].type;
 			}
-
 		},
 		methods: {
+			// initData(json) {
+			// 	// this.subjectList = JSON.parse(json);
+			// 	console.log("json#######", json);
+			// 	const detail = JSON.parse(json);
+			// 	console.log("#######detail########:", detail);
+			// 	this.subjectList = detail;
+			// },
 			showCardModal: function(e) {
 				this.modalCard = e.currentTarget.dataset.target
 			},
@@ -412,6 +392,7 @@
 
 				var items = this.subjectList[this.subjectIndex].options;
 				var values = e.detail.value;
+				console.log(values);
 				this.subjectList[this.subjectIndex].userAnswer = values;
 				if (this.autoRadioNext && this.subjectIndex < this.subjectList.length - 1) {
 					this.subjectIndex += 1;

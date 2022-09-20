@@ -5,7 +5,7 @@
 		</view>
 		<view class="subject-bg">
 			<view v-for="(item,index) in subjects" :key="index" class="subject-cell">
-				<view class="subject-cell-content" @click="itemClick">
+				<view class="subject-cell-content" @click="itemClick(item)">
 					<u-image width="100rpx" height="100rpx" :src="item.img"></u-image>
 					<view class="subject-cell-text">
 						{{ item.title }}
@@ -22,27 +22,23 @@
 			return {
 				subjects: [{
 						img: "/static/subject/yuwen.png",
-						title: "类型1"
+						title: "类型1",
+						paper_id: "top_up_language"
 					},
 					{
 						img: "/static/subject/shuxue.png",
-						title: "类型2"
+						title: "类型2",
+						paper_id: "top_up_language"
 					},
 					{
 						img: "/static/subject/english.png",
-						title: "类型3"
+						title: "类型3",
+						paper_id: "top_up_english"
 					},
 					{
 						img: "/static/subject/zhengzhi.png",
-						title: "类型4"
-					},
-					{
-						img: "/static/subject/english.png",
-						title: "类型3"
-					},
-					{
-						img: "/static/subject/zhengzhi.png",
-						title: "类型4"
+						title: "类型4",
+						paper_id: "top_up_political"
 					}
 				]
 			}
@@ -55,9 +51,9 @@
 			});
 		},
 		methods: {
-			itemClick() {
+			itemClick(item) {
 				uni.navigateTo({
-					url: "/pages/question/selected"
+					url: "/pages/question/selected?paper_id=" + item.paper_id
 				})
 			},
 			onShareAppMessage(res) {
