@@ -44,85 +44,8 @@
 				list: ['题型练习', '套卷练习'],
 				current: 0,
 				paper_id: "",
-				types: [{
-					title: "选择",
-					items: [{
-							name: '选择一',
-							url: '/pages/about/business_cooperation',
-						},
-						{
-							name: '选择二',
-							url: '/pages/about/more_app',
-						}
-					]
-				}, {
-					title: "测试",
-					items: [{
-							name: '测试一',
-							url: '/pages/about/business_cooperation',
-						},
-						{
-							name: '测试二',
-							url: '/pages/about/more_app',
-						}
-					]
-				}],
-				questionList: [],
-				tests: [{
-						"_id": 2,
-						"paper_id": "top_up_political_real_2014",
-						"answer": "D",
-						"title": "3.对我国的历史文化遗产要批判地继承,这种态度体现的哲学道理是( )",
-						"typeName": "选择题",
-						"No": 3,
-						"type": 1,
-						"options": [{
-								"value": "内因和外因关系的原理",
-								"key": "A"
-							},
-							{
-								"value": "世界的物质统一性原理",
-								"key": "B"
-							},
-							{
-								"value": "原因和结果关系的原理",
-								"key": "C"
-							},
-							{
-								"value": "辩证否定的原理",
-								"key": "D"
-							}
-						],
-						"parsing": "[考情点拨]本题考查了辩证否定的哲学道理。[应试指导]辩证否定是通过事物的内在矛盾运动而进行的自我否定，即自己否定自己，并通过自我否定，实现自我更新、自我发展。它包括两层含义:(1)辩证否定是事物的自我否定;(2)辩证否定是\"扬弃\"。\"对我国的历史文化遗产要批判地继承\"，即对历史文化遗产要既克服又保留，既变革又继承,体现的即是\"扬弃\"的观点。"
-					},
-					{
-						"_id": 7,
-						"paper_id": "top_up_political_real_2014",
-						"answer": "C",
-						"title": "8.下列各项中,属于技术社会形态系列的是( )",
-						"typeName": "选择题",
-						"No": 8,
-						"type": 1,
-						"options": [{
-								"value": "封建社会",
-								"key": "A"
-							},
-							{
-								"value": "原始社会",
-								"key": "B"
-							},
-							{
-								"value": "工业社会",
-								"key": "C"
-							},
-							{
-								"value": "奴隶社会",
-								"key": "D"
-							}
-						],
-						"parsing": "[考情点拨]本题考查了社会形态的分类。[应试指导]社会形态是社会政治经济文化性质的外在表现形式,是一定生产力基础上的经济基础和上层建筑的统一体。按照不同的标准，社会形态可以有不同的分类。其中,技术社会形态是以生产力和技术发展水平以及与之相适应的产业结构为标准对社会形态所作的划分，包括渔猎社会、农业社会、工业社会、信息社会等具体的社会形态。原始社会、奴隶社会、封建社会、资本主义社会、社会主义社会等是按照生产关系的不同性质对社会形态所作的分类。"
-					}
-				]
+				types: [],
+				questionList: []
 			}
 		},
 		onLoad(options) {
@@ -136,14 +59,15 @@
 		methods: {
 			initData(options) {
 				this.paper_id = options.paper_id
-				// this.getData()
+				this.getTypeData()
 				this.getQuestionList()
 			},
-			getData() {
+			getTypeData() {
 				const db = uniCloud.database();
 				console.log("开始请求topic_type：", this.paper_id);
 				db.collection("topic_type").where({
-					"_id": this.paper_id
+					"_id": this.paper_id,
+
 				}).get().then((res) => {
 					console.log("获取topic_type成功", JSON.stringify(res.result.data));
 					this.types = res.result.data[0].types;
@@ -184,10 +108,26 @@
 			sectionChange(index) {
 				this.current = index;
 			},
-			cellClick() {
-				let json = JSON.stringify(this.tests);
-				uni.navigateTo({
-					url: "/pages/question/answer?json=" + json
+			cellClick(item) {
+				uniCloud.callFunction({
+					name: "answer-random",
+					data: {
+						"paper_type": item.paper_type,
+						"type": item.type,
+						"typeName": item.typeName,
+						"count": item.count
+					},
+					success(res) {
+						// console.log("openTest", JSON.stringify(res.result.data))
+						// console.log("openTest", res.result.data.length)
+						let json = JSON.stringify(res.result.data);
+						uni.navigateTo({
+							url: "/pages/question/answer?json=" + json
+						})
+					},
+					fail() {
+						console.log("获取answer_questions失败题型练习");
+					}
 				})
 			},
 			onShareAppMessage(res) {

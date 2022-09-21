@@ -1,0 +1,7 @@
+{
+  "name": "answer-random",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}

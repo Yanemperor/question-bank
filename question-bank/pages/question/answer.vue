@@ -2,11 +2,7 @@
 	<view>
 		<view id="top-box" class="cu-bar bg-white solid-bottom">
 			<view class="action text-black">
-				<text v-if="currentType===1">判断题</text>
-				<text v-else-if="currentType===2">单选题</text>
-				<text v-else-if="currentType===3">多选题</text>
-				<text v-else-if="currentType===4">填空题</text>
-				<text v-else-if="currentType===5">问答题</text>
+				<text>{{ currentType }}</text>
 			</view>
 			<view class="action">
 				<button class="cu-btn bg-green shadow" @tap="showCardModal" data-target="modalCard">答题卡</button>
@@ -62,13 +58,13 @@
 
 						<view class="cu-bar bg-white solid-bottom">
 							<view class="action text-black">
-								<text class="cuIcon-title text-red"></text>{{subject.title}}
+								<text class="cuIcon-title text-red"></text>{{ index + 1 + "."  + subject.title }}
 							</view>
 						</view>
 						<view>
 							<!-- 单选 -->
 							<radio-group class="block" @change="RadioboxChange"
-								v-if="subject.type===1||subject.type===2">
+								v-if="subject.type===1">
 								<label class="cu-form-group" v-for="option in subject.options" :key="option.key">
 									<radio :value="option.key"
 										:checked="subject.userAnswer.indexOf(option.key) > -1?true:false"></radio>
@@ -76,16 +72,16 @@
 								</label>
 							</radio-group>
 							<!-- 多选 -->
-							<checkbox-group class="block" @change="CheckboxChange" v-else-if="subject.type===3">
+							<!-- <checkbox-group class="block" @change="CheckboxChange" v-else-if="subject.type===3">
 								<label class="cu-form-group" v-for="option in subject.options">
 									<checkbox :value="option.key"
 										:class="subject.userAnswer.indexOf(option.key) > -1?'checked':''"
 										:checked="subject.userAnswer.indexOf(option.key) > -1?true:false"></checkbox>
 									<view class="title  text-black">{{option.key}}.{{option.value}}</view>
 								</label>
-							</checkbox-group>
+							</checkbox-group> -->
 
-							<view v-else-if="subject.type===4">
+							<!-- <view v-else-if="subject.type===4">
 								<view class="cu-form-group solid-bottom">
 									<view class="title  text-black">
 										答：
@@ -93,9 +89,9 @@
 									<input placeholder="文本输入框" name="input" v-model="subject.userAnswer"
 										@blur="textInput"></input>
 								</view>
-							</view>
+							</view> -->
 
-							<view v-else-if="subject.type===5">
+							<view v-else-if="subject.type===2 || subject.type===3">
 								<view class="cu-bar cu-bar-title bg-white margin-top">
 									<view class="action  text-black">
 										答：
@@ -116,12 +112,12 @@
 									<text class="solid-bottom  padding-left text-green">{{subject.answer}}</text>
 								</view>
 							</view>
-							<view class="cu-bar cu-bar-title">
+							<view class="cu-bar cu-bar-title" v-if="subject.parsing">
 								<view class="action  text-grey">
 									<text>解析：</text>
 								</view>
 							</view>
-							<view class="text-content padding  text-grey">
+							<view class="text-content padding  text-grey" v-if="subject.parsing">
 								{{subject.parsing}}
 							</view>
 						</view>
@@ -174,7 +170,7 @@
 		data() {
 			return {
 				userFavor: false, //是否已收藏
-				currentType: 0, //当前题型
+				currentType: "", //当前题型
 				subjectIndex: 0, //跳转索引
 				autoShowAnswer: true, //答错是否显答案
 				autoRadioNext: true, //判断题、单项题，自动移下一题
@@ -355,7 +351,7 @@
 				
 				console.log("detail:", temps);
 				this.subjectList = temps;
-				this.currentType = this.subjectList[0].type;
+				this.currentType = this.subjectList[0].typeName;
 			}
 		},
 		methods: {
@@ -384,7 +380,7 @@
 
 				if (index != undefined) {
 					this.subjectIndex = index;
-					this.currentType = this.subjectList[index].type;
+					this.currentType = this.subjectList[index].typeName;
 					this.userFavor = this.subjectList[index].userFavor;
 				}
 			},
