@@ -8,10 +8,24 @@
 // 数据库查询有最大返回条数限制，详见：https://uniapp.dcloud.net.cn/uniCloud/cf-database?id=limit
 // 详细JQL语法，请参考 https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=jsquery
 
+// "paper_type": "top_up_language",
+// 	"type": 1,
+// 	"typeName": "论述题"
+
 // 下面示例查询uni-id-users表的所有数据
 // db.collection('answer_questions').where('user_id._id=="610a6daa506cc7000100c07f"').get();
-db.collection('answer_questions').where('type=="11"').get();
-// db.collection('answer_questions').where('typeName=="日常对话题"').get();
-db.collection('answer_questions').where('type=="11"').update({
-    "type": 1
-  });
+// db.collection('answer_questions').where('type==16').get();
+// db.collection('answer_questions').where('paper_type== "top_up_language"').get();
+// "No" : dbCmd.inc(55)
+const dbCmd = db.command
+// db.collection('answer_questions').where({
+// 	"paper_type": "top_up_english",
+// 	"typeName": "写作题"
+// }).update({
+// 	"No" : 61
+// });
+
+// db.collection('answer_questions').where({
+// 	"paper_type": "top_up_english",
+// 	"typeName": "写作题"
+// }).get()

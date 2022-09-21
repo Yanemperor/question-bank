@@ -13,6 +13,10 @@
 				<text>{{ currentType }}</text>
 			</view>
 			<view class="action">
+				<view class="padding-right-sm" v-if="article">
+					<u-button text="显示文章" size="mini" plain shape="circle" type="success" @click="show = true">
+					</u-button>
+				</view>
 				<button class="cu-btn bg-green shadow" @tap="showCardModal" data-target="modalCard">答题卡</button>
 			</view>
 		</view>
@@ -29,6 +33,7 @@
 						<view class="margin-tb-sm text-center" v-for="(subject,index) in subjectList" :key="index">
 							<button class="cu-btn round" :class="[subject.userAnswer.length===0?'line-grey':'bg-red']"
 								@click="AppointedSubject(index)">{{index+1}}</button>
+
 						</view>
 					</view>
 
@@ -61,22 +66,33 @@
 		<form>
 			<swiper :current="subjectIndex" class="swiper-box" @change="SwiperChange" :style="{'height':swiperHeight}">
 				<swiper-item v-for="(subject,index) in subjectList">
-
 					<view v-if="index-subjectIndex>=-1&&index-subjectIndex<=1">
-
 						<view class="cu-bar bg-white solid-bottom">
 							<view class="action text-black">
-								<text class="cuIcon-title text-red"></text>{{ index + 1 + "."  + subject.title }}
+								<text class="cuIcon-title text-red"></text>
+								<view v-if="subject.type !== 7">
+									{{ index + 1 + "."  + subject.title }}
+								</view>
+								<view v-if="subject.type === 7">
+									第{{ subject.No }}题
+								</view>
 							</view>
 						</view>
 						<view>
 							<!-- 单选 -->
 							<radio-group class="block" @change="RadioboxChange"
-								v-if="subject.type===1">
+								v-if="subject.type===1 || subject.type===3 || subject.type===6 || subject.type===7">
 								<label class="cu-form-group" v-for="option in subject.options" :key="option.key">
 									<radio :value="option.key"
 										:checked="subject.userAnswer.indexOf(option.key) > -1?true:false"></radio>
-									<view class="title text-black">{{option.key}}.{{option.value}}</view>
+									<view class="title text-black" v-if="subject.typeName != '发音题'">
+										{{option.key}}.{{option.value}}</view>
+									<view class="title text-black" v-if="subject.typeName == '发音题'">
+										<view class="flex">
+											{{option.key}}.
+											<rich-text :nodes="option.value"></rich-text>
+										</view>
+									</view>
 								</label>
 							</radio-group>
 							<!-- 多选 -->
@@ -169,7 +185,11 @@
 			</view>
 
 		</view>
-
+		<u-popup :show="show" mode="bottom" @close="close" @open="open">
+			<view class="padding-sm">
+				<text>{{ article }}</text>
+			</view>
+		</u-popup>
 	</view>
 </template>
 
@@ -177,6 +197,8 @@
 	export default {
 		data() {
 			return {
+				show: false,
+				article: "", // 文章
 				userFavor: false, //是否已收藏
 				currentType: "", //当前题型
 				subjectIndex: 0, //跳转索引
@@ -343,9 +365,11 @@
 				title: this.title
 			});
 			if (options.json) {
-				console.log("options.json:", JSON.stringify(options.json));
-				
-				var details = JSON.parse(options.json);
+
+				let json = decodeURIComponent(options.json)
+				console.log("options.json:", JSON.stringify(json));
+
+				var details = JSON.parse(json);
 				//添加用户显示答案字段
 				// for (var i = 0; i < details.length; i++) {
 				// 	// this.$set(details[i], "showAnswer", false);
@@ -358,20 +382,19 @@
 						"userAnswer": ""
 					}))
 				})
-				
+
 				console.log("detail:", JSON.stringify(temps));
 				this.subjectList = temps;
 				this.currentType = this.subjectList[0].typeName;
+				if (this.subjectList[0].article) {
+					this.article = this.subjectList[0].article;
+				}
+				if (this.subjectList[0].type === 7) {
+					this.article = this.subjectList[0].title;
+				}
 			}
 		},
 		methods: {
-			// initData(json) {
-			// 	// this.subjectList = JSON.parse(json);
-			// 	console.log("json#######", json);
-			// 	const detail = JSON.parse(json);
-			// 	console.log("#######detail########:", detail);
-			// 	this.subjectList = detail;
-			// },
 			showCardModal: function(e) {
 				this.modalCard = e.currentTarget.dataset.target
 			},
@@ -392,6 +415,10 @@
 					this.subjectIndex = index;
 					this.currentType = this.subjectList[index].typeName;
 					this.userFavor = this.subjectList[index].userFavor;
+					this.article = this.subjectList[index].article;
+					if (this.subjectList[index].type === 7) {
+						this.article = this.subjectList[index].title;
+					}
 				}
 			},
 			RadioboxChange: function(e) { //单选选中
@@ -466,8 +493,15 @@
 			SubmitError: function(e) { //提交纠错
 
 				this.modalError = null;
-			}
+			},
 
+			open() {
+				// console.log('open');
+			},
+			close() {
+				this.show = false
+				// console.log('close');
+			}
 		}
 	}
 </script>

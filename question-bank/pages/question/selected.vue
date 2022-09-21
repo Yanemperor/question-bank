@@ -92,13 +92,14 @@
 			cellAllQuestionClick(item) {
 				const db = uniCloud.database();
 				console.log("开始请求answer_questions", item.id);
-				db.collection("answer_questions").orderBy("type asc, No asc").where({
+				db.collection("answer_questions").orderBy("No asc").where({
 					"paper_id": item.id
 				}).get().then((res) => {
-					// console.log("获取answer_questions成功", JSON.stringify(res.result.data));
+					console.log("获取answer_questions成功", JSON.stringify(res.result.data));
 					let json = JSON.stringify(res.result.data);
+					let newStr = json.replace(/%/g, '%25');
 					uni.navigateTo({
-						url: "/pages/question/answer?json=" + json
+						url: "/pages/question/answer?json=" + encodeURIComponent(newStr)
 					})
 				}).catch((e) => {
 					console.log("获取answer_questions失败", e);
@@ -121,8 +122,9 @@
 						console.log("openTest", JSON.stringify(res.result.data))
 						console.log("openTest", res.result.data.length)
 						let json = JSON.stringify(res.result.data);
+						let newStr = json.replace(/%/g, '%25');
 						uni.navigateTo({
-							url: "/pages/question/answer?json=" + json
+							url: "/pages/question/answer?json=" + encodeURIComponent(newStr)
 						})
 					},
 					fail() {

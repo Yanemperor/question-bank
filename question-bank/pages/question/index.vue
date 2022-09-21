@@ -26,11 +26,6 @@
 						paper_id: "top_up_language"
 					},
 					{
-						img: "/static/subject/shuxue.png",
-						title: "类型2",
-						paper_id: "top_up_language"
-					},
-					{
 						img: "/static/subject/english.png",
 						title: "类型3",
 						paper_id: "top_up_english"
