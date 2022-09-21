@@ -1,3 +1,11 @@
+<!-- 0 判断题
+1 选择题
+2 多选题
+3 阅读选择题 阅读理解
+4 填空题
+5 简答题 辨析题 文言文 论述题 现代文阅读 写作题
+6 日常对话题
+7 完形填空题 -->
 <template>
 	<view>
 		<view id="top-box" class="cu-bar bg-white solid-bottom">
@@ -72,16 +80,16 @@
 								</label>
 							</radio-group>
 							<!-- 多选 -->
-							<!-- <checkbox-group class="block" @change="CheckboxChange" v-else-if="subject.type===3">
+							<checkbox-group class="block" @change="CheckboxChange" v-else-if="subject.type===2">
 								<label class="cu-form-group" v-for="option in subject.options">
 									<checkbox :value="option.key"
 										:class="subject.userAnswer.indexOf(option.key) > -1?'checked':''"
 										:checked="subject.userAnswer.indexOf(option.key) > -1?true:false"></checkbox>
 									<view class="title  text-black">{{option.key}}.{{option.value}}</view>
 								</label>
-							</checkbox-group> -->
+							</checkbox-group>
 
-							<!-- <view v-else-if="subject.type===4">
+							<view v-else-if="subject.type===4">
 								<view class="cu-form-group solid-bottom">
 									<view class="title  text-black">
 										答：
@@ -89,9 +97,9 @@
 									<input placeholder="文本输入框" name="input" v-model="subject.userAnswer"
 										@blur="textInput"></input>
 								</view>
-							</view> -->
+							</view>
 
-							<view v-else-if="subject.type===2 || subject.type===3">
+							<view v-else-if="subject.type===5">
 								<view class="cu-bar cu-bar-title bg-white margin-top">
 									<view class="action  text-black">
 										答：
@@ -335,6 +343,8 @@
 				title: this.title
 			});
 			if (options.json) {
+				console.log("options.json:", JSON.stringify(options.json));
+				
 				var details = JSON.parse(options.json);
 				//添加用户显示答案字段
 				// for (var i = 0; i < details.length; i++) {
@@ -349,7 +359,7 @@
 					}))
 				})
 				
-				console.log("detail:", temps);
+				console.log("detail:", JSON.stringify(temps));
 				this.subjectList = temps;
 				this.currentType = this.subjectList[0].typeName;
 			}

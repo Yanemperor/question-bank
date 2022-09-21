@@ -118,8 +118,8 @@
 						"count": item.count
 					},
 					success(res) {
-						// console.log("openTest", JSON.stringify(res.result.data))
-						// console.log("openTest", res.result.data.length)
+						console.log("openTest", JSON.stringify(res.result.data))
+						console.log("openTest", res.result.data.length)
 						let json = JSON.stringify(res.result.data);
 						uni.navigateTo({
 							url: "/pages/question/answer?json=" + json
