@@ -27,13 +27,33 @@
 					},
 					{
 						img: "/static/subject/english.png",
-						title: "类型3",
+						title: "类型2",
 						paper_id: "top_up_english"
 					},
 					{
 						img: "/static/subject/zhengzhi.png",
-						title: "类型4",
+						title: "类型3",
 						paper_id: "top_up_political"
+					},
+					{
+						img: "/static/subject/jiaoyu.png",
+						title: "类型4",
+						paper_id: "top_up_educational_theory"
+					},
+					{
+						img: "/static/subject/minfa.png",
+						title: "类型5",
+						paper_id: "top_up_civil_law"
+					},
+					{
+						img: "/static/subject/yishu.png",
+						title: "类型6",
+						paper_id: "top_up_introduction_art"
+					},
+					{
+						img: "/static/subject/shengtai.png",
+						title: "类型6",
+						paper_id: "top_up_ecology"
 					}
 				]
 			}

@@ -13,7 +13,7 @@
 				<text>{{ currentType }}</text>
 			</view>
 			<view class="action">
-				<view class="padding-right-sm" v-if="article">
+				<view class="padding-right-sm" v-if="isShowArticle">
 					<u-button text="显示文章" size="mini" plain shape="circle" type="success" @click="show = true">
 					</u-button>
 				</view>
@@ -70,23 +70,27 @@
 						<view class="cu-bar bg-white solid-bottom">
 							<view class="action text-black">
 								<text class="cuIcon-title text-red"></text>
-								<view v-if="subject.type !== 7">
+								<view v-if="subject.type !== 6 && subject.title.length <= 500">
 									{{ index + 1 + "."  + subject.title }}
 								</view>
-								<view v-if="subject.type === 7">
+								<view v-else-if="subject.type === 6">
 									第{{ subject.No }}题
+								</view>
+								<view v-else-if="subject.title.length > 500">
+									第{{ index + 1 }}题
 								</view>
 							</view>
 						</view>
 						<view>
 							<!-- 单选 -->
 							<radio-group class="block" @change="RadioboxChange"
-								v-if="subject.type===1 || subject.type===3 || subject.type===6 || subject.type===7">
+								v-if="subject.type===0 || subject.type===1 || subject.type===3 || subject.type===6 || subject.type===7">
 								<label class="cu-form-group" v-for="option in subject.options" :key="option.key">
 									<radio :value="option.key"
 										:checked="subject.userAnswer.indexOf(option.key) > -1?true:false"></radio>
 									<view class="title text-black" v-if="subject.typeName != '发音题'">
-										{{option.key}}.{{option.value}}</view>
+										{{option.key}}.{{option.value}}
+									</view>
 									<view class="title text-black" v-if="subject.typeName == '发音题'">
 										<view class="flex">
 											{{option.key}}.
@@ -199,6 +203,7 @@
 			return {
 				show: false,
 				article: "", // 文章
+				isShowArticle: false,
 				userFavor: false, //是否已收藏
 				currentType: "", //当前题型
 				subjectIndex: 0, //跳转索引
@@ -283,37 +288,7 @@
 						"userAnswer": "",
 						"userFavor": false,
 						"parsing": "问答题没有选项，无法做答，且不参与计分"
-					},
-					{
-						"_id": 7,
-						"paper_id": "top_up_political_real_2014",
-						"answer": "C",
-						"title": "8.下列各项中,属于技术社会形态系列的是( )",
-						"typeName": "选择题",
-						"No": 8,
-						"type": 1,
-						"userAnswer": "",
-
-						"options": [{
-								"value": "封建社会",
-								"key": "A"
-							},
-							{
-								"value": "原始社会",
-								"key": "B"
-							},
-							{
-								"value": "工业社会",
-								"key": "C"
-							},
-							{
-								"value": "奴隶社会",
-								"key": "D"
-							}
-						],
-						"parsing": "[考情点拨]本题考查了社会形态的分类。[应试指导]社会形态是社会政治经济文化性质的外在表现形式,是一定生产力基础上的经济基础和上层建筑的统一体。按照不同的标准，社会形态可以有不同的分类。其中,技术社会形态是以生产力和技术发展水平以及与之相适应的产业结构为标准对社会形态所作的划分，包括渔猎社会、农业社会、工业社会、信息社会等具体的社会形态。原始社会、奴隶社会、封建社会、资本主义社会、社会主义社会等是按照生产关系的不同性质对社会形态所作的分类。"
 					}
-
 				],
 				modalCard: null, //显示答题卡
 				modalError: null, //纠错卡
@@ -386,11 +361,15 @@
 				console.log("detail:", JSON.stringify(temps));
 				this.subjectList = temps;
 				this.currentType = this.subjectList[0].typeName;
+				let title = this.subjectList[0].title;
 				if (this.subjectList[0].article) {
 					this.article = this.subjectList[0].article;
-				}
-				if (this.subjectList[0].type === 7) {
-					this.article = this.subjectList[0].title;
+					this.isShowArticle = true;
+				} else if (title.length > 500) {
+					this.article = title;
+					this.isShowArticle = true;
+				} else {
+					this.isShowArticle = false;
 				}
 			}
 		},
@@ -416,8 +395,16 @@
 					this.currentType = this.subjectList[index].typeName;
 					this.userFavor = this.subjectList[index].userFavor;
 					this.article = this.subjectList[index].article;
-					if (this.subjectList[index].type === 7) {
+					let title = this.subjectList[index].title;
+					console.log("titleCount", title.length)
+					if (this.subjectList[index].type === 6) {
 						this.article = this.subjectList[index].title;
+						this.isShowArticle = true;
+					} else if (title.length > 500) {
+						this.article = title;
+						this.isShowArticle = true;
+					} else {
+						this.isShowArticle = false;
 					}
 				}
 			},

@@ -18,14 +18,14 @@
 // db.collection('answer_questions').where('paper_type== "top_up_language"').get();
 // "No" : dbCmd.inc(55)
 const dbCmd = db.command
-// db.collection('answer_questions').where({
-// 	"paper_type": "top_up_english",
-// 	"typeName": "写作题"
-// }).update({
-// 	"No" : 61
-// });
+db.collection('answer_questions').where({
+	"paper_type": "top_up_ecology",
+	"typeName": "判断题"
+}).update({
+	"type": 0
+});
 
 // db.collection('answer_questions').where({
-// 	"paper_type": "top_up_english",
-// 	"typeName": "写作题"
+// 	"paper_type": "top_up_ecology",
+// 	"typeName": "判断题"
 // }).get()
