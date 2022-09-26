@@ -98,7 +98,7 @@ var components
 try {
   components = {
     uImage: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-image/u-image */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-image/u-image")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-image/u-image.vue */ 371))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-image/u-image */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-image/u-image")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-image/u-image.vue */ 387))
     }
   }
 } catch (e) {
@@ -183,19 +183,34 @@ var _default =
         paper_id: "top_up_language" },
 
       {
-        img: "/static/subject/shuxue.png",
-        title: "类型2",
-        paper_id: "top_up_language" },
-
-      {
         img: "/static/subject/english.png",
-        title: "类型3",
+        title: "类型2",
         paper_id: "top_up_english" },
 
       {
         img: "/static/subject/zhengzhi.png",
+        title: "类型3",
+        paper_id: "top_up_political" },
+
+      {
+        img: "/static/subject/jiaoyu.png",
         title: "类型4",
-        paper_id: "top_up_political" }] };
+        paper_id: "top_up_educational_theory" },
+
+      {
+        img: "/static/subject/minfa.png",
+        title: "类型5",
+        paper_id: "top_up_civil_law" },
+
+      {
+        img: "/static/subject/yishu.png",
+        title: "类型6",
+        paper_id: "top_up_introduction_art" },
+
+      {
+        img: "/static/subject/shengtai.png",
+        title: "类型6",
+        paper_id: "top_up_ecology" }] };
 
 
 

@@ -3,6 +3,8 @@
     "pages/question/index",
     "pages/question/selected",
     "pages/question/answer",
+    "pages/download/index",
+    "pages/download/list",
     "pages/my/index",
     "pages/list/list",
     "pages/grid/grid",
@@ -50,18 +52,19 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/list/list",
-        "iconPath": "static/tabbar/list.png",
-        "selectedIconPath": "static/tabbar/list_active.png",
-        "text": "列表"
+        "pagePath": "pages/download/index",
+        "iconPath": "static/tabbar/download.png",
+        "selectedIconPath": "static/tabbar/download_selected.png",
+        "text": "下载"
       },
       {
         "pagePath": "pages/ucenter/ucenter",
-        "iconPath": "static/tabbar/me.png",
-        "selectedIconPath": "static/tabbar/me_active.png",
+        "iconPath": "static/tabbar/my.png",
+        "selectedIconPath": "static/tabbar/my_selected.png",
         "text": "我的"
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
 }

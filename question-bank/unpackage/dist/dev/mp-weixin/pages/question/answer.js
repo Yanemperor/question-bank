@@ -95,6 +95,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components
+try {
+  components = {
+    uButton: function() {
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-button/u-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-button/u-button")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-button/u-button.vue */ 420))
+    },
+    uPopup: function() {
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-popup/u-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-popup/u-popup")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-popup/u-popup.vue */ 430))
+    }
+  }
+} catch (e) {
+  if (
+    e.message.indexOf("Cannot find module") !== -1 &&
+    e.message.indexOf(".vue") !== -1
+  ) {
+    console.error(e.message)
+    console.error("1. 排查组件名称拼写是否正确")
+    console.error(
+      "2. 排查组件是否符合 easycom 规范，文档：https://uniapp.dcloud.net.cn/collocation/pages?id=easycom"
+    )
+    console.error(
+      "3. 若组件不符合 easycom 规范，需手动引入，并在 components 中注册该组件"
+    )
+  } else {
+    throw e
+  }
+}
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -105,7 +131,11 @@ var render = function() {
     var l0 =
       index - _vm.subjectIndex >= -1 &&
       index - _vm.subjectIndex <= 1 &&
-      (subject.type === 1 || subject.type === 2)
+      (subject.type === 0 ||
+        subject.type === 1 ||
+        subject.type === 3 ||
+        subject.type === 6 ||
+        subject.type === 7)
         ? _vm.__map(subject.options, function(option, __i1__) {
             var $orig = _vm.__get_orig(option)
 
@@ -119,8 +149,14 @@ var render = function() {
     var l1 =
       index - _vm.subjectIndex >= -1 &&
       index - _vm.subjectIndex <= 1 &&
-      !(subject.type === 1 || subject.type === 2) &&
-      subject.type === 3
+      !(
+        subject.type === 0 ||
+        subject.type === 1 ||
+        subject.type === 3 ||
+        subject.type === 6 ||
+        subject.type === 7
+      ) &&
+      subject.type === 2
         ? _vm.__map(subject.options, function(option, __i2__) {
             var $orig = _vm.__get_orig(option)
 
@@ -139,6 +175,12 @@ var render = function() {
       l1: l1
     }
   })
+
+  if (!_vm._isMounted) {
+    _vm.e0 = function($event) {
+      _vm.show = true
+    }
+  }
 
   _vm.$mp.data = Object.assign(
     {},
@@ -352,12 +394,43 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
     return {
+      show: false,
+      article: "", // 文章
+      isShowArticle: false,
       userFavor: false, //是否已收藏
-      currentType: 0, //当前题型
+      currentType: "", //当前题型
       subjectIndex: 0, //跳转索引
       autoShowAnswer: true, //答错是否显答案
       autoRadioNext: true, //判断题、单项题，自动移下一题
@@ -439,75 +512,7 @@ var _default =
         "answer": "",
         "userAnswer": "",
         "userFavor": false,
-        "parsing": "问答题没有选项，无法做答，且不参与计分" },
-
-
-      {
-        "title": "水是液体？",
-        "type": 1,
-        "options": [{
-          "key": "A",
-          "value": "对" },
-        {
-          "key": "B",
-          "value": "错" }],
-
-        "answer": "A",
-        "userAnswer": "",
-        "userFavor": false,
-        "parsing": "难到是固体不成？" },
-
-      {
-        "title": "电流分有？",
-        "type": 2,
-        "options": [{
-          "key": "A",
-          "value": "直流" },
-        {
-          "key": "B",
-          "value": "交流" },
-        {
-          "key": "C",
-          "value": "直流和交流" }],
-
-        "answer": "C",
-        "userAnswer": "",
-        "userFavor": false,
-        "parsing": "科技学依据" },
-
-      {
-        "title": "酸菜鱼的味道？",
-        "type": 3,
-        "options": [{
-          "key": "A",
-          "value": "咸味" },
-        {
-          "key": "B",
-          "value": "辣味" },
-        {
-          "key": "C",
-          "value": "甜味" },
-        {
-          "key": "D",
-          "value": "酸味" }],
-
-        "answer": "A,B,D",
-        "userAnswer": "",
-        "userFavor": false,
-        "parsing": "你怎么想都行，要的就是这个味，答案只能选A,B,D" },
-
-      {
-        "title": "床前（____）光，疑是地上霜。",
-        "type": 4,
-        "options": [{
-          "key": "",
-          "value": "" }],
-
-        "answer": "明月",
-        "userAnswer": "",
-        "userFavor": false,
         "parsing": "问答题没有选项，无法做答，且不参与计分" }],
-
 
 
       modalCard: null, //显示答题卡
@@ -556,26 +561,44 @@ var _default =
 
   },
   onLoad: function onLoad(options) {
-    this.initData(options.json);
-    this.currentType = this.subjectList[0].type;
     uni.setNavigationBarTitle({
       title: this.title });
 
+    if (options.json) {
 
-    //添加用户显示答案字段
-    for (var i = 0; i < this.subjectList.length; i++) {
-      this.$set(this.subjectList[i], "showAnswer", false);
+      var json = decodeURIComponent(options.json);
+      console.log("options.json:", JSON.stringify(json));
+
+      var details = JSON.parse(json);
+      //添加用户显示答案字段
+      // for (var i = 0; i < details.length; i++) {
+      // 	// this.$set(details[i], "showAnswer", false);
+      // 	details[i].showAnswer = false;
+      // }
+      var temps = [];
+      details.map(function (item, index) {
+        temps.push(Object.assign(item, {
+          "showAnswer": false,
+          "userAnswer": "" }));
+
+      });
+
+      console.log("detail:", JSON.stringify(temps));
+      this.subjectList = temps;
+      this.currentType = this.subjectList[0].typeName;
+      var title = this.subjectList[0].title;
+      if (this.subjectList[0].article) {
+        this.article = this.subjectList[0].article;
+        this.isShowArticle = true;
+      } else if (title.length > 500) {
+        this.article = title;
+        this.isShowArticle = true;
+      } else {
+        this.isShowArticle = false;
+      }
     }
-
   },
   methods: {
-    initData: function initData(json) {
-      // this.subjectList = JSON.parse(json);
-      console.log("json#######", json);
-      var detail = JSON.parse(json);
-      console.log("#######detail########:", detail);
-      this.subjectList = detail;
-    },
     showCardModal: function showCardModal(e) {
       this.modalCard = e.currentTarget.dataset.target;
     },
@@ -594,8 +617,20 @@ var _default =
 
       if (index != undefined) {
         this.subjectIndex = index;
-        this.currentType = this.subjectList[index].type;
+        this.currentType = this.subjectList[index].typeName;
         this.userFavor = this.subjectList[index].userFavor;
+        this.article = this.subjectList[index].article;
+        var title = this.subjectList[index].title;
+        console.log("titleCount", title.length);
+        if (this.subjectList[index].type === 6) {
+          this.article = this.subjectList[index].title;
+          this.isShowArticle = true;
+        } else if (title.length > 500) {
+          this.article = title;
+          this.isShowArticle = true;
+        } else {
+          this.isShowArticle = false;
+        }
       }
     },
     RadioboxChange: function RadioboxChange(e) {//单选选中
@@ -670,6 +705,14 @@ var _default =
     SubmitError: function SubmitError(e) {//提交纠错
 
       this.modalError = null;
+    },
+
+    open: function open() {
+      // console.log('open');
+    },
+    close: function close() {
+      this.show = false;
+      // console.log('close');
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

@@ -98,13 +98,13 @@ var components
 try {
   components = {
     uSubsection: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-subsection/u-subsection */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-subsection/u-subsection")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-subsection/u-subsection.vue */ 379))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-subsection/u-subsection */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-subsection/u-subsection")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-subsection/u-subsection.vue */ 395))
     },
     uIcon: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 387))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 403))
     },
     uLine: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-line/u-line */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-line/u-line")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-line/u-line.vue */ 396))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-line/u-line */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-line/u-line")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-line/u-line.vue */ 412))
     }
   }
 } catch (e) {
@@ -207,97 +207,8 @@ var _default =
       list: ['题型练习', '套卷练习'],
       current: 0,
       paper_id: "",
-      types: [{
-        title: "选择",
-        items: [{
-          name: '选择一',
-          url: '/pages/about/business_cooperation' },
-
-        {
-          name: '选择二',
-          url: '/pages/about/more_app' }] },
-
-
-      {
-        title: "测试",
-        items: [{
-          name: '测试一',
-          url: '/pages/about/business_cooperation' },
-
-        {
-          name: '测试二',
-          url: '/pages/about/more_app' }] }],
-
-
-
-      questionList: [],
-      tests: [{
-        "_id": 13,
-        "typeName": "选择题",
-        "paper_id": "top_up_political_real_2014",
-        "No": 14,
-        "answer": "D",
-        "title": "14.中国共产党对当代中国基本国情的科学判断是，我国正处在( )",
-        "type": 1,
-        "options": [{
-          "value": "社会主义发达阶段",
-          "key": "A" },
-        {
-          "value": "新民主主义阶段",
-          "key": "B" },
-        {
-          "value": "社会主义高级阶段",
-          "key": "C" },
-        {
-          "value": "社会主义初级阶段",
-          "key": "D" }],
-
-        "parsing": "[考情点拨]本题考查了社会主义初级阶段的[应试指导]在党的十一届三中全会以后，中国共产党总结了我国社会主义建设的历史经验，对当代中国的基本国情作出了科学的判断,认为我们现在处于并将长期处于社会主义初级阶段，并据此制定了党在社会主义初级阶段的基本路线。" },
-      {
-        "_id": 2,
-        "typeName": "选择题",
-        "paper_id": "top_up_political_real_2014",
-        "No": 3,
-        "answer": "D",
-        "title": "3.对我国的历史文化遗产要批判地继承,这种态度体现的哲学道理是( )",
-        "type": 1,
-        "options": [{
-          "value": "内因和外因关系的原理",
-          "key": "A" },
-        {
-          "value": "世界的物质统一性原理",
-          "key": "B" },
-        {
-          "value": "原因和结果关系的原理",
-          "key": "C" },
-        {
-          "value": "辩证否定的原理",
-          "key": "D" }],
-
-        "parsing": "[考情点拨]本题考查了辩证否定的哲学道理。[应试指导]辩证否定是通过事物的内在矛盾运动而进行的自我否定，即自己否定自己，并通过自我否定，实现自我更新、自我发展。它包括两层含义:(1)辩证否定是事物的自我否定;(2)辩证否定是\"扬弃\"。\"对我国的历史文化遗产要批判地继承\"，即对历史文化遗产要既克服又保留，既变革又继承,体现的即是\"扬弃\"的观点。" },
-      {
-        "_id": 4,
-        "typeName": "选择题",
-        "paper_id": "top_up_political_real_2014",
-        "No": 5,
-        "answer": "A",
-        "title": "5.\"元气是万物的本原\",这是一种( )",
-        "type": 1,
-        "options": [{
-          "value": "朴素唯物主义观点",
-          "key": "A" },
-        {
-          "value": "形而上学唯物主义观点",
-          "key": "B" },
-        {
-          "value": "主观唯心主义观点",
-          "key": "C" },
-        {
-          "value": "庸俗唯物主义观点",
-          "key": "D" }],
-
-        "parsing": "[考情点拨]本题考查了朴素唯物主义的观点。[应试指导]朴素唯物主义往往将某一种或某几种具体的物质形态作为世界本源，\"元气是万物的本源\"即是这样一种观点。" }] };
-
+      types: [],
+      questionList: [] };
 
   },
   onLoad: function onLoad(options) {
@@ -311,14 +222,15 @@ var _default =
   methods: {
     initData: function initData(options) {
       this.paper_id = options.paper_id;
-      // this.getData()
+      this.getTypeData();
       this.getQuestionList();
     },
-    getData: function getData() {var _this = this;
+    getTypeData: function getTypeData() {var _this = this;
       var db = uniCloud.database();
       console.log("开始请求topic_type：", this.paper_id);
       db.collection("topic_type").where({
         "_id": this.paper_id }).
+
       get().then(function (res) {
         console.log("获取topic_type成功", JSON.stringify(res.result.data));
         _this.types = res.result.data[0].types;
@@ -343,13 +255,14 @@ var _default =
     cellAllQuestionClick: function cellAllQuestionClick(item) {
       var db = uniCloud.database();
       console.log("开始请求answer_questions", item.id);
-      db.collection("answer_questions").where({
+      db.collection("answer_questions").orderBy("No asc").where({
         "paper_id": item.id }).
       get().then(function (res) {
         console.log("获取answer_questions成功", JSON.stringify(res.result.data));
         var json = JSON.stringify(res.result.data);
+        var newStr = json.replace(/%/g, '%25');
         uni.navigateTo({
-          url: "/pages/question/answer?json=" + json });
+          url: "/pages/question/answer?json=" + encodeURIComponent(newStr) });
 
       }).catch(function (e) {
         console.log("获取answer_questions失败", e);
@@ -359,10 +272,27 @@ var _default =
     sectionChange: function sectionChange(index) {
       this.current = index;
     },
-    cellClick: function cellClick() {
-      var json = JSON.stringify(this.tests);
-      uni.navigateTo({
-        url: "/pages/question/answer?json=" + json });
+    cellClick: function cellClick(item) {
+      uniCloud.callFunction({
+        name: "answer-random",
+        data: {
+          "paper_type": item.paper_type,
+          "type": item.type,
+          "typeName": item.typeName,
+          "count": item.count },
+
+        success: function success(res) {
+          console.log("openTest", JSON.stringify(res.result.data));
+          console.log("openTest", res.result.data.length);
+          var json = JSON.stringify(res.result.data);
+          var newStr = json.replace(/%/g, '%25');
+          uni.navigateTo({
+            url: "/pages/question/answer?json=" + encodeURIComponent(newStr) });
+
+        },
+        fail: function fail() {
+          console.log("获取answer_questions失败题型练习");
+        } });
 
     },
     onShareAppMessage: function onShareAppMessage(res) {

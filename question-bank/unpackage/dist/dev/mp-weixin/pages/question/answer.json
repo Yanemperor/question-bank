@@ -1,5 +1,8 @@
 {
   "navigationBarTitleText": "答题",
   "navigationBarBackgroundColor": "#ffffff",
-  "usingComponents": {}
+  "usingComponents": {
+    "u-button": "/uni_modules/uview-ui/components/u-button/u-button",
+    "u-popup": "/uni_modules/uview-ui/components/u-popup/u-popup"
+  }
 }
