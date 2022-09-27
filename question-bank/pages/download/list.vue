@@ -54,44 +54,9 @@
 			},
 
 			cellClick(item, index, row) {
-				console.log("url", item.url)	
-				console.log("tempFilePath", item.tempFilePath)	
-				// this.questionList[index].items[row].tempFilePath = "item.url";
-				// console.log("123", JSON.stringify(this.questionList));
-				var that = this;
-				uni.showLoading({
-					title: '正在打开...'
-				});
-				uni.downloadFile({
-					url: item.url, //仅为示例，并非真实的资源
-					success: (res) => {
-						if (res.statusCode === 200) {
-							console.log('下载成功');
-							uni.hideLoading();
-							var filePath = res.tempFilePath; // 临时文件存储路径
-							// this.questionList[index].items[row].tempFilePath = filePath;
-							that.questionList[index].items[row].tempFilePath = filePath;
-							uni.openDocument({
-								filePath: encodeURI(filePath),
-								// fileType: 'pdf',
-								success: function(res) {
-									console.log('打开文档成功');
-								},
-								fail: function(err) {
-									uni.showToast({
-										title: '打开失败',
-										duration: 1500,
-										icon: 'none'
-									});
-									console.log('打开失败');
-								}
-							});
-						}
-					}, fail: function(err) {
-						console.log('下载失败原因', err);
-						uni.hideLoading();
-					}
-				});
+				uni.navigateTo({
+					url: "/pages/download/browse?title=" + item.name + "&url=" + item.url
+				})
 			},
 			getDownloadList() {
 				const db = uniCloud.database();

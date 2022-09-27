@@ -1,11 +1,14 @@
 {
   "pages": [
+    "pages/my/index",
     "pages/question/index",
     "pages/question/selected",
     "pages/question/answer",
     "pages/download/index",
     "pages/download/list",
-    "pages/my/index",
+    "pages/download/browse",
+    "pages/my/collection",
+    "pages/my/ticket",
     "pages/list/list",
     "pages/grid/grid",
     "pages/ucenter/login-page/index/index",
@@ -62,9 +65,14 @@
         "iconPath": "static/tabbar/my.png",
         "selectedIconPath": "static/tabbar/my_selected.png",
         "text": "我的"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "iconPath": "static/tabbar/my.png",
+        "selectedIconPath": "static/tabbar/my_selected.png",
+        "text": "我的"
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }
