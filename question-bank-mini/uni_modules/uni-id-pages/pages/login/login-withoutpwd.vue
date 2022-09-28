@@ -11,7 +11,7 @@
 			<text class="tip">将根据第三方账号服务平台的授权范围获取你的信息</text>
 			<view class="quickLogin">
 				<image @click="quickLogin" :src="imgSrc" mode="widthFix" class="quickLoginBtn"></image>
-				<uni-id-pages-agreements scope="register" ref="agreements"></uni-id-pages-agreements>
+				<!-- <uni-id-pages-agreements scope="register" ref="agreements"></uni-id-pages-agreements> -->
 			</view>
 		</template>
 		<template v-else>
@@ -25,7 +25,7 @@
 			<button class="uni-btn" type="primary" @click="toSmsPage">获取验证码</button>
 		</template>
 		<!-- 固定定位的快捷登录按钮 -->
-		<uni-id-pages-fab-login ref="uniFabLogin"></uni-id-pages-fab-login>
+		<uni-id-pages-fab-login ref="uniFabLogin" v-show="false"></uni-id-pages-fab-login>
 	</view>
 </template>
 

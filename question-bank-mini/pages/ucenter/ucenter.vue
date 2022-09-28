@@ -1,20 +1,38 @@
 <template>
-	<view class="center">
+	<view class="content">
 		<uni-sign-in ref="signIn"></uni-sign-in>
-		<view class="userInfo" @click.capture="toUserInfo">
-			<cloud-image width="150rpx" height="150rpx" v-if="hasLogin&&userInfo.avatar_file&&userInfo.avatar_file.url" :src="userInfo.avatar_file.url"></cloud-image>
-			<image v-else class="logo-img" src="@/static/uni-center/defaultAvatarUrl.png"></image>
-			<view class="logo-title">
-				<text class="uer-name" v-if="hasLogin">{{userInfo.nickname||userInfo.username||userInfo.mobile}}</text>
-				<text class="uer-name" v-else>{{$t('mine.notLogged')}}</text>
+		<view class="header" @click.capture="toUserInfo">
+			<image class="image-bg" src="/static/my/bg.png" />
+			<view style="padding-top: 200rpx;">
+				<u-image v-if="hasLogin&&userInfo.avatar_file&&userInfo.avatar_file.url" :src="userInfo.avatar_file.url"
+					shape="circle" width="160rpx" height="160rpx"></u-image>
+				<image v-else class="logo-img" src="@/static/uni-center/defaultAvatarUrl.png"></image>
+			</view>
+			<view v-if="hasLogin" class="header-name" style="padding-top: 6rpx;">
+				{{userInfo.nickname||userInfo.username||userInfo.mobile}}
+			</view>
+			<view v-else class="header-name" style="padding-top: 6rpx;" @click="login">
+				{{$t('mine.notLogged')}}
 			</view>
 		</view>
-		<uni-grid class="grid" :column="4" :showBorder="false" :square="true">
-			<uni-grid-item class="item" v-for="(item,index) in gridList" @click.native="tapGrid(index)" :key="index">
-				<uni-icons class="icon" color="#007AFF" :type="item.icon" size="26"></uni-icons>
-				<text class="text">{{item.text}}</text>
-			</uni-grid-item>
-		</uni-grid>
+		<view class="cell-bg">
+			<uni-list class="center-list" v-for="(sublist , index) in ucenterList" :key="index">
+				<uni-list-item v-for="(item,i) in sublist" :title="item.title" link :rightText="item.rightText" :key="i"
+					:clickable="true" :to="item.to" @click="ucenterListClick(item)" :show-extra-icon="true"
+					:extraIcon="{type:item.icon,color:'#999'}">
+					<template v-slot:footer>
+						<view v-if="item.showBadge" class="item-footer">
+							<text class="item-footer-text">{{item.rightText}}</text>
+							<view class="item-footer-badge"></view>
+						</view>
+					</template>
+				</uni-list-item>
+			</uni-list>
+		</view>
+		<u-action-sheet :list="roles" v-model="show" :mask-close-able="false" @click="sheetClick" @close="sheetClose">
+		</u-action-sheet>
+	</view>
+	<!-- <view class="center">
 		<uni-list class="center-list" v-for="(sublist , index) in ucenterList" :key="index">
 			<uni-list-item v-for="(item,i) in sublist" :title="item.title" link :rightText="item.rightText" :key="i"
 				:clickable="true" :to="item.to" @click="ucenterListClick(item)" :show-extra-icon="true"
@@ -27,7 +45,7 @@
 				</template>
 			</uni-list-item>
 		</uni-list>
-	</view>
+	</view> -->
 </template>
 
 <script>
@@ -44,9 +62,11 @@
 	} from '@/uni_modules/uni-id-pages/common/store.js'
 	export default {
 		// #ifdef APP
-		onBackPress({from}) {
-			if(from=='backbutton'){
-				this.$nextTick(function(){
+		onBackPress({
+			from
+		}) {
+			if (from == 'backbutton') {
+				this.$nextTick(function() {
 					uniShare.hide()
 				})
 				return uniShare.isShow;
@@ -55,46 +75,16 @@
 		// #endif
 		data() {
 			return {
-				gridList: [{
-						"text": this.$t('mine.showText'),
-						"icon": "chat"
-					},
-					{
-						"text": this.$t('mine.showText'),
-						"icon": "cloud-upload"
-					},
-					{
-						"text": this.$t('mine.showText'),
-						"icon": "contact"
-					},
-					{
-						"text": this.$t('mine.showText'),
-						"icon": "download"
-					}
-				],
+				// to 跳转页面 event 执行方法
 				ucenterList: [
-					[
-						// #ifdef APP-PLUS
-						{
-							"title": this.$t('mine.signInByAd'),
-							"event": 'signInByAd',
-							"icon": "compose"
-						},
-						// #endif
-						{
+					[{
 							"title": this.$t('mine.signIn'),
 							"event": 'signIn',
 							"icon": "compose"
 						},
-						// #ifdef APP-PLUS
+
 						{
-							"title": this.$t('mine.toEvaluate'),
-							"event": 'gotoMarket',
-							"icon": "hand-thumbsup"
-						},
-						//#endif
-						{
-							"title":this.$t('mine.readArticles'),
+							"title": this.$t('mine.readArticles'),
 							"to": '/pages/ucenter/read-news-log/read-news-log',
 							"icon": "flag"
 						},
@@ -103,29 +93,27 @@
 							"to": '',
 							"event": 'getScore',
 							"icon": "paperplane"
+						},
+						{
+							"title": "收藏",
+							"to": '/pages/my/collection',
+							"icon": "flag"
+						},
+						{
+							"title": this.$t('mine.feedback'),
+							"to": '/uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback',
+							"icon": "help"
+						}, {
+							"title": this.$t('mine.settings'),
+							"to": '/pages/ucenter/settings/settings',
+							"icon": "gear"
+						},
+						{
+							"title": this.$t('mine.about'),
+							"to": '/pages/ucenter/about/about',
+							"icon": "info"
 						}
-						// #ifdef APP-PLUS
-						, {
-							"title": this.$t('mine.invite'),
-							"event": 'share',
-							"icon": "redo"
-						}
-						// #endif
 					],
-					[{
-						"title": this.$t('mine.feedback'),
-						"to": '/uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback',
-						"icon": "help"
-					}, {
-						"title": this.$t('mine.settings'),
-						"to": '/pages/ucenter/settings/settings',
-						"icon": "gear"
-					}],
-					[{
-						"title": this.$t('mine.about'),
-						"to": '/pages/ucenter/about/about',
-						"icon": "info"
-					}]
 				],
 				listStyles: {
 					"height": "150rpx", // 边框高度
@@ -136,13 +124,39 @@
 						"style": "solid", // 边框样式
 						"radius": "100%" // 边框圆角，支持百分比
 					}
-				}
+				},
+				items: [{
+						icon: "/static/my/collection.png",
+						title: "收藏",
+						url: "/pages/my/collection"
+					},
+					{
+						icon: "/static/my/ticket.png",
+						title: "下载券",
+						url: "/pages/my/ticket"
+					},
+					{
+						icon: "/static/my/feedback.png",
+						title: "意见反馈",
+						url: "/pages/my/feedback"
+					},
+					{
+						icon: "/static/my/about.png",
+						title: "关于我们",
+						url: "/pages/my/about"
+					},
+					{
+						icon: "/static/my/set.png",
+						title: "设置",
+						url: "/pages/my/set"
+					}
+				]
 			}
 		},
 		onLoad() {
 			//#ifdef APP-PLUS
 			this.ucenterList[this.ucenterList.length - 2].unshift({
-				title:this.$t('mine.checkUpdate'),// this.this.$t('mine.checkUpdate')"检查更新"
+				title: this.$t('mine.checkUpdate'), // this.this.$t('mine.checkUpdate')"检查更新"
 				rightText: this.appVersion.version + '-' + this.appVersion.versionCode,
 				event: 'checkVersion',
 				icon: 'loop',
@@ -150,13 +164,12 @@
 			})
 			//#endif
 		},
-		onShow() {
-		},
+		onShow() {},
 		computed: {
 			userInfo() {
 				return store.userInfo
 			},
-			hasLogin(){
+			hasLogin() {
 				return store.hasLogin
 			},
 			// #ifdef APP-PLUS
@@ -177,7 +190,7 @@
 			signIn() { //普通签到
 				this.$refs.signIn.open()
 			},
-			signInByAd(){ //看激励视频广告签到
+			signInByAd() { //看激励视频广告签到
 				this.$refs.signIn.showRewardedVideoAd()
 			},
 			/**
@@ -208,7 +221,7 @@
 			tapGrid(index) {
 				uni.showToast({
 					// title: '你点击了，第' + (index + 1) + '个',
-					title: this.$t('mine.clicked') + " " + (index + 1) ,
+					title: this.$t('mine.clicked') + " " + (index + 1),
 					icon: 'none'
 				});
 			},
@@ -220,10 +233,13 @@
 				if (uni.getSystemInfoSync().platform == "ios") {
 					// 这里填写appstore应用id
 					let appstoreid = this.appConfig.marketId.ios; // 'id1417078253';
-					console.log({appstoreid});
-					plus.runtime.openURL("itms-apps://" + 'itunes.apple.com/cn/app/wechat/' + appstoreid + '?mt=8',err=>{
-						console.log('plus.runtime.openURL err:' + JSON.stringify(err));
+					console.log({
+						appstoreid
 					});
+					plus.runtime.openURL("itms-apps://" + 'itunes.apple.com/cn/app/wechat/' + appstoreid + '?mt=8',
+						err => {
+							console.log('plus.runtime.openURL err:' + JSON.stringify(err));
+						});
 				}
 				if (uni.getSystemInfoSync().platform == "android") {
 					var Uri = plus.android.importClass("android.net.Uri");
@@ -256,25 +272,29 @@
 						console.log(res);
 						const data = res.result.data[0];
 						let msg = '';
-						msg = data ? (this.$t('mine.currentScore')+ data.balance) : this.$t('mine.noScore');
+						msg = data ? (this.$t('mine.currentScore') + data.balance) : this.$t('mine.noScore');
 						uni.showToast({
 							title: msg,
 							icon: 'none'
 						});
-					}).finally(()=>{
+					}).finally(() => {
 						uni.hideLoading()
 					})
 			},
 			async share() {
-				let {result} = await db.collection('uni-id-users').where("'_id' == $cloudEnv_uid").field('my_invite_code').get()
+				let {
+					result
+				} = await db.collection('uni-id-users').where("'_id' == $cloudEnv_uid").field('my_invite_code').get()
 				let myInviteCode = result.data[0].my_invite_code
-				if(!myInviteCode){
+				if (!myInviteCode) {
 					return uni.showToast({
 						title: '请检查uni-config-center中uni-id配置，是否已启用 autoSetInviteCode',
 						icon: 'none'
 					});
 				}
-				console.log({myInviteCode});
+				console.log({
+					myInviteCode
+				});
 				let {
 					appName,
 					logo,
@@ -344,30 +364,97 @@
 </script>
 
 <style lang="scss" scoped>
-	/* #ifndef APP-NVUE */
-	view {
+	.content {
 		display: flex;
-		box-sizing: border-box;
 		flex-direction: column;
 	}
 
-	page {
-		background-color: #f8f8f8;
+	.image-bg {
+		position: fixed;
+		width: 100%;
+		height: 678rpx;
+		top: 0;
+		left: 0;
+		z-index: -1;
 	}
-	/* #endif*/
+
+	.header {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.header-name {
+		font-size: 36rpx;
+		font-weight: 500;
+		color: #333333;
+	}
+
+	.header-position {
+		font-size: 32rpx;
+		font-weight: 400;
+		color: #333333;
+	}
+
+	.header-btn {
+		display: flex;
+		margin-top: 14rpx;
+		width: 144rpx;
+		height: 56rpx;
+		background: #333333;
+		border-radius: 28rpx;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.header-btn-text {
+		color: white;
+		font-size: 28rpx;
+		font-weight: 500;
+	}
+
+	.cell-bg {
+		margin-top: 48rpx;
+		margin-left: 24rpx;
+		margin-right: 24rpx;
+		background-color: #ffffff;
+		border-radius: 12rpx;
+	}
+
+	.cell {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 100rpx;
+		padding-left: 32rpx;
+		padding-right: 38rpx;
+	}
+
+	.cell-left {
+		display: flex;
+		align-items: center;
+	}
+
+	.cell-title {
+		padding-left: 16rpx;
+		color: rgba(0, 0, 0, 0.9);
+		font-size: 32rpx;
+	}
+
+
 
 	.center {
-		flex: 1;
+		display: flex;
 		flex-direction: column;
-		background-color: #f8f8f8;
 	}
 
 	.userInfo {
-		padding: 20rpx;
-		padding-top: 50px;
-		background-image: url(../../static/uni-center/headers.png);
+		background-image: url(https://vkceyugu.cdn.bspapp.com/VKCEYUGU-07534e22-9043-4fb4-b0d9-2145eacb7ff9/daf35166-83db-4b2f-b863-d513e56fa1ca.png);
 		flex-direction: column;
 		align-items: center;
+		width: 100%;
+		height: 678rpx;
 	}
 
 	.logo-img {

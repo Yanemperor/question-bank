@@ -100,23 +100,17 @@ try {
     uniSignIn: function() {
       return Promise.all(/*! import() | uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in.vue */ 607))
     },
-    cloudImage: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-id-pages/components/cloud-image/cloud-image */ "uni_modules/uni-id-pages/components/cloud-image/cloud-image").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-id-pages/components/cloud-image/cloud-image.vue */ 615))
-    },
-    uniGrid: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-grid/components/uni-grid/uni-grid */ "uni_modules/uni-grid/components/uni-grid/uni-grid").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-grid/components/uni-grid/uni-grid.vue */ 585))
-    },
-    uniGridItem: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-grid/components/uni-grid-item/uni-grid-item */ "uni_modules/uni-grid/components/uni-grid-item/uni-grid-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-grid/components/uni-grid-item/uni-grid-item.vue */ 592))
-    },
-    uniIcons: function() {
-      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 599))
+    uImage: function() {
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-image/u-image */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-image/u-image")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-image/u-image.vue */ 445))
     },
     uniList: function() {
       return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list/uni-list */ "uni_modules/uni-list/components/uni-list/uni-list").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list/uni-list.vue */ 534))
     },
     uniListItem: function() {
       return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list-item/uni-list-item */ "uni_modules/uni-list/components/uni-list-item/uni-list-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list-item/uni-list-item.vue */ 541))
+    },
+    uActionSheet: function() {
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-action-sheet/u-action-sheet */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-action-sheet/u-action-sheet")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-action-sheet/u-action-sheet.vue */ 470))
     }
   }
 } catch (e) {
@@ -239,6 +233,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var _checkUpdate = _interopRequireDefault(__webpack_require__(/*! @/uni_modules/uni-upgrade-center-app/utils/check-update */ 260));
 var _callCheckVersion = _interopRequireDefault(__webpack_require__(/*! @/uni_modules/uni-upgrade-center-app/utils/call-check-version */ 261));
 
@@ -261,44 +273,16 @@ var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js 
 
 
 
+
+
   data: function data() {
     return {
-      gridList: [{
-        "text": this.$t('mine.showText'),
-        "icon": "chat" },
-
-      {
-        "text": this.$t('mine.showText'),
-        "icon": "cloud-upload" },
-
-      {
-        "text": this.$t('mine.showText'),
-        "icon": "contact" },
-
-      {
-        "text": this.$t('mine.showText'),
-        "icon": "download" }],
-
-
+      // to 跳转页面 event 执行方法
       ucenterList: [
-      [
-
-
-
-
-
-
-
-      {
+      [{
         "title": this.$t('mine.signIn'),
         "event": 'signIn',
         "icon": "compose" },
-
-
-
-
-
-
 
 
       {
@@ -310,29 +294,27 @@ var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js 
         "title": this.$t('mine.myScore'),
         "to": '',
         "event": 'getScore',
-        "icon": "paperplane" }],
+        "icon": "paperplane" },
 
+      {
+        "title": "收藏",
+        "to": '/pages/my/collection',
+        "icon": "flag" },
 
-
-
-
-
-
-
-
-      [{
+      {
         "title": this.$t('mine.feedback'),
         "to": '/uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback',
         "icon": "help" },
       {
         "title": this.$t('mine.settings'),
         "to": '/pages/ucenter/settings/settings',
-        "icon": "gear" }],
+        "icon": "gear" },
 
-      [{
+      {
         "title": this.$t('mine.about'),
         "to": '/pages/ucenter/about/about',
         "icon": "info" }]],
+
 
 
       listStyles: {
@@ -343,7 +325,33 @@ var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js 
           "width": "1px", // 边框宽度
           "style": "solid", // 边框样式
           "radius": "100%" // 边框圆角，支持百分比
-        } } };
+        } },
+
+      items: [{
+        icon: "/static/my/collection.png",
+        title: "收藏",
+        url: "/pages/my/collection" },
+
+      {
+        icon: "/static/my/ticket.png",
+        title: "下载券",
+        url: "/pages/my/ticket" },
+
+      {
+        icon: "/static/my/feedback.png",
+        title: "意见反馈",
+        url: "/pages/my/feedback" },
+
+      {
+        icon: "/static/my/about.png",
+        title: "关于我们",
+        url: "/pages/my/about" },
+
+      {
+        icon: "/static/my/set.png",
+        title: "设置",
+        url: "/pages/my/set" }] };
+
 
 
   },
@@ -358,8 +366,7 @@ var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js 
 
 
   },
-  onShow: function onShow() {
-  },
+  onShow: function onShow() {},
   computed: {
     userInfo: function userInfo() {
       return _store.store.userInfo;
@@ -442,6 +449,9 @@ var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js 
 
 
 
+
+
+
     },
     /**
         * 获取积分信息
@@ -474,6 +484,8 @@ var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js 
       });
     },
     share: function share() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var _yield$db$collection$, result, myInviteCode, _this2$appConfig$abou, appName, logo, company, slogan;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
+
+
                   db.collection('uni-id-users').where("'_id' == $cloudEnv_uid").field('my_invite_code').get());case 2:_yield$db$collection$ = _context2.sent;result = _yield$db$collection$.result;
                 myInviteCode = result.data[0].my_invite_code;if (
                 myInviteCode) {_context2.next = 7;break;}return _context2.abrupt("return",
@@ -482,7 +494,9 @@ var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js 
                   icon: 'none' }));case 7:
 
 
-                console.log({ myInviteCode: myInviteCode });_this2$appConfig$abou =
+                console.log({
+                  myInviteCode: myInviteCode });_this2$appConfig$abou =
+
 
 
 
