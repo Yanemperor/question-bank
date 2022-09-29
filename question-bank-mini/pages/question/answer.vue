@@ -194,13 +194,20 @@
 				<text>{{ article }}</text>
 			</view>
 		</u-popup>
+		<u-modal :show="modalShow" title='请登录后再收藏题目吧' showCancelButton="true" confirmText="去登录"
+			@cancel="modalShow=false" @confirm="modalConfirm"></u-modal>
 	</view>
 </template>
 
 <script>
+	import {
+		store,
+		mutations
+	} from '@/uni_modules/uni-id-pages/common/store.js'
 	export default {
 		data() {
 			return {
+				modalShow: false,
 				show: false,
 				article: "", // 文章
 				isShowArticle: false,
@@ -210,86 +217,8 @@
 				autoShowAnswer: true, //答错是否显答案
 				autoRadioNext: true, //判断题、单项题，自动移下一题
 				swiperHeight: '800px', //
-				title: '测试考题一',
-				subjectList: [{
-						"title": "水是液体？",
-						"type": 1,
-						"options": [{
-							"key": "A",
-							"value": "对"
-						}, {
-							"key": "B",
-							"value": "错"
-						}],
-						"answer": "A",
-						"userAnswer": "",
-						"userFavor": false,
-						"parsing": "难到是固体不成？"
-					},
-					{
-						"title": "电流分有？",
-						"type": 2,
-						"options": [{
-							"key": "A",
-							"value": "直流"
-						}, {
-							"key": "B",
-							"value": "交流"
-						}, {
-							"key": "C",
-							"value": "直流和交流"
-						}],
-						"answer": "C",
-						"userAnswer": "",
-						"userFavor": false,
-						"parsing": "科技学依据"
-					},
-					{
-						"title": "酸菜鱼的味道？",
-						"type": 3,
-						"options": [{
-							"key": "A",
-							"value": "咸味"
-						}, {
-							"key": "B",
-							"value": "辣味"
-						}, {
-							"key": "C",
-							"value": "甜味"
-						}, {
-							"key": "D",
-							"value": "酸味"
-						}],
-						"answer": "A,B,D",
-						"userAnswer": "",
-						"userFavor": false,
-						"parsing": "你怎么想都行，要的就是这个味，答案只能选A,B,D"
-					},
-					{
-						"title": "床前（____）光，疑是地上霜。",
-						"type": 4,
-						"options": [{
-							"key": "",
-							"value": ""
-						}],
-						"answer": "明月",
-						"userAnswer": "",
-						"userFavor": false,
-						"parsing": "问答题没有选项，无法做答，且不参与计分"
-					},
-					{
-						"title": "什么美国要限制华为？",
-						"type": 5,
-						"options": [{
-							"key": "",
-							"value": ""
-						}],
-						"answer": "",
-						"userAnswer": "",
-						"userFavor": false,
-						"parsing": "问答题没有选项，无法做答，且不参与计分"
-					}
-				],
+				title: '',
+				subjectList: [],
 				modalCard: null, //显示答题卡
 				modalError: null, //纠错卡
 				errorList: ['题目不完整', '答案不正确', '含有错别字', '图片不存在', '解析不完整', '其他错误']
@@ -361,6 +290,7 @@
 				console.log("detail:", JSON.stringify(temps));
 				this.subjectList = temps;
 				this.currentType = this.subjectList[0].typeName;
+				this.userFavor = this.subjectList[0].userFavor;
 				let title = this.subjectList[0].title;
 				if (this.subjectList[0].article) {
 					this.article = this.subjectList[0].article;
@@ -374,6 +304,12 @@
 			}
 		},
 		methods: {
+			userInfo() {
+				return store.userInfo
+			},
+			hasLogin() {
+				return store.hasLogin
+			},
 			showCardModal: function(e) {
 				this.modalCard = e.currentTarget.dataset.target
 			},
@@ -448,16 +384,63 @@
 					this.subjectList[this.subjectIndex].showAnswer = true;
 				}
 			},
-
+			modalConfirm() {
+				console.log("去登录")
+				uni.redirectTo({
+					url: '/uni_modules/uni-id-pages/pages/login/login-withoutpwd',
+				});
+			},
 			FavorSubject: function(e) { //收藏题
+				if (!this.hasLogin()) {
+					this.modalShow = true
+					return
+				}
+				let userInfo = this.userInfo()
+				let topic = this.subjectList[this.subjectIndex]
+				console.log("userInfo:", JSON.stringify(userInfo))
 
 				if (this.userFavor) {
-					this.userFavor = false;
-					this.subjectList[this.subjectIndex].userFavor = false;
+					this.collect(userInfo, topic, false)
+					// this.userFavor = false;
+					// this.subjectList[this.subjectIndex].userFavor = false;
 				} else {
+					this.collect(userInfo, topic, true)
+					// this.userFavor = true;
+					// this.subjectList[this.subjectIndex].userFavor = true;
+				}
 
-					this.userFavor = true;
-					this.subjectList[this.subjectIndex].userFavor = true;
+			},
+			collect(userInfo, topic, isCollect) {
+				const db = uniCloud.database();
+				console.log("开始请求topic-collect：", this.paper_id);
+				console.log("topic-collect:", userInfo._id)
+				console.log("topic-collect:", topic._id)
+				console.log("topic-collect:", topic.paper_type)
+				console.log("topic-collect:", topic.type)
+				if (isCollect) {
+					db.collection("topic-collect").add({
+						"user_id": userInfo._id,
+						"topic_id": topic._id,
+						"paper_type": topic.paper_type,
+						"topic_type": topic.type
+					}).then((res) => {
+						console.log("获取topic-collect成功", JSON.stringify(res.result.data));
+						this.userFavor = true;
+						this.subjectList[this.subjectIndex].userFavor = true;
+					}).catch((e) => {
+						console.log("获取topic-collect失败", e);
+					});
+				} else {
+					db.collection("topic-collect").where({
+						"user_id": userInfo._id,
+						"topic_id": topic._id
+					}).remove().then((res) => {
+						console.log("获取topic-collect成功", JSON.stringify(res.result.data));
+						this.userFavor = false;
+						this.subjectList[this.subjectIndex].userFavor = false;
+					}).catch((e) => {
+						console.log("获取topic-collect失败", e);
+					});
 				}
 			},
 

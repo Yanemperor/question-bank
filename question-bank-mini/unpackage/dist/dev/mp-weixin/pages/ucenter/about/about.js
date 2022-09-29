@@ -98,7 +98,7 @@ var components
 try {
   components = {
     uqrcode: function() {
-      return Promise.all(/*! import() | uni_modules/Sansnn-uQRCode/components/uqrcode/uqrcode */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/Sansnn-uQRCode/components/uqrcode/uqrcode")]).then(__webpack_require__.bind(null, /*! @/uni_modules/Sansnn-uQRCode/components/uqrcode/uqrcode.vue */ 620))
+      return Promise.all(/*! import() | uni_modules/Sansnn-uQRCode/components/uqrcode/uqrcode */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/Sansnn-uQRCode/components/uqrcode/uqrcode")]).then(__webpack_require__.bind(null, /*! @/uni_modules/Sansnn-uQRCode/components/uqrcode/uqrcode.vue */ 623))
     }
   }
 } catch (e) {
@@ -229,7 +229,7 @@ var _config = _interopRequireDefault(__webpack_require__(/*! @/uni_modules/uni-i
 //
 //
 //
-var uqrcode = function uqrcode() {Promise.all(/*! require.ensure | uni_modules/Sansnn-uQRCode/components/uqrcode/uqrcode */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/Sansnn-uQRCode/components/uqrcode/uqrcode")]).then((function () {return resolve(__webpack_require__(/*! @/uni_modules/Sansnn-uQRCode/components/uqrcode/uqrcode */ 620));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { uqrcode: uqrcode }, onLoad: function onLoad() {}, computed: { uniStarterConfig: function uniStarterConfig() {console.log(getApp());
+var uqrcode = function uqrcode() {Promise.all(/*! require.ensure | uni_modules/Sansnn-uQRCode/components/uqrcode/uqrcode */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/Sansnn-uQRCode/components/uqrcode/uqrcode")]).then((function () {return resolve(__webpack_require__(/*! @/uni_modules/Sansnn-uQRCode/components/uqrcode/uqrcode */ 623));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { uqrcode: uqrcode }, onLoad: function onLoad() {}, computed: { uniStarterConfig: function uniStarterConfig() {console.log(getApp());
       return getApp().globalData.config;
     },
     agreements: function agreements() {

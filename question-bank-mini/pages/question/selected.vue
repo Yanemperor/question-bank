@@ -38,6 +38,10 @@
 </template>
 
 <script>
+	import {
+		store,
+		mutations
+	} from '@/uni_modules/uni-id-pages/common/store.js'
 	export default {
 		data() {
 			return {
@@ -57,6 +61,9 @@
 			this.initData(options)
 		},
 		methods: {
+			userInfo() {
+				return store.userInfo
+			},
 			initData(options) {
 				this.paper_id = options.paper_id
 				this.getTypeData()
@@ -90,45 +97,69 @@
 				});
 			},
 			cellAllQuestionClick(item) {
-				const db = uniCloud.database();
-				console.log("开始请求answer_questions", item.id);
-				db.collection("answer_questions").orderBy("No asc").where({
-					"paper_id": item.id
-				}).get().then((res) => {
-					console.log("获取answer_questions成功", JSON.stringify(res.result.data));
-					let json = JSON.stringify(res.result.data);
-					let newStr = json.replace(/%/g, '%25');
-					uni.navigateTo({
-						url: "/pages/question/answer?json=" + encodeURIComponent(newStr)
-					})
-				}).catch((e) => {
-					console.log("获取answer_questions失败", e);
-				});
-
-			},
-			sectionChange(index) {
-				this.current = index;
-			},
-			cellClick(item) {
+				// const db = uniCloud.database();
+				// console.log("开始请求answer_questions", item.id);
+				// db.collection("answer_questions").orderBy("No asc").where({
+				// 	"paper_id": item.id
+				// }).get().then((res) => {
+				// 	console.log("获取answer_questions成功", JSON.stringify(res.result.data));
+				// 	let json = JSON.stringify(res.result.data);
+				// 	let newStr = json.replace(/%/g, '%25');
+				// 	uni.navigateTo({
+				// 		url: "/pages/question/answer?json=" + encodeURIComponent(newStr)
+				// 	})
+				// }).catch((e) => {
+				// 	console.log("获取answer_questions失败", e);
+				// });
+				
+				let userInfo = this.userInfo()
 				uniCloud.callFunction({
-					name: "answer-random",
+					name: "full-answer",
 					data: {
-						"paper_type": item.paper_type,
-						"type": item.type,
-						"typeName": item.typeName,
-						"count": item.count
+						"paper_id": item.id,
+						"user_id": userInfo._id
 					},
-					success(res) {
-						console.log("openTest", JSON.stringify(res.result.data))
-						console.log("openTest", res.result.data.length)
+					success(res) {						
+						// console.log("openTest", JSON.stringify(res.result.data))
+						console.log("获取answer_questions成功", JSON.stringify(res.result.data));
 						let json = JSON.stringify(res.result.data);
 						let newStr = json.replace(/%/g, '%25');
 						uni.navigateTo({
 							url: "/pages/question/answer?json=" + encodeURIComponent(newStr)
 						})
 					},
-					fail() {
-						console.log("获取answer_questions失败题型练习");
+					fail(e) {
+						console.log("获取answer_questions失败", e);
+					}
+				})
+
+			},
+			sectionChange(index) {
+				this.current = index;
+			},
+			cellClick(item) {
+				let userInfo = this.userInfo()
+				uniCloud.callFunction({
+					name: "answer-random",
+					data: {
+						"paper_type": item.paper_type,
+						"type": item.type,
+						"typeName": item.typeName,
+						"count": item.count,
+						"user_id": userInfo._id
+					},
+					success(res) {						
+						// console.log("openTest", JSON.stringify(res.result.data))
+						console.log("openresult", res.result)
+						
+						let json = JSON.stringify(res.result.data);
+						let newStr = json.replace(/%/g, '%25');
+						uni.navigateTo({
+							url: "/pages/question/answer?json=" + encodeURIComponent(newStr)
+						})
+					},
+					fail(e) {
+						console.log("获取answer_questions失败题型练习:",e);
 					}
 				})
 			},

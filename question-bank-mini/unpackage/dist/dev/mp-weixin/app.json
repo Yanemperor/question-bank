@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/ucenter/ucenter",
     "pages/my/index",
     "pages/question/index",
     "pages/question/selected",
@@ -13,7 +14,6 @@
     "pages/grid/grid",
     "pages/list/search/search",
     "pages/list/detail",
-    "pages/ucenter/ucenter",
     "pages/ucenter/about/about",
     "uni_modules/uni-upgrade-center-app/pages/upgrade-popup",
     "pages/uni-agree/uni-agree",
@@ -72,7 +72,7 @@
         "text": "我的"
       },
       {
-        "pagePath": "pages/my/index",
+        "pagePath": "pages/list/list",
         "iconPath": "static/tabbar/my.png",
         "selectedIconPath": "static/tabbar/my_selected.png",
         "text": "我的"

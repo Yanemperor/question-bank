@@ -9062,13 +9062,11 @@ internalMixin(Vue);
 /* WEBPACK VAR INJECTION */(function(global, uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 7));var _uniI18n = __webpack_require__(/*! @dcloudio/uni-i18n */ 3);var _pages = _interopRequireDefault(__webpack_require__(/*! @/pages.json */ 10));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _createForOfIteratorHelper(o, allowArrayLike) {var it;if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {if (it) o = it;var i = 0;var F = function F() {};return { s: F, n: function n() {if (i >= o.length) return { done: true };return { done: false, value: o[i++] };}, e: function e(_e32) {throw _e32;}, f: F };}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}var normalCompletion = true,didErr = false,err;return { s: function s() {it = o[Symbol.iterator]();}, n: function n() {var step = it.next();normalCompletion = step.done;return step;}, e: function e(_e33) {didErr = true;err = _e33;}, f: function f() {try {if (!normalCompletion && it.return != null) it.return();} finally {if (didErr) throw err;}} };}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = _getPrototypeOf(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = _getPrototypeOf(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return _possibleConstructorReturn(this, result);};}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _wrapNativeSuper(Class) {var _cache = typeof Map === "function" ? new Map() : undefined;_wrapNativeSuper = function _wrapNativeSuper(Class) {if (Class === null || !_isNativeFunction(Class)) return Class;if (typeof Class !== "function") {throw new TypeError("Super expression must either be null or a function");}if (typeof _cache !== "undefined") {if (_cache.has(Class)) return _cache.get(Class);_cache.set(Class, Wrapper);}function Wrapper() {return _construct(Class, arguments, _getPrototypeOf(this).constructor);}Wrapper.prototype = Object.create(Class.prototype, { constructor: { value: Wrapper, enumerable: false, writable: true, configurable: true } });return _setPrototypeOf(Wrapper, Class);};return _wrapNativeSuper(Class);}function _construct(Parent, args, Class) {if (_isNativeReflectConstruct()) {_construct = Reflect.construct;} else {_construct = function _construct(Parent, args, Class) {var a = [null];a.push.apply(a, args);var Constructor = Function.bind.apply(Parent, a);var instance = new Constructor();if (Class) _setPrototypeOf(instance, Class.prototype);return instance;};}return _construct.apply(null, arguments);}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));return true;} catch (e) {return false;}}function _isNativeFunction(fn) {return Function.toString.call(fn).indexOf("[native code]") !== -1;}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}"undefined" != typeof globalThis ? globalThis : "undefined" != typeof window ? window : "undefined" != typeof global ? global : "undefined" != typeof self && self;function n(e) {return e && e.__esModule && Object.prototype.hasOwnProperty.call(e, "default") ? e.default : e;}function s(e, t, n) {return e(n = { path: t, exports: {}, require: function require(e, t) {return function () {throw new Error("Dynamic requires are not currently supported by @rollup/plugin-commonjs");}(null == t && n.path);} }, n.exports), n.exports;}var o = s(function (e, t) {var n;e.exports = (n = n || function (e, t) {var n = Object.create || function () {function e() {}return function (t) {var n;return e.prototype = t, n = new e(), e.prototype = null, n;};}(),s = {},o = s.lib = {},r = o.Base = { extend: function extend(e) {var t = n(this);return e && t.mixIn(e), t.hasOwnProperty("init") && this.init !== t.init || (t.init = function () {t.$super.init.apply(this, arguments);}), t.init.prototype = t, t.$super = this, t;}, create: function create() {var e = this.extend();return e.init.apply(e, arguments), e;}, init: function init() {}, mixIn: function mixIn(e) {for (var t in e) {e.hasOwnProperty(t) && (this[t] = e[t]);}e.hasOwnProperty("toString") && (this.toString = e.toString);}, clone: function clone() {return this.init.prototype.extend(this);} },i = o.WordArray = r.extend({ init: function init(e, n) {e = this.words = e || [], this.sigBytes = n != t ? n : 4 * e.length;}, toString: function toString(e) {return (e || c).stringify(this);}, concat: function concat(e) {var t = this.words,n = e.words,s = this.sigBytes,o = e.sigBytes;if (this.clamp(), s % 4) for (var r = 0; r < o; r++) {var i = n[r >>> 2] >>> 24 - r % 4 * 8 & 255;t[s + r >>> 2] |= i << 24 - (s + r) % 4 * 8;} else for (r = 0; r < o; r += 4) {t[s + r >>> 2] = n[r >>> 2];}return this.sigBytes += o, this;}, clamp: function clamp() {var t = this.words,n = this.sigBytes;t[n >>> 2] &= 4294967295 << 32 - n % 4 * 8, t.length = e.ceil(n / 4);}, clone: function clone() {var e = r.clone.call(this);return e.words = this.words.slice(0), e;}, random: function random(t) {for (var n, s = [], o = function o(t) {t = t;var n = 987654321,s = 4294967295;return function () {var o = ((n = 36969 * (65535 & n) + (n >> 16) & s) << 16) + (t = 18e3 * (65535 & t) + (t >> 16) & s) & s;return o /= 4294967296, (o += .5) * (e.random() > .5 ? 1 : -1);};}, r = 0; r < t; r += 4) {var a = o(4294967296 * (n || e.random()));n = 987654071 * a(), s.push(4294967296 * a() | 0);}return new i.init(s, t);} }),a = s.enc = {},c = a.Hex = { stringify: function stringify(e) {for (var t = e.words, n = e.sigBytes, s = [], o = 0; o < n; o++) {var r = t[o >>> 2] >>> 24 - o % 4 * 8 & 255;s.push((r >>> 4).toString(16)), s.push((15 & r).toString(16));}return s.join("");}, parse: function parse(e) {for (var t = e.length, n = [], s = 0; s < t; s += 2) {n[s >>> 3] |= parseInt(e.substr(s, 2), 16) << 24 - s % 8 * 4;}return new i.init(n, t / 2);} },u = a.Latin1 = { stringify: function stringify(e) {for (var t = e.words, n = e.sigBytes, s = [], o = 0; o < n; o++) {var r = t[o >>> 2] >>> 24 - o % 4 * 8 & 255;s.push(String.fromCharCode(r));}return s.join("");}, parse: function parse(e) {for (var t = e.length, n = [], s = 0; s < t; s++) {n[s >>> 2] |= (255 & e.charCodeAt(s)) << 24 - s % 4 * 8;}return new i.init(n, t);} },l = a.Utf8 = { stringify: function stringify(e) {try {return decodeURIComponent(escape(u.stringify(e)));} catch (e) {throw new Error("Malformed UTF-8 data");}}, parse: function parse(e) {return u.parse(unescape(encodeURIComponent(e)));} },h = o.BufferedBlockAlgorithm = r.extend({ reset: function reset() {this._data = new i.init(), this._nDataBytes = 0;}, _append: function _append(e) {"string" == typeof e && (e = l.parse(e)), this._data.concat(e), this._nDataBytes += e.sigBytes;}, _process: function _process(t) {var n = this._data,s = n.words,o = n.sigBytes,r = this.blockSize,a = o / (4 * r),c = (a = t ? e.ceil(a) : e.max((0 | a) - this._minBufferSize, 0)) * r,u = e.min(4 * c, o);if (c) {for (var l = 0; l < c; l += r) {this._doProcessBlock(s, l);}var h = s.splice(0, c);n.sigBytes -= u;}return new i.init(h, u);}, clone: function clone() {var e = r.clone.call(this);return e._data = this._data.clone(), e;}, _minBufferSize: 0 });o.Hasher = h.extend({ cfg: r.extend(), init: function init(e) {this.cfg = this.cfg.extend(e), this.reset();}, reset: function reset() {h.reset.call(this), this._doReset();}, update: function update(e) {return this._append(e), this._process(), this;}, finalize: function finalize(e) {return e && this._append(e), this._doFinalize();}, blockSize: 16, _createHelper: function _createHelper(e) {return function (t, n) {return new e.init(n).finalize(t);};}, _createHmacHelper: function _createHmacHelper(e) {return function (t, n) {return new d.HMAC.init(e, n).finalize(t);};} });var d = s.algo = {};return s;}(Math), n);}),r = (s(function (e, t) {var n;e.exports = (n = o, function (e) {var t = n,s = t.lib,o = s.WordArray,r = s.Hasher,i = t.algo,a = [];!function () {for (var t = 0; t < 64; t++) {a[t] = 4294967296 * e.abs(e.sin(t + 1)) | 0;}}();var c = i.MD5 = r.extend({ _doReset: function _doReset() {this._hash = new o.init([1732584193, 4023233417, 2562383102, 271733878]);}, _doProcessBlock: function _doProcessBlock(e, t) {for (var n = 0; n < 16; n++) {var s = t + n,o = e[s];e[s] = 16711935 & (o << 8 | o >>> 24) | 4278255360 & (o << 24 | o >>> 8);}var r = this._hash.words,i = e[t + 0],c = e[t + 1],f = e[t + 2],g = e[t + 3],p = e[t + 4],m = e[t + 5],y = e[t + 6],_ = e[t + 7],w = e[t + 8],k = e[t + 9],T = e[t + 10],S = e[t + 11],v = e[t + 12],A = e[t + 13],P = e[t + 14],I = e[t + 15],b = r[0],O = r[1],C = r[2],E = r[3];b = u(b, O, C, E, i, 7, a[0]), E = u(E, b, O, C, c, 12, a[1]), C = u(C, E, b, O, f, 17, a[2]), O = u(O, C, E, b, g, 22, a[3]), b = u(b, O, C, E, p, 7, a[4]), E = u(E, b, O, C, m, 12, a[5]), C = u(C, E, b, O, y, 17, a[6]), O = u(O, C, E, b, _, 22, a[7]), b = u(b, O, C, E, w, 7, a[8]), E = u(E, b, O, C, k, 12, a[9]), C = u(C, E, b, O, T, 17, a[10]), O = u(O, C, E, b, S, 22, a[11]), b = u(b, O, C, E, v, 7, a[12]), E = u(E, b, O, C, A, 12, a[13]), C = u(C, E, b, O, P, 17, a[14]), b = l(b, O = u(O, C, E, b, I, 22, a[15]), C, E, c, 5, a[16]), E = l(E, b, O, C, y, 9, a[17]), C = l(C, E, b, O, S, 14, a[18]), O = l(O, C, E, b, i, 20, a[19]), b = l(b, O, C, E, m, 5, a[20]), E = l(E, b, O, C, T, 9, a[21]), C = l(C, E, b, O, I, 14, a[22]), O = l(O, C, E, b, p, 20, a[23]), b = l(b, O, C, E, k, 5, a[24]), E = l(E, b, O, C, P, 9, a[25]), C = l(C, E, b, O, g, 14, a[26]), O = l(O, C, E, b, w, 20, a[27]), b = l(b, O, C, E, A, 5, a[28]), E = l(E, b, O, C, f, 9, a[29]), C = l(C, E, b, O, _, 14, a[30]), b = h(b, O = l(O, C, E, b, v, 20, a[31]), C, E, m, 4, a[32]), E = h(E, b, O, C, w, 11, a[33]), C = h(C, E, b, O, S, 16, a[34]), O = h(O, C, E, b, P, 23, a[35]), b = h(b, O, C, E, c, 4, a[36]), E = h(E, b, O, C, p, 11, a[37]), C = h(C, E, b, O, _, 16, a[38]), O = h(O, C, E, b, T, 23, a[39]), b = h(b, O, C, E, A, 4, a[40]), E = h(E, b, O, C, i, 11, a[41]), C = h(C, E, b, O, g, 16, a[42]), O = h(O, C, E, b, y, 23, a[43]), b = h(b, O, C, E, k, 4, a[44]), E = h(E, b, O, C, v, 11, a[45]), C = h(C, E, b, O, I, 16, a[46]), b = d(b, O = h(O, C, E, b, f, 23, a[47]), C, E, i, 6, a[48]), E = d(E, b, O, C, _, 10, a[49]), C = d(C, E, b, O, P, 15, a[50]), O = d(O, C, E, b, m, 21, a[51]), b = d(b, O, C, E, v, 6, a[52]), E = d(E, b, O, C, g, 10, a[53]), C = d(C, E, b, O, T, 15, a[54]), O = d(O, C, E, b, c, 21, a[55]), b = d(b, O, C, E, w, 6, a[56]), E = d(E, b, O, C, I, 10, a[57]), C = d(C, E, b, O, y, 15, a[58]), O = d(O, C, E, b, A, 21, a[59]), b = d(b, O, C, E, p, 6, a[60]), E = d(E, b, O, C, S, 10, a[61]), C = d(C, E, b, O, f, 15, a[62]), O = d(O, C, E, b, k, 21, a[63]), r[0] = r[0] + b | 0, r[1] = r[1] + O | 0, r[2] = r[2] + C | 0, r[3] = r[3] + E | 0;}, _doFinalize: function _doFinalize() {var t = this._data,n = t.words,s = 8 * this._nDataBytes,o = 8 * t.sigBytes;n[o >>> 5] |= 128 << 24 - o % 32;var r = e.floor(s / 4294967296),i = s;n[15 + (o + 64 >>> 9 << 4)] = 16711935 & (r << 8 | r >>> 24) | 4278255360 & (r << 24 | r >>> 8), n[14 + (o + 64 >>> 9 << 4)] = 16711935 & (i << 8 | i >>> 24) | 4278255360 & (i << 24 | i >>> 8), t.sigBytes = 4 * (n.length + 1), this._process();for (var a = this._hash, c = a.words, u = 0; u < 4; u++) {var l = c[u];c[u] = 16711935 & (l << 8 | l >>> 24) | 4278255360 & (l << 24 | l >>> 8);}return a;}, clone: function clone() {var e = r.clone.call(this);return e._hash = this._hash.clone(), e;} });function u(e, t, n, s, o, r, i) {var a = e + (t & n | ~t & s) + o + i;return (a << r | a >>> 32 - r) + t;}function l(e, t, n, s, o, r, i) {var a = e + (t & s | n & ~s) + o + i;return (a << r | a >>> 32 - r) + t;}function h(e, t, n, s, o, r, i) {var a = e + (t ^ n ^ s) + o + i;return (a << r | a >>> 32 - r) + t;}function d(e, t, n, s, o, r, i) {var a = e + (n ^ (t | ~s)) + o + i;return (a << r | a >>> 32 - r) + t;}t.MD5 = r._createHelper(c), t.HmacMD5 = r._createHmacHelper(c);}(Math), n.MD5);}), s(function (e, t) {var n, s, r;e.exports = (s = (n = o).lib.Base, r = n.enc.Utf8, void (n.algo.HMAC = s.extend({ init: function init(e, t) {e = this._hasher = new e.init(), "string" == typeof t && (t = r.parse(t));var n = e.blockSize,s = 4 * n;t.sigBytes > s && (t = e.finalize(t)), t.clamp();for (var o = this._oKey = t.clone(), i = this._iKey = t.clone(), a = o.words, c = i.words, u = 0; u < n; u++) {a[u] ^= 1549556828, c[u] ^= 909522486;}o.sigBytes = i.sigBytes = s, this.reset();}, reset: function reset() {var e = this._hasher;e.reset(), e.update(this._iKey);}, update: function update(e) {return this._hasher.update(e), this;}, finalize: function finalize(e) {var t = this._hasher,n = t.finalize(e);return t.reset(), t.finalize(this._oKey.clone().concat(n));} })));}), s(function (e, t) {e.exports = o.HmacMD5;}));var i = "FUNCTION",a = "OBJECT",c = "CLIENT_DB";function u(e) {return Object.prototype.toString.call(e).slice(8, -1).toLowerCase();}function l(e) {return "object" === u(e);}function h(e) {return e && "string" == typeof e ? JSON.parse(e) : e;}var d = "development" === "development",f = "mp-weixin";var g;switch (f) {case "h5":g = "web";break;case "app-plus":g = "app";break;default:g = f;}var p = h({
     "address": [
         "127.0.0.1",
-        "10.200.155.18",
-        "169.254.121.9",
-        "169.254.59.72"
+        "10.200.155.18"
     ],
-    "debugPort": 50660,
+    "debugPort": 64681,
     "initialLaunchType": "remote",
-    "servePort": 50661,
+    "servePort": 64682,
     "skipFiles": [
         "<node_internals>/**/*.js",
         "/Applications/HBuilderX.app/Contents/HBuilderX/plugins/unicloud/**/*.js"
@@ -9874,7 +9872,7 @@ if (hadRuntime) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": [{ "path": "pages/my/index", "style": { "navigationBarTitleText": "我的", "navigationBarBackgroundColor": "#ffffff", "navigationStyle": "custom" } }, { "path": "pages/question/index", "style": { "navigationBarTitleText": "首页", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/question/selected", "style": { "navigationBarTitleText": "选择", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/question/answer", "style": { "navigationBarTitleText": "答题", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/download/index", "style": { "navigationBarTitleText": "下载", "navigationBarBackgroundColor": "#ffffff", "navigationStyle": "custom", "navigationBarTextStyle": "white" } }, { "path": "pages/download/list", "style": { "navigationBarTitleText": "历年真题", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/download/browse", "style": { "navigationBarTitleText": "真题", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/my/collection", "style": { "navigationBarTitleText": "收藏", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/my/ticket", "style": { "navigationBarTitleText": "下载券", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/list/list", "style": { "enablePullDownRefresh": true, "navigationStyle": "custom" } }, { "path": "pages/grid/grid", "style": {} }, { "path": "pages/list/search/search", "style": { "navigationBarTitleText": "搜索" } }, { "path": "pages/list/detail", "style": { "app-plus": { "titleNView": { "buttons": [{ "type": "share" }], "type": "transparent" } }, "h5": { "titleNView": { "type": "transparent" } }, "navigationBarTitleText": "文章详情" } }, { "path": "pages/ucenter/ucenter", "style": { "navigationStyle": "custom" } }, { "path": "pages/ucenter/about/about", "style": { "navigationBarTitleText": "关于" } }, { "path": "uni_modules/uni-upgrade-center-app/pages/upgrade-popup", "style": { "disableScroll": true, "app-plus": { "backgroundColorTop": "transparent", "background": "transparent", "titleNView": false, "scrollIndicator": false, "popGesture": "none", "animationType": "fade-in", "animationDuration": 200 } } }, { "path": "pages/uni-agree/uni-agree", "style": { "navigationStyle": "custom", "app-plus": { "popGesture": "none" } } }, { "path": "pages/ucenter/settings/settings", "style": { "navigationBarTitleText": "设置" } }, { "path": "pages/common/webview/webview", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }, { "path": "pages/ucenter/read-news-log/read-news-log", "style": { "navigationBarTitleText": "阅读记录", "enablePullDownRefresh": true } }, { "path": "pages/ucenter/invite/invite", "style": { "navigationStyle": "custom", "enablePullDownRefresh": false } }, { "path": "uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback", "style": { "navigationBarTitleText": "意见反馈", "enablePullDownRefresh": false } }, { "path": "uni_modules/uni-id-pages/pages/userinfo/deactivate/deactivate", "style": { "navigationBarTitleText": "注销账号" } }, { "path": "uni_modules/uni-id-pages/pages/userinfo/userinfo", "style": { "navigationBarTitleText": "个人资料" } }, { "path": "uni_modules/uni-id-pages/pages/userinfo/bind-mobile/bind-mobile", "style": { "navigationBarTitleText": "绑定手机号码" } }, { "path": "uni_modules/uni-id-pages/pages/userinfo/cropImage/cropImage", "style": { "navigationBarTitleText": "" } }, { "path": "uni_modules/uni-id-pages/pages/login/login-withoutpwd", "style": { "navigationBarTitleText": "" } }, { "path": "uni_modules/uni-id-pages/pages/login/login-withpwd", "style": { "navigationBarTitleText": "" } }, { "path": "uni_modules/uni-id-pages/pages/login/login-smscode", "style": { "navigationBarTitleText": "手机验证码登录" } }, { "path": "uni_modules/uni-id-pages/pages/register/register", "style": { "navigationBarTitleText": "注册" } }, { "path": "uni_modules/uni-id-pages/pages/retrieve/retrieve", "style": { "navigationBarTitleText": "重置密码" } }, { "path": "uni_modules/uni-id-pages/pages/common/webview/webview", "style": { "enablePullDownRefresh": false, "navigationBarTitleText": "" } }, { "path": "uni_modules/uni-id-pages/pages/userinfo/change_pwd/change_pwd", "style": { "enablePullDownRefresh": false, "navigationBarTitleText": "修改密码" } }, { "path": "uni_modules/uni-id-pages/pages/register/register-by-email", "style": { "navigationBarTitleText": "邮箱验证码注册" } }, { "path": "uni_modules/uni-id-pages/pages/retrieve/retrieve-by-email", "style": { "navigationBarTitleText": "通过邮箱重置密码" } }, { "path": "uni_modules/uni-id-pages/pages/register/register-admin", "style": { "enablePullDownRefresh": false, "navigationBarTitleText": "注册管理员账号" } }], "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-starter", "navigationBarBackgroundColor": "#FFFFFF", "backgroundColor": "#F8F8F8", "enablePullDownRefresh": false, "rpxCalcMaxDeviceWidth": 375, "rpxCalcBaseDeviceWidth": 375 }, "condition": { "list": [{ "path": "pages/list/detail" }, { "path": "pages/list/list" }, { "path": "pages/ucenter/settings/settings" }], "current": 1 }, "tabBar": { "color": "#7A7E83", "selectedColor": "#111111", "borderStyle": "black", "backgroundColor": "#FFFFFF", "list": [{ "pagePath": "pages/question/index", "iconPath": "static/tabbar/index.png", "selectedIconPath": "static/tabbar/index_selected.png", "text": "首页" }, { "pagePath": "pages/download/index", "iconPath": "static/tabbar/download.png", "selectedIconPath": "static/tabbar/download_selected.png", "text": "下载" }, { "pagePath": "pages/ucenter/ucenter", "iconPath": "static/tabbar/my.png", "selectedIconPath": "static/tabbar/my_selected.png", "text": "我的" }, { "pagePath": "pages/my/index", "iconPath": "static/tabbar/my.png", "selectedIconPath": "static/tabbar/my_selected.png", "text": "我的" }] }, "uniIdRouter": { "loginPage": "uni_modules/uni-id-pages/pages/login/login-withoutpwd", "needLogin": ["/uni_modules/uni-id-pages/pages/userinfo/userinfo"], "resToLogin": true } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": [{ "path": "pages/ucenter/ucenter", "style": { "navigationStyle": "custom" } }, { "path": "pages/my/index", "style": { "navigationBarTitleText": "我的", "navigationBarBackgroundColor": "#ffffff", "navigationStyle": "custom" } }, { "path": "pages/question/index", "style": { "navigationBarTitleText": "首页", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/question/selected", "style": { "navigationBarTitleText": "选择", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/question/answer", "style": { "navigationBarTitleText": "答题", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/download/index", "style": { "navigationBarTitleText": "下载", "navigationBarBackgroundColor": "#ffffff", "navigationStyle": "custom", "navigationBarTextStyle": "white" } }, { "path": "pages/download/list", "style": { "navigationBarTitleText": "历年真题", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/download/browse", "style": { "navigationBarTitleText": "真题", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/my/collection", "style": { "navigationBarTitleText": "收藏", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/my/ticket", "style": { "navigationBarTitleText": "下载券", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/list/list", "style": { "enablePullDownRefresh": true, "navigationStyle": "custom" } }, { "path": "pages/grid/grid", "style": {} }, { "path": "pages/list/search/search", "style": { "navigationBarTitleText": "搜索" } }, { "path": "pages/list/detail", "style": { "app-plus": { "titleNView": { "buttons": [{ "type": "share" }], "type": "transparent" } }, "h5": { "titleNView": { "type": "transparent" } }, "navigationBarTitleText": "文章详情" } }, { "path": "pages/ucenter/about/about", "style": { "navigationBarTitleText": "关于" } }, { "path": "uni_modules/uni-upgrade-center-app/pages/upgrade-popup", "style": { "disableScroll": true, "app-plus": { "backgroundColorTop": "transparent", "background": "transparent", "titleNView": false, "scrollIndicator": false, "popGesture": "none", "animationType": "fade-in", "animationDuration": 200 } } }, { "path": "pages/uni-agree/uni-agree", "style": { "navigationStyle": "custom", "app-plus": { "popGesture": "none" } } }, { "path": "pages/ucenter/settings/settings", "style": { "navigationBarTitleText": "设置" } }, { "path": "pages/common/webview/webview", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }, { "path": "pages/ucenter/read-news-log/read-news-log", "style": { "navigationBarTitleText": "阅读记录", "enablePullDownRefresh": true } }, { "path": "pages/ucenter/invite/invite", "style": { "navigationStyle": "custom", "enablePullDownRefresh": false } }, { "path": "uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback", "style": { "navigationBarTitleText": "意见反馈", "enablePullDownRefresh": false } }, { "path": "uni_modules/uni-id-pages/pages/userinfo/deactivate/deactivate", "style": { "navigationBarTitleText": "注销账号" } }, { "path": "uni_modules/uni-id-pages/pages/userinfo/userinfo", "style": { "navigationBarTitleText": "个人资料" } }, { "path": "uni_modules/uni-id-pages/pages/userinfo/bind-mobile/bind-mobile", "style": { "navigationBarTitleText": "绑定手机号码" } }, { "path": "uni_modules/uni-id-pages/pages/userinfo/cropImage/cropImage", "style": { "navigationBarTitleText": "" } }, { "path": "uni_modules/uni-id-pages/pages/login/login-withoutpwd", "style": { "navigationBarTitleText": "" } }, { "path": "uni_modules/uni-id-pages/pages/login/login-withpwd", "style": { "navigationBarTitleText": "" } }, { "path": "uni_modules/uni-id-pages/pages/login/login-smscode", "style": { "navigationBarTitleText": "手机验证码登录" } }, { "path": "uni_modules/uni-id-pages/pages/register/register", "style": { "navigationBarTitleText": "注册" } }, { "path": "uni_modules/uni-id-pages/pages/retrieve/retrieve", "style": { "navigationBarTitleText": "重置密码" } }, { "path": "uni_modules/uni-id-pages/pages/common/webview/webview", "style": { "enablePullDownRefresh": false, "navigationBarTitleText": "" } }, { "path": "uni_modules/uni-id-pages/pages/userinfo/change_pwd/change_pwd", "style": { "enablePullDownRefresh": false, "navigationBarTitleText": "修改密码" } }, { "path": "uni_modules/uni-id-pages/pages/register/register-by-email", "style": { "navigationBarTitleText": "邮箱验证码注册" } }, { "path": "uni_modules/uni-id-pages/pages/retrieve/retrieve-by-email", "style": { "navigationBarTitleText": "通过邮箱重置密码" } }, { "path": "uni_modules/uni-id-pages/pages/register/register-admin", "style": { "enablePullDownRefresh": false, "navigationBarTitleText": "注册管理员账号" } }], "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-starter", "navigationBarBackgroundColor": "#FFFFFF", "backgroundColor": "#F8F8F8", "enablePullDownRefresh": false, "rpxCalcMaxDeviceWidth": 375, "rpxCalcBaseDeviceWidth": 375 }, "condition": { "list": [{ "path": "pages/list/detail" }, { "path": "pages/list/list" }, { "path": "pages/ucenter/settings/settings" }], "current": 1 }, "tabBar": { "color": "#7A7E83", "selectedColor": "#111111", "borderStyle": "black", "backgroundColor": "#FFFFFF", "list": [{ "pagePath": "pages/question/index", "iconPath": "static/tabbar/index.png", "selectedIconPath": "static/tabbar/index_selected.png", "text": "首页" }, { "pagePath": "pages/download/index", "iconPath": "static/tabbar/download.png", "selectedIconPath": "static/tabbar/download_selected.png", "text": "下载" }, { "pagePath": "pages/ucenter/ucenter", "iconPath": "static/tabbar/my.png", "selectedIconPath": "static/tabbar/my_selected.png", "text": "我的" }, { "pagePath": "pages/list/list", "iconPath": "static/tabbar/my.png", "selectedIconPath": "static/tabbar/my_selected.png", "text": "我的" }] }, "uniIdRouter": { "loginPage": "uni_modules/uni-id-pages/pages/login/login-withoutpwd", "needLogin": ["/uni_modules/uni-id-pages/pages/userinfo/userinfo"], "resToLogin": true } };exports.default = _default;
 
 /***/ }),
 /* 11 */
@@ -21378,256 +21376,7 @@ platform;exports.default = _default;
 /* 150 */,
 /* 151 */,
 /* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */,
-/* 167 */,
-/* 168 */,
-/* 169 */,
-/* 170 */,
-/* 171 */,
-/* 172 */,
-/* 173 */,
-/* 174 */,
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */,
-/* 181 */,
-/* 182 */,
-/* 183 */,
-/* 184 */,
-/* 185 */,
-/* 186 */,
-/* 187 */,
-/* 188 */,
-/* 189 */,
-/* 190 */,
-/* 191 */,
-/* 192 */,
-/* 193 */,
-/* 194 */,
-/* 195 */,
-/* 196 */,
-/* 197 */,
-/* 198 */,
-/* 199 */,
-/* 200 */,
-/* 201 */,
-/* 202 */,
-/* 203 */,
-/* 204 */,
-/* 205 */,
-/* 206 */,
-/* 207 */,
-/* 208 */,
-/* 209 */,
-/* 210 */,
-/* 211 */,
-/* 212 */,
-/* 213 */,
-/* 214 */,
-/* 215 */,
-/* 216 */,
-/* 217 */,
-/* 218 */,
-/* 219 */,
-/* 220 */,
-/* 221 */
-/*!**********************************************************************************************************!*\
-  !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/json-gps/js_sdk/gps.js ***!
-  \**********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 7));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}var
-
-
-Gps = /*#__PURE__*/function () {
-  function Gps(arg) {_classCallCheck(this, Gps);
-    this.lock = false; //锁防止重复请求
-  }_createClass(Gps, [{ key: "getLocation", value: function () {var _getLocation = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var _this = this;var param,_args3 = arguments;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
-                param = _args3.length > 0 && _args3[0] !== undefined ? _args3[0] : {
-                  type: 'wgs84' };return _context3.abrupt("return",
-
-                new Promise( /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2(callback) {return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:if (!
-                            _this.lock) {_context2.next = 3;break;}
-                            // console.log('已锁，已有另一个请求正在执行。无需重复请求');
-                            callback(false);return _context2.abrupt("return",
-                            false);case 3:
-
-                            _this.lock = true; //加锁防止重复的请求
-                            uni.getLocation(_objectSpread(_objectSpread({},
-                            param), {}, {
-                              success: function success(res) {
-                                _this.lock = false; //成功后解锁
-                                //console.log(res);
-                                callback(res);
-                              },
-                              fail: function () {var _fail = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(err) {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
-                                          uni.showToast({
-                                            title: '定位获取失败',
-                                            icon: 'none' });
-
-                                          console.error(err);
-                                          callback(false);
-
-
-
-
-
-
-                                          if (err.errMsg == 'getLocation:fail auth deny') {
-                                            uni.showModal({
-                                              content: '应用无定位权限',
-                                              confirmText: '前往设置',
-                                              complete: function complete(e) {
-                                                if (e.confirm) {
-                                                  uni.openSetting({
-                                                    success: function success(res) {
-                                                      console.log(res.authSetting);
-                                                    } });
-
-                                                }
-                                                _this.lock = false; //解锁让回到界面重新获取
-                                              } });
-
-                                          }
-                                          if (err.errMsg == 'getLocation:fail:ERROR_NOCELL&WIFI_LOCATIONSWITCHOFF') {
-                                            uni.showModal({
-                                              content: '未开启定位权限，请前往手机系统设置中开启',
-                                              showCancel: false,
-                                              confirmText: "知道了" });
-
-                                          }case 5:case "end":return _context.stop();}}}, _callee);}));function fail(_x2) {return _fail.apply(this, arguments);}return fail;}() }));case 5:case "end":return _context2.stop();}}}, _callee2);}));return function (_x) {return _ref.apply(this, arguments);};}()));case 2:case "end":return _context3.stop();}}}, _callee3);}));function getLocation() {return _getLocation.apply(this, arguments);}return getLocation;}() }]);return Gps;}();var _default =
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Gps;exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 222 */,
-/* 223 */,
-/* 224 */,
-/* 225 */,
-/* 226 */,
-/* 227 */,
-/* 228 */,
-/* 229 */,
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */,
-/* 237 */,
-/* 238 */,
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */,
-/* 244 */,
-/* 245 */,
-/* 246 */,
-/* 247 */,
-/* 248 */,
-/* 249 */,
-/* 250 */,
-/* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */,
-/* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */,
-/* 259 */,
-/* 260 */
+/* 153 */
 /*!********************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-upgrade-center-app/utils/check-update.js ***!
   \********************************************************************************************************************************/
@@ -21635,7 +21384,7 @@ Gps;exports.default = _default;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = _default;var _callCheckVersion = _interopRequireDefault(__webpack_require__(/*! ./call-check-version */ 261));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = _default;var _callCheckVersion = _interopRequireDefault(__webpack_require__(/*! ./call-check-version */ 154));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 // 推荐再App.vue中使用
 var PACKAGE_INFO_KEY = '__package_info__';
@@ -21796,7 +21545,7 @@ function updateUseModal(packageInfo) {var
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 261 */
+/* 154 */
 /*!**************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-upgrade-center-app/utils/call-check-version.js ***!
   \**************************************************************************************************************************************/
@@ -21839,7 +21588,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 }
 
 /***/ }),
-/* 262 */
+/* 155 */
 /*!****************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-id-pages/common/store.js ***!
   \****************************************************************************************************************/
@@ -21981,6 +21730,255 @@ var store = _vue.default.observable(data);exports.store = store;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 6)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
+/* 156 */,
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */,
+/* 167 */,
+/* 168 */,
+/* 169 */,
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */,
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */,
+/* 184 */,
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */,
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */,
+/* 197 */,
+/* 198 */,
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */,
+/* 204 */,
+/* 205 */,
+/* 206 */,
+/* 207 */,
+/* 208 */,
+/* 209 */,
+/* 210 */,
+/* 211 */,
+/* 212 */,
+/* 213 */,
+/* 214 */,
+/* 215 */,
+/* 216 */,
+/* 217 */,
+/* 218 */,
+/* 219 */,
+/* 220 */,
+/* 221 */,
+/* 222 */,
+/* 223 */,
+/* 224 */,
+/* 225 */,
+/* 226 */,
+/* 227 */,
+/* 228 */,
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */
+/*!**********************************************************************************************************!*\
+  !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/json-gps/js_sdk/gps.js ***!
+  \**********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 7));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}var
+
+
+Gps = /*#__PURE__*/function () {
+  function Gps(arg) {_classCallCheck(this, Gps);
+    this.lock = false; //锁防止重复请求
+  }_createClass(Gps, [{ key: "getLocation", value: function () {var _getLocation = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var _this = this;var param,_args3 = arguments;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
+                param = _args3.length > 0 && _args3[0] !== undefined ? _args3[0] : {
+                  type: 'wgs84' };return _context3.abrupt("return",
+
+                new Promise( /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2(callback) {return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:if (!
+                            _this.lock) {_context2.next = 3;break;}
+                            // console.log('已锁，已有另一个请求正在执行。无需重复请求');
+                            callback(false);return _context2.abrupt("return",
+                            false);case 3:
+
+                            _this.lock = true; //加锁防止重复的请求
+                            uni.getLocation(_objectSpread(_objectSpread({},
+                            param), {}, {
+                              success: function success(res) {
+                                _this.lock = false; //成功后解锁
+                                //console.log(res);
+                                callback(res);
+                              },
+                              fail: function () {var _fail = _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee(err) {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+                                          uni.showToast({
+                                            title: '定位获取失败',
+                                            icon: 'none' });
+
+                                          console.error(err);
+                                          callback(false);
+
+
+
+
+
+
+                                          if (err.errMsg == 'getLocation:fail auth deny') {
+                                            uni.showModal({
+                                              content: '应用无定位权限',
+                                              confirmText: '前往设置',
+                                              complete: function complete(e) {
+                                                if (e.confirm) {
+                                                  uni.openSetting({
+                                                    success: function success(res) {
+                                                      console.log(res.authSetting);
+                                                    } });
+
+                                                }
+                                                _this.lock = false; //解锁让回到界面重新获取
+                                              } });
+
+                                          }
+                                          if (err.errMsg == 'getLocation:fail:ERROR_NOCELL&WIFI_LOCATIONSWITCHOFF') {
+                                            uni.showModal({
+                                              content: '未开启定位权限，请前往手机系统设置中开启',
+                                              showCancel: false,
+                                              confirmText: "知道了" });
+
+                                          }case 5:case "end":return _context.stop();}}}, _callee);}));function fail(_x2) {return _fail.apply(this, arguments);}return fail;}() }));case 5:case "end":return _context2.stop();}}}, _callee2);}));return function (_x) {return _ref.apply(this, arguments);};}()));case 2:case "end":return _context3.stop();}}}, _callee3);}));function getLocation() {return _getLocation.apply(this, arguments);}return getLocation;}() }]);return Gps;}();var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gps;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */,
+/* 244 */,
+/* 245 */,
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
 /* 263 */,
 /* 264 */,
 /* 265 */,
@@ -22392,7 +22390,7 @@ function filterToWhere(filter, command) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js */ 262);
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js */ 155);
 
 
 
@@ -22720,6 +22718,277 @@ function getPwdRules() {var pwdName = arguments.length > 0 && arguments[0] !== u
 /* 448 */,
 /* 449 */,
 /* 450 */
+/*!***********************************************************************************************************!*\
+  !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-sign-in/utils/ad.js ***!
+  \***********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = _getPrototypeOf(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = _getPrototypeOf(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return _possibleConstructorReturn(this, result);};}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));return true;} catch (e) {return false;}}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;} // ad.js
+var ADType = {
+  RewardedVideo: "RewardedVideo",
+  FullScreenVideo: "FullScreenVideo" };var
+
+
+AdHelper = /*#__PURE__*/function () {
+
+  function AdHelper() {_classCallCheck(this, AdHelper);
+    this._ads = {};
+  }_createClass(AdHelper, [{ key: "load", value: function load(
+
+    options, onload, onerror) {
+      var ops = this._fixOldOptions(options);var
+
+      adpid =
+      ops.adpid;
+
+      if (!adpid || this.isBusy(adpid)) {
+        return;
+      }
+
+      this.get(ops).load(onload, onerror);
+    } }, { key: "show", value: function show(
+
+    options, onsuccess, onfail) {
+      var ops = this._fixOldOptions(options);var
+
+      adpid =
+      ops.adpid;
+
+      if (!adpid) {
+        return;
+      }
+
+      uni.showLoading({
+        mask: true });
+
+
+      var ad = this.get(ops);
+
+      ad.load(function () {
+        uni.hideLoading();
+        ad.show(function (e) {
+          onsuccess && onsuccess(e);
+        });
+      }, function (err) {
+        uni.hideLoading();
+        onfail && onfail(err);
+      });
+    } }, { key: "isBusy", value: function isBusy(
+
+    adpid) {
+      return this._ads[adpid] && this._ads[adpid].isLoading;
+    } }, { key: "get", value: function get(
+
+    options) {var
+
+      adpid =
+
+      options.adpid,_options$singleton = options.singleton,singleton = _options$singleton === void 0 ? true : _options$singleton;
+      if (singleton === false) {
+        if (this._ads[adpid]) {
+          this._ads[adpid].destroy();
+          delete this._ads[adpid];
+        }
+      }
+      delete options.singleton;
+      if (!this._ads[adpid]) {
+        this._ads[adpid] = this._createAdInstance(options);
+      }
+
+      return this._ads[adpid];
+    } }, { key: "_createAdInstance", value: function _createAdInstance(
+
+    options) {
+      var adType = options.adType || ADType.RewardedVideo;
+      delete options.adType;
+
+      var ad = null;
+      if (adType === ADType.RewardedVideo) {
+        ad = new RewardedVideo(options);
+      } else if (adType === ADType.FullScreenVideo) {
+        ad = new FullScreenVideo(options);
+      }
+
+      return ad;
+    } }, { key: "_fixOldOptions", value: function _fixOldOptions(
+
+    options) {
+      return typeof options === "string" ? {
+        adpid: options } :
+      options;
+    } }]);return AdHelper;}();
+
+
+var EXPIRED_TIME = 1000 * 60 * 30;
+var ProviderType = {
+  CSJ: 'csj',
+  GDT: 'gdt' };
+
+
+var RETRY_COUNT = 1;var
+
+AdBase = /*#__PURE__*/function () {
+  function AdBase(adInstance) {var _this = this;var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};_classCallCheck(this, AdBase);
+    this._isLoad = false;
+    this._isLoading = false;
+    this._lastLoadTime = 0;
+    this._lastError = null;
+    this._retryCount = 0;
+
+    this._loadCallback = null;
+    this._closeCallback = null;
+    this._errorCallback = null;
+
+    var ad = this._ad = adInstance;
+    ad.onLoad(function (e) {
+      _this._isLoading = false;
+      _this._isLoad = true;
+      _this._lastLoadTime = Date.now();
+
+      _this.onLoad();
+    });
+    ad.onClose(function (e) {
+      _this._isLoad = false;
+      _this.onClose(e);
+    });
+    ad.onVerify && ad.onVerify(function (e) {
+      // e.isValid
+    });
+    ad.onError(function (_ref)
+
+
+    {var code = _ref.code,message = _ref.message;
+      _this._isLoading = false;
+      var data = {
+        code: code,
+        errMsg: message };
+
+
+      if (code === -5008) {
+        _this._loadAd();
+        return;
+      }
+
+      if (_this._retryCount < RETRY_COUNT) {
+        _this._retryCount += 1;
+        _this._loadAd();
+        return;
+      }
+
+      _this._lastError = data;
+      _this.onError(data);
+    });
+  }_createClass(AdBase, [{ key: "getProvider", value: function getProvider()
+
+
+
+
+
+
+
+
+
+    {
+      return this._ad.getProvider();
+    } }, { key: "load", value: function load(
+
+    onload, onerror) {
+      this._loadCallback = onload;
+      this._errorCallback = onerror;
+
+      if (this._isLoading) {
+        return;
+      }
+
+      if (this._isLoad) {
+        this.onLoad();
+        return;
+      }
+
+      this._retryCount = 0;
+
+      this._loadAd();
+    } }, { key: "show", value: function show(
+
+    onclose) {
+      this._closeCallback = onclose;
+
+      if (this._isLoading || !this._isLoad) {
+        return;
+      }
+
+      if (this._lastError !== null) {
+        this.onError(this._lastError);
+        return;
+      }
+
+      var provider = this.getProvider();
+      if (provider === ProviderType.CSJ && this.isExpired) {
+        this._loadAd();
+        return;
+      }
+
+      this._ad.show();
+    } }, { key: "onLoad", value: function onLoad(
+
+    e) {
+      if (this._loadCallback != null) {
+        this._loadCallback();
+      }
+    } }, { key: "onClose", value: function onClose(
+
+    e) {
+      if (this._closeCallback != null) {
+        this._closeCallback({
+          isEnded: e.isEnded });
+
+      }
+    } }, { key: "onError", value: function onError(
+
+    e) {
+      if (this._errorCallback != null) {
+        this._errorCallback(e);
+      }
+    } }, { key: "destroy", value: function destroy()
+
+    {
+      this._ad.destroy();
+    } }, { key: "_loadAd", value: function _loadAd()
+
+    {
+      this._isLoad = false;
+      this._isLoading = true;
+      this._lastError = null;
+      this._ad.load();
+    } }, { key: "isExpired", get: function get() {return this._lastLoadTime !== 0 && Math.abs(Date.now() - this._lastLoadTime) > EXPIRED_TIME;} }, { key: "isLoading", get: function get() {return this._isLoading;} }]);return AdBase;}();var
+
+
+RewardedVideo = /*#__PURE__*/function (_AdBase) {_inherits(RewardedVideo, _AdBase);var _super = _createSuper(RewardedVideo);
+  function RewardedVideo() {var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};_classCallCheck(this, RewardedVideo);return _super.call(this,
+    plus.ad.createRewardedVideoAd(options), options);
+  }return RewardedVideo;}(AdBase);var
+
+
+FullScreenVideo = /*#__PURE__*/function (_AdBase2) {_inherits(FullScreenVideo, _AdBase2);var _super2 = _createSuper(FullScreenVideo);
+  function FullScreenVideo() {var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};_classCallCheck(this, FullScreenVideo);return _super2.call(this,
+    plus.ad.createFullScreenVideoAd(options), options);
+  }return FullScreenVideo;}(AdBase);var _default =
+
+
+new AdHelper();exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 451 */,
+/* 452 */,
+/* 453 */,
+/* 454 */,
+/* 455 */,
+/* 456 */,
+/* 457 */,
+/* 458 */
 /*!************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-image/props.js ***!
   \************************************************************************************************************************/
@@ -22811,14 +23080,151 @@ function getPwdRules() {var pwdName = arguments.length > 0 && arguments[0] !== u
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 451 */,
-/* 452 */,
-/* 453 */,
-/* 454 */,
-/* 455 */,
-/* 456 */,
-/* 457 */,
-/* 458 */
+/* 459 */,
+/* 460 */,
+/* 461 */,
+/* 462 */,
+/* 463 */,
+/* 464 */,
+/* 465 */,
+/* 466 */,
+/* 467 */,
+/* 468 */,
+/* 469 */,
+/* 470 */,
+/* 471 */,
+/* 472 */,
+/* 473 */,
+/* 474 */,
+/* 475 */,
+/* 476 */,
+/* 477 */,
+/* 478 */,
+/* 479 */,
+/* 480 */
+/*!*******************************************************************************************************************!*\
+  !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/libs/mixin/openType.js ***!
+  \*******************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    openType: String },
+
+  methods: {
+    onGetUserInfo: function onGetUserInfo(event) {
+      this.$emit('getuserinfo', event.detail);
+    },
+    onContact: function onContact(event) {
+      this.$emit('contact', event.detail);
+    },
+    onGetPhoneNumber: function onGetPhoneNumber(event) {
+      this.$emit('getphonenumber', event.detail);
+    },
+    onError: function onError(event) {
+      this.$emit('error', event.detail);
+    },
+    onLaunchApp: function onLaunchApp(event) {
+      this.$emit('launchapp', event.detail);
+    },
+    onOpenSetting: function onOpenSetting(event) {
+      this.$emit('opensetting', event.detail);
+    } } };exports.default = _default;
+
+/***/ }),
+/* 481 */
+/*!*****************************************************************************************************************!*\
+  !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/libs/mixin/button.js ***!
+  \*****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    lang: String,
+    sessionFrom: String,
+    sendMessageTitle: String,
+    sendMessagePath: String,
+    sendMessageImg: String,
+    showMessageCard: Boolean,
+    appParameter: String,
+    formType: String,
+    openType: String } };exports.default = _default;
+
+/***/ }),
+/* 482 */
+/*!*******************************************************************************************************************************!*\
+  !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-action-sheet/props.js ***!
+  \*******************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 操作菜单是否展示 （默认false）
+    show: {
+      type: Boolean,
+      default: uni.$u.props.actionSheet.show },
+
+    // 标题
+    title: {
+      type: String,
+      default: uni.$u.props.actionSheet.title },
+
+    // 选项上方的描述信息
+    description: {
+      type: String,
+      default: uni.$u.props.actionSheet.description },
+
+    // 数据
+    actions: {
+      type: Array,
+      default: uni.$u.props.actionSheet.actions },
+
+    // 取消按钮的文字，不为空时显示按钮
+    cancelText: {
+      type: String,
+      default: uni.$u.props.actionSheet.cancelText },
+
+    // 点击某个菜单项时是否关闭弹窗
+    closeOnClickAction: {
+      type: Boolean,
+      default: uni.$u.props.actionSheet.closeOnClickAction },
+
+    // 处理底部安全区（默认true）
+    safeAreaInsetBottom: {
+      type: Boolean,
+      default: uni.$u.props.actionSheet.safeAreaInsetBottom },
+
+    // 小程序的打开方式
+    openType: {
+      type: String,
+      default: uni.$u.props.actionSheet.openType },
+
+    // 点击遮罩是否允许关闭 (默认true)
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: uni.$u.props.actionSheet.closeOnClickOverlay },
+
+    // 圆角值
+    round: {
+      type: [Boolean, String, Number],
+      default: uni.$u.props.actionSheet.round } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 483 */,
+/* 484 */,
+/* 485 */,
+/* 486 */,
+/* 487 */,
+/* 488 */,
+/* 489 */,
+/* 490 */
 /*!***********************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-icon/icons.js ***!
   \***********************************************************************************************************************/
@@ -23041,7 +23447,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   'uicon-en': "\uE692" };exports.default = _default;
 
 /***/ }),
-/* 459 */
+/* 491 */
 /*!***********************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-icon/props.js ***!
   \***********************************************************************************************************************/
@@ -23138,14 +23544,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 460 */,
-/* 461 */,
-/* 462 */,
-/* 463 */,
-/* 464 */,
-/* 465 */,
-/* 466 */,
-/* 467 */
+/* 492 */,
+/* 493 */,
+/* 494 */,
+/* 495 */,
+/* 496 */,
+/* 497 */,
+/* 498 */,
+/* 499 */
 /*!***********************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-line/props.js ***!
   \***********************************************************************************************************************/
@@ -23186,137 +23592,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 468 */,
-/* 469 */,
-/* 470 */,
-/* 471 */,
-/* 472 */,
-/* 473 */,
-/* 474 */,
-/* 475 */
-/*!*******************************************************************************************************************!*\
-  !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/libs/mixin/openType.js ***!
-  \*******************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    openType: String },
-
-  methods: {
-    onGetUserInfo: function onGetUserInfo(event) {
-      this.$emit('getuserinfo', event.detail);
-    },
-    onContact: function onContact(event) {
-      this.$emit('contact', event.detail);
-    },
-    onGetPhoneNumber: function onGetPhoneNumber(event) {
-      this.$emit('getphonenumber', event.detail);
-    },
-    onError: function onError(event) {
-      this.$emit('error', event.detail);
-    },
-    onLaunchApp: function onLaunchApp(event) {
-      this.$emit('launchapp', event.detail);
-    },
-    onOpenSetting: function onOpenSetting(event) {
-      this.$emit('opensetting', event.detail);
-    } } };exports.default = _default;
-
-/***/ }),
-/* 476 */
-/*!*****************************************************************************************************************!*\
-  !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/libs/mixin/button.js ***!
-  \*****************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    lang: String,
-    sessionFrom: String,
-    sendMessageTitle: String,
-    sendMessagePath: String,
-    sendMessageImg: String,
-    showMessageCard: Boolean,
-    appParameter: String,
-    formType: String,
-    openType: String } };exports.default = _default;
-
-/***/ }),
-/* 477 */
-/*!*******************************************************************************************************************************!*\
-  !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-action-sheet/props.js ***!
-  \*******************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  props: {
-    // 操作菜单是否展示 （默认false）
-    show: {
-      type: Boolean,
-      default: uni.$u.props.actionSheet.show },
-
-    // 标题
-    title: {
-      type: String,
-      default: uni.$u.props.actionSheet.title },
-
-    // 选项上方的描述信息
-    description: {
-      type: String,
-      default: uni.$u.props.actionSheet.description },
-
-    // 数据
-    actions: {
-      type: Array,
-      default: uni.$u.props.actionSheet.actions },
-
-    // 取消按钮的文字，不为空时显示按钮
-    cancelText: {
-      type: String,
-      default: uni.$u.props.actionSheet.cancelText },
-
-    // 点击某个菜单项时是否关闭弹窗
-    closeOnClickAction: {
-      type: Boolean,
-      default: uni.$u.props.actionSheet.closeOnClickAction },
-
-    // 处理底部安全区（默认true）
-    safeAreaInsetBottom: {
-      type: Boolean,
-      default: uni.$u.props.actionSheet.safeAreaInsetBottom },
-
-    // 小程序的打开方式
-    openType: {
-      type: String,
-      default: uni.$u.props.actionSheet.openType },
-
-    // 点击遮罩是否允许关闭 (默认true)
-    closeOnClickOverlay: {
-      type: Boolean,
-      default: uni.$u.props.actionSheet.closeOnClickOverlay },
-
-    // 圆角值
-    round: {
-      type: [Boolean, String, Number],
-      default: uni.$u.props.actionSheet.round } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 478 */,
-/* 479 */,
-/* 480 */,
-/* 481 */,
-/* 482 */,
-/* 483 */,
-/* 484 */,
-/* 485 */
+/* 500 */,
+/* 501 */,
+/* 502 */,
+/* 503 */,
+/* 504 */,
+/* 505 */,
+/* 506 */,
+/* 507 */
 /*!*****************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-subsection/props.js ***!
   \*****************************************************************************************************************************/
@@ -23373,14 +23656,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 486 */,
-/* 487 */,
-/* 488 */,
-/* 489 */,
-/* 490 */,
-/* 491 */,
-/* 492 */,
-/* 493 */
+/* 508 */,
+/* 509 */,
+/* 510 */,
+/* 511 */,
+/* 512 */,
+/* 513 */,
+/* 514 */,
+/* 515 */
 /*!*************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-button/props.js ***!
   \*************************************************************************************************************************/
@@ -23549,14 +23832,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 494 */,
-/* 495 */,
-/* 496 */,
-/* 497 */,
-/* 498 */,
-/* 499 */,
-/* 500 */,
-/* 501 */
+/* 516 */,
+/* 517 */,
+/* 518 */,
+/* 519 */,
+/* 520 */,
+/* 521 */,
+/* 522 */,
+/* 523 */
 /*!************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-popup/props.js ***!
   \************************************************************************************************************************/
@@ -23643,14 +23926,113 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 502 */,
-/* 503 */,
-/* 504 */,
-/* 505 */,
-/* 506 */,
-/* 507 */,
-/* 508 */,
-/* 509 */
+/* 524 */,
+/* 525 */,
+/* 526 */,
+/* 527 */,
+/* 528 */,
+/* 529 */,
+/* 530 */,
+/* 531 */
+/*!************************************************************************************************************************!*\
+  !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-modal/props.js ***!
+  \************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  props: {
+    // 是否展示modal
+    show: {
+      type: Boolean,
+      default: uni.$u.props.modal.show },
+
+    // 标题
+    title: {
+      type: [String],
+      default: uni.$u.props.modal.title },
+
+    // 弹窗内容
+    content: {
+      type: String,
+      default: uni.$u.props.modal.content },
+
+    // 确认文案
+    confirmText: {
+      type: String,
+      default: uni.$u.props.modal.confirmText },
+
+    // 取消文案
+    cancelText: {
+      type: String,
+      default: uni.$u.props.modal.cancelText },
+
+    // 是否显示确认按钮
+    showConfirmButton: {
+      type: Boolean,
+      default: uni.$u.props.modal.showConfirmButton },
+
+    // 是否显示取消按钮
+    showCancelButton: {
+      type: Boolean,
+      default: uni.$u.props.modal.showCancelButton },
+
+    // 确认按钮颜色
+    confirmColor: {
+      type: String,
+      default: uni.$u.props.modal.confirmColor },
+
+    // 取消文字颜色
+    cancelColor: {
+      type: String,
+      default: uni.$u.props.modal.cancelColor },
+
+    // 对调确认和取消的位置
+    buttonReverse: {
+      type: Boolean,
+      default: uni.$u.props.modal.buttonReverse },
+
+    // 是否开启缩放效果
+    zoom: {
+      type: Boolean,
+      default: uni.$u.props.modal.zoom },
+
+    // 是否异步关闭，只对确定按钮有效
+    asyncClose: {
+      type: Boolean,
+      default: uni.$u.props.modal.asyncClose },
+
+    // 是否允许点击遮罩关闭modal
+    closeOnClickOverlay: {
+      type: Boolean,
+      default: uni.$u.props.modal.closeOnClickOverlay },
+
+    // 给一个负的margin-top，往上偏移，避免和键盘重合的情况
+    negativeTop: {
+      type: [String, Number],
+      default: uni.$u.props.modal.negativeTop },
+
+    // modal宽度，不支持百分比，可以数值，px，rpx单位
+    width: {
+      type: [String, Number],
+      default: uni.$u.props.modal.width },
+
+    // 确认按钮的样式，circle-圆形，square-方形，如设置，将不会显示取消按钮
+    confirmButtonShape: {
+      type: String,
+      default: uni.$u.props.modal.confirmButtonShape } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 532 */,
+/* 533 */,
+/* 534 */,
+/* 535 */,
+/* 536 */,
+/* 537 */,
+/* 538 */,
+/* 539 */
 /*!*************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-navbar/props.js ***!
   \*************************************************************************************************************************/
@@ -23742,14 +24124,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 510 */,
-/* 511 */,
-/* 512 */,
-/* 513 */,
-/* 514 */,
-/* 515 */,
-/* 516 */,
-/* 517 */
+/* 540 */,
+/* 541 */,
+/* 542 */,
+/* 543 */,
+/* 544 */,
+/* 545 */,
+/* 546 */,
+/* 547 */
 /*!******************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-search-bar/components/uni-search-bar/i18n/index.js ***!
   \******************************************************************************************************************************************/
@@ -23757,16 +24139,16 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 518));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 519));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 520));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 548));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 549));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 550));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
   en: _en.default,
   'zh-Hans': _zhHans.default,
   'zh-Hant': _zhHant.default };exports.default = _default;
 
 /***/ }),
-/* 518 */
+/* 548 */
 /*!*****************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-search-bar/components/uni-search-bar/i18n/en.json ***!
   \*****************************************************************************************************************************************/
@@ -23776,7 +24158,7 @@ var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 5
 module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"Search enter content\"}");
 
 /***/ }),
-/* 519 */
+/* 549 */
 /*!**********************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-search-bar/components/uni-search-bar/i18n/zh-Hans.json ***!
   \**********************************************************************************************************************************************/
@@ -23786,7 +24168,7 @@ module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-
 module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"请输入搜索内容\"}");
 
 /***/ }),
-/* 520 */
+/* 550 */
 /*!**********************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-search-bar/components/uni-search-bar/i18n/zh-Hant.json ***!
   \**********************************************************************************************************************************************/
@@ -23796,14 +24178,14 @@ module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-
 module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"請輸入搜索內容\"}");
 
 /***/ }),
-/* 521 */,
-/* 522 */,
-/* 523 */,
-/* 524 */,
-/* 525 */,
-/* 526 */,
-/* 527 */,
-/* 528 */
+/* 551 */,
+/* 552 */,
+/* 553 */,
+/* 554 */,
+/* 555 */,
+/* 556 */,
+/* 557 */,
+/* 558 */
 /*!************************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/index.js ***!
   \************************************************************************/
@@ -23812,16 +24194,16 @@ module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _en_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./en.json */ 529);
-var _en_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./en.json */ 529, 1);
-/* harmony import */ var _es_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./es.json */ 530);
-var _es_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./es.json */ 530, 1);
-/* harmony import */ var _fr_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./fr.json */ 531);
-var _fr_json__WEBPACK_IMPORTED_MODULE_2___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./fr.json */ 531, 1);
-/* harmony import */ var _zh_Hans_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./zh-Hans.json */ 532);
-var _zh_Hans_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./zh-Hans.json */ 532, 1);
-/* harmony import */ var _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./zh-Hant.json */ 533);
-var _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./zh-Hant.json */ 533, 1);
+/* harmony import */ var _en_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./en.json */ 559);
+var _en_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./en.json */ 559, 1);
+/* harmony import */ var _es_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./es.json */ 560);
+var _es_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./es.json */ 560, 1);
+/* harmony import */ var _fr_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./fr.json */ 561);
+var _fr_json__WEBPACK_IMPORTED_MODULE_2___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./fr.json */ 561, 1);
+/* harmony import */ var _zh_Hans_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./zh-Hans.json */ 562);
+var _zh_Hans_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./zh-Hans.json */ 562, 1);
+/* harmony import */ var _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./zh-Hant.json */ 563);
+var _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./zh-Hant.json */ 563, 1);
 
 
 
@@ -23837,7 +24219,7 @@ var _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpac
 
 
 /***/ }),
-/* 529 */
+/* 559 */
 /*!***********************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/en.json ***!
   \***********************************************************************/
@@ -23847,7 +24229,7 @@ var _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpac
 module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"Success\",\"uniCloud.component.update.success\":\"Success\",\"uniCloud.component.remove.showModal.title\":\"Tips\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
 
 /***/ }),
-/* 530 */
+/* 560 */
 /*!***********************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/es.json ***!
   \***********************************************************************/
@@ -23857,7 +24239,7 @@ module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"Success\",\"u
 module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
 
 /***/ }),
-/* 531 */
+/* 561 */
 /*!***********************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/fr.json ***!
   \***********************************************************************/
@@ -23867,7 +24249,7 @@ module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\
 module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
 
 /***/ }),
-/* 532 */
+/* 562 */
 /*!****************************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/zh-Hans.json ***!
   \****************************************************************************/
@@ -23877,7 +24259,7 @@ module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\
 module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
 
 /***/ }),
-/* 533 */
+/* 563 */
 /*!****************************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/zh-Hant.json ***!
   \****************************************************************************/
@@ -23887,26 +24269,12 @@ module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\
 module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否刪除數據\"}");
 
 /***/ }),
-/* 534 */,
-/* 535 */,
-/* 536 */,
-/* 537 */,
-/* 538 */,
-/* 539 */,
-/* 540 */,
-/* 541 */,
-/* 542 */,
-/* 543 */,
-/* 544 */,
-/* 545 */,
-/* 546 */,
-/* 547 */,
-/* 548 */,
-/* 549 */,
-/* 550 */,
-/* 551 */,
-/* 552 */,
-/* 553 */
+/* 564 */,
+/* 565 */,
+/* 566 */,
+/* 567 */,
+/* 568 */,
+/* 569 */
 /*!*******************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-dateformat/components/uni-dateformat/date-format.js ***!
   \*******************************************************************************************************************************************/
@@ -24116,12 +24484,12 @@ function friendlyDate(time, _ref)
 }
 
 /***/ }),
-/* 554 */,
-/* 555 */,
-/* 556 */,
-/* 557 */,
-/* 558 */,
-/* 559 */
+/* 570 */,
+/* 571 */,
+/* 572 */,
+/* 573 */,
+/* 574 */,
+/* 575 */
 /*!***************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/components/uni-load-state/i18n/index.js ***!
   \***************************************************************************************************************/
@@ -24129,14 +24497,14 @@ function friendlyDate(time, _ref)
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 560));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 561));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 576));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 577));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
   en: _en.default,
   'zh-Hans': _zhHans.default };exports.default = _default;
 
 /***/ }),
-/* 560 */
+/* 576 */
 /*!**************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/components/uni-load-state/i18n/en.json ***!
   \**************************************************************************************************************/
@@ -24146,7 +24514,7 @@ var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 5
 module.exports = JSON.parse("{\"noData\":\"No Data\",\"noNetwork\":\"Network error\",\"toSet\":\"Go to settings\",\"error\":\"error\"}");
 
 /***/ }),
-/* 561 */
+/* 577 */
 /*!*******************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/components/uni-load-state/i18n/zh-Hans.json ***!
   \*******************************************************************************************************************/
@@ -24156,22 +24524,6 @@ module.exports = JSON.parse("{\"noData\":\"No Data\",\"noNetwork\":\"Network err
 module.exports = JSON.parse("{\"noData\":\"暂无数据\",\"noNetwork\":\"网络异常\",\"toSet\":\"前往设置\",\"error\":\"错误\"}");
 
 /***/ }),
-/* 562 */,
-/* 563 */,
-/* 564 */,
-/* 565 */,
-/* 566 */,
-/* 567 */,
-/* 568 */,
-/* 569 */,
-/* 570 */,
-/* 571 */,
-/* 572 */,
-/* 573 */,
-/* 574 */,
-/* 575 */,
-/* 576 */,
-/* 577 */,
 /* 578 */,
 /* 579 */,
 /* 580 */,
@@ -24198,7 +24550,23 @@ module.exports = JSON.parse("{\"noData\":\"暂无数据\",\"noNetwork\":\"网络
 /* 601 */,
 /* 602 */,
 /* 603 */,
-/* 604 */
+/* 604 */,
+/* 605 */,
+/* 606 */,
+/* 607 */,
+/* 608 */,
+/* 609 */,
+/* 610 */,
+/* 611 */,
+/* 612 */,
+/* 613 */,
+/* 614 */,
+/* 615 */,
+/* 616 */,
+/* 617 */,
+/* 618 */,
+/* 619 */,
+/* 620 */
 /*!***************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \***************************************************************************************************************************/
@@ -25374,290 +25742,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     "unicode_decimal": 58929 }] };exports.default = _default;
 
 /***/ }),
-/* 605 */,
-/* 606 */,
-/* 607 */,
-/* 608 */,
-/* 609 */,
-/* 610 */,
-/* 611 */,
-/* 612 */
-/*!***********************************************************************************************************!*\
-  !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-sign-in/utils/ad.js ***!
-  \***********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = _getPrototypeOf(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = _getPrototypeOf(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return _possibleConstructorReturn(this, result);};}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));return true;} catch (e) {return false;}}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;} // ad.js
-var ADType = {
-  RewardedVideo: "RewardedVideo",
-  FullScreenVideo: "FullScreenVideo" };var
-
-
-AdHelper = /*#__PURE__*/function () {
-
-  function AdHelper() {_classCallCheck(this, AdHelper);
-    this._ads = {};
-  }_createClass(AdHelper, [{ key: "load", value: function load(
-
-    options, onload, onerror) {
-      var ops = this._fixOldOptions(options);var
-
-      adpid =
-      ops.adpid;
-
-      if (!adpid || this.isBusy(adpid)) {
-        return;
-      }
-
-      this.get(ops).load(onload, onerror);
-    } }, { key: "show", value: function show(
-
-    options, onsuccess, onfail) {
-      var ops = this._fixOldOptions(options);var
-
-      adpid =
-      ops.adpid;
-
-      if (!adpid) {
-        return;
-      }
-
-      uni.showLoading({
-        mask: true });
-
-
-      var ad = this.get(ops);
-
-      ad.load(function () {
-        uni.hideLoading();
-        ad.show(function (e) {
-          onsuccess && onsuccess(e);
-        });
-      }, function (err) {
-        uni.hideLoading();
-        onfail && onfail(err);
-      });
-    } }, { key: "isBusy", value: function isBusy(
-
-    adpid) {
-      return this._ads[adpid] && this._ads[adpid].isLoading;
-    } }, { key: "get", value: function get(
-
-    options) {var
-
-      adpid =
-
-      options.adpid,_options$singleton = options.singleton,singleton = _options$singleton === void 0 ? true : _options$singleton;
-      if (singleton === false) {
-        if (this._ads[adpid]) {
-          this._ads[adpid].destroy();
-          delete this._ads[adpid];
-        }
-      }
-      delete options.singleton;
-      if (!this._ads[adpid]) {
-        this._ads[adpid] = this._createAdInstance(options);
-      }
-
-      return this._ads[adpid];
-    } }, { key: "_createAdInstance", value: function _createAdInstance(
-
-    options) {
-      var adType = options.adType || ADType.RewardedVideo;
-      delete options.adType;
-
-      var ad = null;
-      if (adType === ADType.RewardedVideo) {
-        ad = new RewardedVideo(options);
-      } else if (adType === ADType.FullScreenVideo) {
-        ad = new FullScreenVideo(options);
-      }
-
-      return ad;
-    } }, { key: "_fixOldOptions", value: function _fixOldOptions(
-
-    options) {
-      return typeof options === "string" ? {
-        adpid: options } :
-      options;
-    } }]);return AdHelper;}();
-
-
-var EXPIRED_TIME = 1000 * 60 * 30;
-var ProviderType = {
-  CSJ: 'csj',
-  GDT: 'gdt' };
-
-
-var RETRY_COUNT = 1;var
-
-AdBase = /*#__PURE__*/function () {
-  function AdBase(adInstance) {var _this = this;var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};_classCallCheck(this, AdBase);
-    this._isLoad = false;
-    this._isLoading = false;
-    this._lastLoadTime = 0;
-    this._lastError = null;
-    this._retryCount = 0;
-
-    this._loadCallback = null;
-    this._closeCallback = null;
-    this._errorCallback = null;
-
-    var ad = this._ad = adInstance;
-    ad.onLoad(function (e) {
-      _this._isLoading = false;
-      _this._isLoad = true;
-      _this._lastLoadTime = Date.now();
-
-      _this.onLoad();
-    });
-    ad.onClose(function (e) {
-      _this._isLoad = false;
-      _this.onClose(e);
-    });
-    ad.onVerify && ad.onVerify(function (e) {
-      // e.isValid
-    });
-    ad.onError(function (_ref)
-
-
-    {var code = _ref.code,message = _ref.message;
-      _this._isLoading = false;
-      var data = {
-        code: code,
-        errMsg: message };
-
-
-      if (code === -5008) {
-        _this._loadAd();
-        return;
-      }
-
-      if (_this._retryCount < RETRY_COUNT) {
-        _this._retryCount += 1;
-        _this._loadAd();
-        return;
-      }
-
-      _this._lastError = data;
-      _this.onError(data);
-    });
-  }_createClass(AdBase, [{ key: "getProvider", value: function getProvider()
-
-
-
-
-
-
-
-
-
-    {
-      return this._ad.getProvider();
-    } }, { key: "load", value: function load(
-
-    onload, onerror) {
-      this._loadCallback = onload;
-      this._errorCallback = onerror;
-
-      if (this._isLoading) {
-        return;
-      }
-
-      if (this._isLoad) {
-        this.onLoad();
-        return;
-      }
-
-      this._retryCount = 0;
-
-      this._loadAd();
-    } }, { key: "show", value: function show(
-
-    onclose) {
-      this._closeCallback = onclose;
-
-      if (this._isLoading || !this._isLoad) {
-        return;
-      }
-
-      if (this._lastError !== null) {
-        this.onError(this._lastError);
-        return;
-      }
-
-      var provider = this.getProvider();
-      if (provider === ProviderType.CSJ && this.isExpired) {
-        this._loadAd();
-        return;
-      }
-
-      this._ad.show();
-    } }, { key: "onLoad", value: function onLoad(
-
-    e) {
-      if (this._loadCallback != null) {
-        this._loadCallback();
-      }
-    } }, { key: "onClose", value: function onClose(
-
-    e) {
-      if (this._closeCallback != null) {
-        this._closeCallback({
-          isEnded: e.isEnded });
-
-      }
-    } }, { key: "onError", value: function onError(
-
-    e) {
-      if (this._errorCallback != null) {
-        this._errorCallback(e);
-      }
-    } }, { key: "destroy", value: function destroy()
-
-    {
-      this._ad.destroy();
-    } }, { key: "_loadAd", value: function _loadAd()
-
-    {
-      this._isLoad = false;
-      this._isLoading = true;
-      this._lastError = null;
-      this._ad.load();
-    } }, { key: "isExpired", get: function get() {return this._lastLoadTime !== 0 && Math.abs(Date.now() - this._lastLoadTime) > EXPIRED_TIME;} }, { key: "isLoading", get: function get() {return this._isLoading;} }]);return AdBase;}();var
-
-
-RewardedVideo = /*#__PURE__*/function (_AdBase) {_inherits(RewardedVideo, _AdBase);var _super = _createSuper(RewardedVideo);
-  function RewardedVideo() {var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};_classCallCheck(this, RewardedVideo);return _super.call(this,
-    plus.ad.createRewardedVideoAd(options), options);
-  }return RewardedVideo;}(AdBase);var
-
-
-FullScreenVideo = /*#__PURE__*/function (_AdBase2) {_inherits(FullScreenVideo, _AdBase2);var _super2 = _createSuper(FullScreenVideo);
-  function FullScreenVideo() {var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};_classCallCheck(this, FullScreenVideo);return _super2.call(this,
-    plus.ad.createFullScreenVideoAd(options), options);
-  }return FullScreenVideo;}(AdBase);var _default =
-
-
-new AdHelper();exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 613 */,
-/* 614 */,
-/* 615 */,
-/* 616 */,
-/* 617 */,
-/* 618 */,
-/* 619 */,
-/* 620 */,
 /* 621 */,
 /* 622 */,
 /* 623 */,
 /* 624 */,
-/* 625 */
+/* 625 */,
+/* 626 */,
+/* 627 */,
+/* 628 */
 /*!****************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/Sansnn-uQRCode/js_sdk/uqrcode/uqrcode.js ***!
   \****************************************************************************************************************************/
@@ -25715,14 +25807,14 @@ var _default = uQRCode;exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../../../../../Applications/HBuilderX.app/Contents/HBuilderX/plugins/uniapp-cli/node_modules/webpack/buildin/global.js */ 2)))
 
 /***/ }),
-/* 626 */,
-/* 627 */,
-/* 628 */,
 /* 629 */,
 /* 630 */,
 /* 631 */,
 /* 632 */,
-/* 633 */
+/* 633 */,
+/* 634 */,
+/* 635 */,
+/* 636 */
 /*!******************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-forms/components/uni-forms/validate.js ***!
   \******************************************************************************************************************************/
@@ -26218,7 +26310,7 @@ SchemaValidator.message = new Message();var _default =
 SchemaValidator;exports.default = _default;
 
 /***/ }),
-/* 634 */
+/* 637 */
 /*!***************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-forms/components/uni-forms/utils.js ***!
   \***************************************************************************************************************************/
@@ -26521,9 +26613,6 @@ var isEqual = function isEqual(a, b) {
 };exports.isEqual = isEqual;
 
 /***/ }),
-/* 635 */,
-/* 636 */,
-/* 637 */,
 /* 638 */,
 /* 639 */,
 /* 640 */,
@@ -26535,7 +26624,10 @@ var isEqual = function isEqual(a, b) {
 /* 646 */,
 /* 647 */,
 /* 648 */,
-/* 649 */
+/* 649 */,
+/* 650 */,
+/* 651 */,
+/* 652 */
 /*!********************************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-file-picker/components/uni-file-picker/choose-and-upload-file.js ***!
   \********************************************************************************************************************************************************/
@@ -26765,7 +26857,7 @@ function chooseAndUploadFile()
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 6)["default"]))
 
 /***/ }),
-/* 650 */
+/* 653 */
 /*!***************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-file-picker/components/uni-file-picker/utils.js ***!
   \***************************************************************************************************************************************/
@@ -26884,9 +26976,6 @@ var get_file_data = /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#_
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 651 */,
-/* 652 */,
-/* 653 */,
 /* 654 */,
 /* 655 */,
 /* 656 */,
@@ -26912,7 +27001,10 @@ var get_file_data = /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#_
 /* 676 */,
 /* 677 */,
 /* 678 */,
-/* 679 */
+/* 679 */,
+/* 680 */,
+/* 681 */,
+/* 682 */
 /*!***************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-popup/components/uni-popup/popup.js ***!
   \***************************************************************************************************************************/
@@ -26946,7 +27038,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     } } };exports.default = _default;
 
 /***/ }),
-/* 680 */
+/* 683 */
 /*!********************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-popup/components/uni-popup/i18n/index.js ***!
   \********************************************************************************************************************************/
@@ -26954,16 +27046,16 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 681));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 682));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 683));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 684));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 685));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 686));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
   en: _en.default,
   'zh-Hans': _zhHans.default,
   'zh-Hant': _zhHant.default };exports.default = _default;
 
 /***/ }),
-/* 681 */
+/* 684 */
 /*!*******************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-popup/components/uni-popup/i18n/en.json ***!
   \*******************************************************************************************************************************/
@@ -26973,7 +27065,7 @@ var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 6
 module.exports = JSON.parse("{\"uni-popup.cancel\":\"cancel\",\"uni-popup.ok\":\"ok\",\"uni-popup.placeholder\":\"pleace enter\",\"uni-popup.title\":\"Hint\",\"uni-popup.shareTitle\":\"Share to\"}");
 
 /***/ }),
-/* 682 */
+/* 685 */
 /*!************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-popup/components/uni-popup/i18n/zh-Hans.json ***!
   \************************************************************************************************************************************/
@@ -26983,7 +27075,7 @@ module.exports = JSON.parse("{\"uni-popup.cancel\":\"cancel\",\"uni-popup.ok\":\
 module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\"确定\",\"uni-popup.placeholder\":\"请输入\",\"uni-popup.title\":\"提示\",\"uni-popup.shareTitle\":\"分享到\"}");
 
 /***/ }),
-/* 683 */
+/* 686 */
 /*!************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-popup/components/uni-popup/i18n/zh-Hant.json ***!
   \************************************************************************************************************************************/
@@ -26993,9 +27085,6 @@ module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\
 module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\"確定\",\"uni-popup.placeholder\":\"請輸入\",\"uni-popup.title\":\"提示\",\"uni-popup.shareTitle\":\"分享到\"}");
 
 /***/ }),
-/* 684 */,
-/* 685 */,
-/* 686 */,
 /* 687 */,
 /* 688 */,
 /* 689 */,
@@ -27021,7 +27110,10 @@ module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\
 /* 709 */,
 /* 710 */,
 /* 711 */,
-/* 712 */
+/* 712 */,
+/* 713 */,
+/* 714 */,
+/* 715 */
 /*!**********************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-id-pages/pages/userinfo/cropImage/limeClipper/utils.js ***!
   \**********************************************************************************************************************************************/
@@ -27276,9 +27368,6 @@ function imageTouchMoveOfCalcOffset(data, clientXForLeft, clientYForLeft) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 713 */,
-/* 714 */,
-/* 715 */,
 /* 716 */,
 /* 717 */,
 /* 718 */,
@@ -27311,7 +27400,10 @@ function imageTouchMoveOfCalcOffset(data, clientXForLeft, clientYForLeft) {
 /* 745 */,
 /* 746 */,
 /* 747 */,
-/* 748 */
+/* 748 */,
+/* 749 */,
+/* 750 */,
+/* 751 */
 /*!*****************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-transition/props.js ***!
   \*****************************************************************************************************************************/
@@ -27343,7 +27435,7 @@ function imageTouchMoveOfCalcOffset(data, clientXForLeft, clientYForLeft) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 749 */
+/* 752 */
 /*!**********************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-transition/transition.js ***!
   \**********************************************************************************************************************************/
@@ -27354,7 +27446,7 @@ function imageTouchMoveOfCalcOffset(data, clientXForLeft, clientYForLeft) {
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 7));
 
 
-var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 750));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
+var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 753));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
 var nextTick = function nextTick() {return new Promise(function (resolve) {return setTimeout(resolve, 1000 / 50);});}; // nvue动画模块实现细节抽离在外部文件
 
 // 定义类名，通过给元素动态切换类名，赋予元素一定的css动画样式
@@ -27508,7 +27600,7 @@ var getClassNames = function getClassNames(name) {return {
     } } };exports.default = _default;
 
 /***/ }),
-/* 750 */
+/* 753 */
 /*!************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-transition/nvue.ani-map.js ***!
   \************************************************************************************************************************************/
@@ -27584,14 +27676,21 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     'leave-to': { opacity: 0, transform: 'scale(0.95)' } } };exports.default = _default;
 
 /***/ }),
-/* 751 */,
-/* 752 */,
-/* 753 */,
 /* 754 */,
 /* 755 */,
 /* 756 */,
 /* 757 */,
-/* 758 */
+/* 758 */,
+/* 759 */,
+/* 760 */,
+/* 761 */,
+/* 762 */,
+/* 763 */,
+/* 764 */,
+/* 765 */,
+/* 766 */,
+/* 767 */,
+/* 768 */
 /*!*******************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-loading-icon/props.js ***!
   \*******************************************************************************************************************************/
@@ -27658,14 +27757,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 759 */,
-/* 760 */,
-/* 761 */,
-/* 762 */,
-/* 763 */,
-/* 764 */,
-/* 765 */,
-/* 766 */
+/* 769 */,
+/* 770 */,
+/* 771 */,
+/* 772 */,
+/* 773 */,
+/* 774 */,
+/* 775 */,
+/* 776 */
 /*!**********************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-gap/props.js ***!
   \**********************************************************************************************************************/
@@ -27697,14 +27796,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 767 */,
-/* 768 */,
-/* 769 */,
-/* 770 */,
-/* 771 */,
-/* 772 */,
-/* 773 */,
-/* 774 */
+/* 777 */,
+/* 778 */,
+/* 779 */,
+/* 780 */,
+/* 781 */,
+/* 782 */,
+/* 783 */,
+/* 784 */
 /*!**************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-overlay/props.js ***!
   \**************************************************************************************************************************/
@@ -27736,14 +27835,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 775 */,
-/* 776 */,
-/* 777 */,
-/* 778 */,
-/* 779 */,
-/* 780 */,
-/* 781 */,
-/* 782 */
+/* 785 */,
+/* 786 */,
+/* 787 */,
+/* 788 */,
+/* 789 */,
+/* 790 */,
+/* 791 */,
+/* 792 */
 /*!*****************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-status-bar/props.js ***!
   \*****************************************************************************************************************************/
@@ -27759,14 +27858,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 783 */,
-/* 784 */,
-/* 785 */,
-/* 786 */,
-/* 787 */,
-/* 788 */,
-/* 789 */,
-/* 790 */
+/* 793 */,
+/* 794 */,
+/* 795 */,
+/* 796 */,
+/* 797 */,
+/* 798 */,
+/* 799 */,
+/* 800 */
 /*!******************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-safe-bottom/props.js ***!
   \******************************************************************************************************************************/
@@ -27778,21 +27877,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   props: {} };exports.default = _default;
 
 /***/ }),
-/* 791 */,
-/* 792 */,
-/* 793 */,
-/* 794 */,
-/* 795 */,
-/* 796 */,
-/* 797 */,
-/* 798 */,
-/* 799 */,
-/* 800 */,
 /* 801 */,
 /* 802 */,
 /* 803 */,
 /* 804 */,
-/* 805 */
+/* 805 */,
+/* 806 */,
+/* 807 */,
+/* 808 */
 /*!****************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-load-more/components/uni-load-more/i18n/index.js ***!
   \****************************************************************************************************************************************/
@@ -27800,16 +27892,16 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 806));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 807));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 808));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 809));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 810));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 811));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
   en: _en.default,
   'zh-Hans': _zhHans.default,
   'zh-Hant': _zhHant.default };exports.default = _default;
 
 /***/ }),
-/* 806 */
+/* 809 */
 /*!***************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-load-more/components/uni-load-more/i18n/en.json ***!
   \***************************************************************************************************************************************/
@@ -27819,7 +27911,7 @@ var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 8
 module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"Pull up to show more\",\"uni-load-more.contentrefresh\":\"loading...\",\"uni-load-more.contentnomore\":\"No more data\"}");
 
 /***/ }),
-/* 807 */
+/* 810 */
 /*!********************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hans.json ***!
   \********************************************************************************************************************************************/
@@ -27829,7 +27921,7 @@ module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"Pull up to show mo
 module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉显示更多\",\"uni-load-more.contentrefresh\":\"正在加载...\",\"uni-load-more.contentnomore\":\"没有更多数据了\"}");
 
 /***/ }),
-/* 808 */
+/* 811 */
 /*!********************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hant.json ***!
   \********************************************************************************************************************************************/
@@ -27839,9 +27931,6 @@ module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉显示更多
 module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉顯示更多\",\"uni-load-more.contentrefresh\":\"正在加載...\",\"uni-load-more.contentnomore\":\"沒有更多數據了\"}");
 
 /***/ }),
-/* 809 */,
-/* 810 */,
-/* 811 */,
 /* 812 */,
 /* 813 */,
 /* 814 */,
@@ -27860,7 +27949,15 @@ module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉顯示更多
 /* 827 */,
 /* 828 */,
 /* 829 */,
-/* 830 */
+/* 830 */,
+/* 831 */,
+/* 832 */,
+/* 833 */,
+/* 834 */,
+/* 835 */,
+/* 836 */,
+/* 837 */,
+/* 838 */
 /*!***********************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-transition/components/uni-transition/createAnimation.js ***!
   \***********************************************************************************************************************************************/
