@@ -96,7 +96,7 @@
 						},
 						{
 							"title": "收藏",
-							"to": '/pages/my/collection',
+							"to": '/pages/ucenter/collection/collection',
 							"icon": "flag"
 						},
 						{
@@ -124,33 +124,7 @@
 						"style": "solid", // 边框样式
 						"radius": "100%" // 边框圆角，支持百分比
 					}
-				},
-				items: [{
-						icon: "/static/my/collection.png",
-						title: "收藏",
-						url: "/pages/my/collection"
-					},
-					{
-						icon: "/static/my/ticket.png",
-						title: "下载券",
-						url: "/pages/my/ticket"
-					},
-					{
-						icon: "/static/my/feedback.png",
-						title: "意见反馈",
-						url: "/pages/my/feedback"
-					},
-					{
-						icon: "/static/my/about.png",
-						title: "关于我们",
-						url: "/pages/my/about"
-					},
-					{
-						icon: "/static/my/set.png",
-						title: "设置",
-						url: "/pages/my/set"
-					}
-				]
+				}
 			}
 		},
 		onLoad() {

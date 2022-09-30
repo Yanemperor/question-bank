@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "收藏",
+  "navigationBarBackgroundColor": "#ffffff",
+  "usingComponents": {
+    "u-icon": "/uni_modules/uview-ui/components/u-icon/u-icon",
+    "u-line": "/uni_modules/uview-ui/components/u-line/u-line"
+  }
+}

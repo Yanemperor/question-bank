@@ -57,13 +57,13 @@
 		},
 
 		{
-			"path": "pages/my/collection",
+			"path": "pages/ucenter/collection/collection",
 			"style": {
 				"navigationBarTitleText": "收藏",
 				"navigationBarBackgroundColor": "#ffffff"
 			}
 		}, {
-			"path": "pages/my/ticket",
+			"path": "pages/ucenter/ticket/ticket",
 			"style": {
 				"navigationBarTitleText": "下载券",
 				"navigationBarBackgroundColor": "#ffffff"
