@@ -32,7 +32,7 @@
 			</view>
 		</view>
 		<view class="ad-banner">
-
+			<ad unit-id="adunit-ecb09927d4519a06" ad-type="video" ad-theme="white"></ad>
 		</view>
 	</view>
 </template>
@@ -228,7 +228,6 @@
 	.ad-banner {
 		border-radius: 8rpx;
 		width: 100%;
-		height: 300rpx;
 		background-color: #ffffff;
 		margin-top: 24rpx;
 	}

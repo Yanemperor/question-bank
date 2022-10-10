@@ -13,6 +13,9 @@
 				<u-line color="#f5f5f5"></u-line>
 			</view>
 		</view>
+		<view class="ad-banner">
+			<ad unit-id="adunit-a02c90eb01b74a15" ad-type="video" ad-theme="white"></ad>
+		</view>
 	</view>
 </template>
 
@@ -170,5 +173,12 @@
 		padding-left: 16rpx;
 		color: rgba(0, 0, 0, 0.9);
 		font-size: 32rpx;
+	}
+	
+	.ad-banner {
+		margin-top: 40rpx;
+		border-radius: 8rpx;
+		width: 100%;
+		background-color: #ffffff;
 	}
 </style>

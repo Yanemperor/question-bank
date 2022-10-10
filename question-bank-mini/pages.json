@@ -126,6 +126,20 @@
 
 		},
 		{
+			"path": "pages/ucenter/about/business_cooperation",
+			"style": {
+				"navigationBarTitleText": "商务合作",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},
+		{
+			"path": "pages/ucenter/about/more_app",
+			"style": {
+				"navigationBarTitleText": "更多APP",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},
+		{
 			"path": "uni_modules/uni-upgrade-center-app/pages/upgrade-popup",
 			"style": {
 				"disableScroll": true,
@@ -302,11 +316,6 @@
 			"text": "下载"
 		}, {
 			"pagePath": "pages/ucenter/ucenter",
-			"iconPath": "static/tabbar/my.png",
-			"selectedIconPath": "static/tabbar/my_selected.png",
-			"text": "我的"
-		}, {
-			"pagePath": "pages/list/list",
 			"iconPath": "static/tabbar/my.png",
 			"selectedIconPath": "static/tabbar/my_selected.png",
 			"text": "我的"

@@ -74,23 +74,6 @@
   background-color: #ffffff;
   border-radius: 12rpx;
 }
-.cell.data-v-4883731c {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100rpx;
-  padding-left: 32rpx;
-  padding-right: 38rpx;
-}
-.cell-left.data-v-4883731c {
-  display: flex;
-  align-items: center;
-}
-.cell-title.data-v-4883731c {
-  padding-left: 16rpx;
-  color: rgba(0, 0, 0, 0.9);
-  font-size: 32rpx;
-}
 .center.data-v-4883731c {
   display: flex;
   flex-direction: column;
@@ -120,7 +103,6 @@
   color: #FFFFFF;
 }
 .center-list.data-v-4883731c {
-  margin-bottom: 30rpx;
   background-color: #f9f9f9;
 }
 .center-list-cell.data-v-4883731c {

@@ -98,13 +98,13 @@ var components
 try {
   components = {
     uniForms: function() {
-      return Promise.all(/*! import() | uni_modules/uni-forms/components/uni-forms/uni-forms */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-forms/components/uni-forms/uni-forms")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-forms/components/uni-forms/uni-forms.vue */ 633))
+      return Promise.all(/*! import() | uni_modules/uni-forms/components/uni-forms/uni-forms */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-forms/components/uni-forms/uni-forms")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-forms/components/uni-forms/uni-forms.vue */ 625))
     },
     uniIdPagesSmsForm: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-id-pages/components/uni-id-pages-sms-form/uni-id-pages-sms-form */ "uni_modules/uni-id-pages/components/uni-id-pages-sms-form/uni-id-pages-sms-form").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-id-pages/components/uni-id-pages-sms-form/uni-id-pages-sms-form.vue */ 698))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-id-pages/components/uni-id-pages-sms-form/uni-id-pages-sms-form */ "uni_modules/uni-id-pages/components/uni-id-pages-sms-form/uni-id-pages-sms-form").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-id-pages/components/uni-id-pages-sms-form/uni-id-pages-sms-form.vue */ 690))
     },
     uniPopupCaptcha: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-captcha/components/uni-popup-captcha/uni-popup-captcha */ "uni_modules/uni-captcha/components/uni-popup-captcha/uni-popup-captcha").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-captcha/components/uni-popup-captcha/uni-popup-captcha.vue */ 705))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-captcha/components/uni-popup-captcha/uni-popup-captcha */ "uni_modules/uni-captcha/components/uni-popup-captcha/uni-popup-captcha").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-captcha/components/uni-popup-captcha/uni-popup-captcha.vue */ 697))
     }
   }
 } catch (e) {

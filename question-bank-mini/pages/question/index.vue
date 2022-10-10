@@ -1,12 +1,12 @@
 <template>
 	<view class="container">
 		<view class="ad-banner">
-
+			<ad unit-id="adunit-3a28792b1a5747d3"></ad>
 		</view>
 		<view class="subject-bg">
 			<view v-for="(item,index) in subjects" :key="index" class="subject-cell">
 				<view class="subject-cell-content" @click="itemClick(item)">
-					<u-image width="100rpx" height="100rpx" :src="item.img"></u-image>
+					<image :src="item.img" mode="heightFix" style="width: 60rpx; height: 60rpx;"></image>
 					<view class="subject-cell-text">
 						{{ item.title }}
 					</view>
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+	let interstitialAd = null
 	export default {
 		data() {
 			return {
@@ -64,12 +65,37 @@
 				//设置下方的Menus菜单，才能够让发送给朋友与分享到朋友圈两个按钮可以点击
 				menus: ["shareAppMessage", "shareTimeline"]
 			});
+			this.initAd()
 		},
 		methods: {
 			itemClick(item) {
 				uni.navigateTo({
 					url: "/pages/question/selected?paper_id=" + item.paper_id
 				})
+			},
+			initAd() {
+				if (wx.createInterstitialAd) {
+					interstitialAd = wx.createInterstitialAd({
+						adUnitId: 'adunit-3a5ff13e60d7adaf'
+					})
+					interstitialAd.onLoad(() => {
+						console.log('onLoad event emit')
+						this.showAd()
+					})
+					interstitialAd.onError((err) => {
+						console.log('onError event emit', err)
+					})
+					interstitialAd.onClose((res) => {
+						console.log('onClose event emit', res)
+					})
+				}
+			},
+			showAd() {
+				if (interstitialAd) {
+					interstitialAd.show().catch((err) => {
+						console.error(err)
+					})
+				}
 			},
 			onShareAppMessage(res) {
 				if (res.from === 'button') { // 来自页面内分享按钮
@@ -101,7 +127,6 @@
 	.ad-banner {
 		border-radius: 8rpx;
 		width: 100%;
-		height: 300rpx;
 		background-color: #ffffff;
 	}
 
@@ -128,8 +153,8 @@
 	}
 
 	.subject-cell-text {
-		padding-top: 4rpx;
+		padding-top: 6rpx;
 		color: #333333;
-		font-size: 32rpx;
+		font-size: 28rpx;
 	}
 </style>

@@ -1,5 +1,6 @@
 <template>
 	<view class="container">
+		<ad unit-id="adunit-13e1b5fb5b226b0e" ad-type="video" ad-theme="white"></ad>
 		<view class="view-btn" @click="viewBtnClick">
 			<view class="view-btn-text">
 				查看
@@ -103,6 +104,7 @@
 		padding: 32rpx;
 	}
 	.view-btn {
+		margin-top: 40rpx;
 		margin-left: 40rpx;
 		margin-right: 40rpx;
 		height: 88rpx;

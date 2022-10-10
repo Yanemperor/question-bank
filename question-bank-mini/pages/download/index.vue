@@ -9,7 +9,7 @@
 			</view>
 		</u-navbar>
 		<view class="ad-banner">
-
+			<ad unit-id="adunit-faa8bf5c01819ee8" ad-type="video" ad-theme="white"></ad>
 		</view>
 		<view class="subject-bg">
 			<view v-for="(item,index) in subjects" :key="index" class="subject-cell">
@@ -176,7 +176,7 @@
 
 	.nav-text {
 		color: #333333;
-		font-size: 32rpx;
+		font-size: 28rpx;
 		font-weight: 500;
 		line-height: 20px;
 		padding-left: 8rpx;
@@ -185,7 +185,6 @@
 	.ad-banner {
 		border-radius: 8rpx;
 		width: 100%;
-		height: 300rpx;
 		background-color: #ffffff;
 	}
 
@@ -212,8 +211,8 @@
 	}
 
 	.subject-cell-text {
-		padding-top: 4rpx;
+		padding-top: 6rpx;
 		color: #333333;
-		font-size: 32rpx;
+		font-size: 28rpx;
 	}
 </style>

@@ -1,7 +1,7 @@
 {
     "name" : "question-bank-mini",
     "appid" : "__UNI__19CDBAE",
-    "description" : "云端一体应用快速开发基本项目模版",
+    "description" : "成考真题小程序",
     "versionName" : "1.1.0",
     "versionCode" : "100",
     "transformPx" : false,

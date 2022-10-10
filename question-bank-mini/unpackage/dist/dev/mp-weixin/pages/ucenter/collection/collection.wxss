@@ -52,4 +52,10 @@
   color: rgba(0, 0, 0, 0.9);
   font-size: 32rpx;
 }
+.ad-banner.data-v-b37c067e {
+  margin-top: 40rpx;
+  border-radius: 8rpx;
+  width: 100%;
+  background-color: #ffffff;
+}
 

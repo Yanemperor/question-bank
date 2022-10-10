@@ -143,8 +143,9 @@ var render = function() {
       var $orig = _vm.__get_orig(item)
 
       var a0 = {
+        size: 18,
         type: item.icon,
-        color: "#999"
+        color: "#333333"
       }
       return {
         $orig: $orig,
@@ -280,26 +281,19 @@ var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js 
       // to 跳转页面 event 执行方法
       ucenterList: [
       [{
+        "title": "收藏",
+        "to": '/pages/ucenter/collection/collection',
+        "icon": "flag" },
+      {
         "title": this.$t('mine.signIn'),
         "event": 'signIn',
         "icon": "compose" },
-
-
-      {
-        "title": this.$t('mine.readArticles'),
-        "to": '/pages/ucenter/read-news-log/read-news-log',
-        "icon": "flag" },
 
       {
         "title": this.$t('mine.myScore'),
         "to": '',
         "event": 'getScore',
         "icon": "paperplane" },
-
-      {
-        "title": "收藏",
-        "to": '/pages/ucenter/collection/collection',
-        "icon": "flag" },
 
       {
         "title": this.$t('mine.feedback'),

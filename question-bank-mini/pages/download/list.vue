@@ -1,6 +1,9 @@
 <template>
 	<view class="container">
 		<view>
+			<view class="ad-banner">
+				<ad unit-id="adunit-b7f7f9f78c0c32b9"></ad>
+			</view>
 			<view class="">
 				<view class="cu-item" v-for="(items, index) in questionList" :key="index">
 					<view class="item-title">
@@ -23,9 +26,6 @@
 					</view>
 				</view>
 			</view>
-		</view>
-		<view class="ad-banner">
-
 		</view>
 	</view>
 </template>

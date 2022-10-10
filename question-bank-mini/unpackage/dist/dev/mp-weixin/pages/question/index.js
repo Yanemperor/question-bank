@@ -95,29 +95,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components
-try {
-  components = {
-    uImage: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-image/u-image */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-image/u-image")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-image/u-image.vue */ 455))
-    }
-  }
-} catch (e) {
-  if (
-    e.message.indexOf("Cannot find module") !== -1 &&
-    e.message.indexOf(".vue") !== -1
-  ) {
-    console.error(e.message)
-    console.error("1. 排查组件名称拼写是否正确")
-    console.error(
-      "2. 排查组件是否符合 easycom 规范，文档：https://uniapp.dcloud.net.cn/collocation/pages?id=easycom"
-    )
-    console.error(
-      "3. 若组件不符合 easycom 规范，需手动引入，并在 components 中注册该组件"
-    )
-  } else {
-    throw e
-  }
-}
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -173,7 +150,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-var _default =
+
+var interstitialAd = null;var _default =
 {
   data: function data() {
     return {
@@ -221,12 +199,37 @@ var _default =
       //设置下方的Menus菜单，才能够让发送给朋友与分享到朋友圈两个按钮可以点击
       menus: ["shareAppMessage", "shareTimeline"] });
 
+    this.initAd();
   },
   methods: {
     itemClick: function itemClick(item) {
       uni.navigateTo({
         url: "/pages/question/selected?paper_id=" + item.paper_id });
 
+    },
+    initAd: function initAd() {var _this = this;
+      if (wx.createInterstitialAd) {
+        interstitialAd = wx.createInterstitialAd({
+          adUnitId: 'adunit-3a5ff13e60d7adaf' });
+
+        interstitialAd.onLoad(function () {
+          console.log('onLoad event emit');
+          _this.showAd();
+        });
+        interstitialAd.onError(function (err) {
+          console.log('onError event emit', err);
+        });
+        interstitialAd.onClose(function (res) {
+          console.log('onClose event emit', res);
+        });
+      }
+    },
+    showAd: function showAd() {
+      if (interstitialAd) {
+        interstitialAd.show().catch(function (err) {
+          console.error(err);
+        });
+      }
     },
     onShareAppMessage: function onShareAppMessage(res) {
       if (res.from === 'button') {// 来自页面内分享按钮

@@ -19,7 +19,7 @@
 			<uni-list class="center-list" v-for="(sublist , index) in ucenterList" :key="index">
 				<uni-list-item v-for="(item,i) in sublist" :title="item.title" link :rightText="item.rightText" :key="i"
 					:clickable="true" :to="item.to" @click="ucenterListClick(item)" :show-extra-icon="true"
-					:extraIcon="{type:item.icon,color:'#999'}">
+					:extraIcon="{size: 18, type:item.icon,color:'#333333'}">
 					<template v-slot:footer>
 						<view v-if="item.showBadge" class="item-footer">
 							<text class="item-footer-text">{{item.rightText}}</text>
@@ -78,26 +78,19 @@
 				// to 跳转页面 event 执行方法
 				ucenterList: [
 					[{
+							"title": "收藏",
+							"to": '/pages/ucenter/collection/collection',
+							"icon": "flag"
+						}, {
 							"title": this.$t('mine.signIn'),
 							"event": 'signIn',
 							"icon": "compose"
-						},
-
-						{
-							"title": this.$t('mine.readArticles'),
-							"to": '/pages/ucenter/read-news-log/read-news-log',
-							"icon": "flag"
 						},
 						{
 							"title": this.$t('mine.myScore'),
 							"to": '',
 							"event": 'getScore',
 							"icon": "paperplane"
-						},
-						{
-							"title": "收藏",
-							"to": '/pages/ucenter/collection/collection',
-							"icon": "flag"
 						},
 						{
 							"title": this.$t('mine.feedback'),
@@ -396,28 +389,6 @@
 		border-radius: 12rpx;
 	}
 
-	.cell {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		height: 100rpx;
-		padding-left: 32rpx;
-		padding-right: 38rpx;
-	}
-
-	.cell-left {
-		display: flex;
-		align-items: center;
-	}
-
-	.cell-title {
-		padding-left: 16rpx;
-		color: rgba(0, 0, 0, 0.9);
-		font-size: 32rpx;
-	}
-
-
-
 	.center {
 		display: flex;
 		flex-direction: column;
@@ -452,7 +423,7 @@
 	}
 
 	.center-list {
-		margin-bottom: 30rpx;
+		// margin-bottom: 30rpx;
 		background-color: #f9f9f9;
 	}
 

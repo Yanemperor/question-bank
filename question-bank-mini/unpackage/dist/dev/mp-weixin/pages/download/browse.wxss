@@ -3,6 +3,7 @@
 	padding: 32rpx;
 }
 .view-btn {
+	margin-top: 40rpx;
 	margin-left: 40rpx;
 	margin-right: 40rpx;
 	height: 88rpx;
