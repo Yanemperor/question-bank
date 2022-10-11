@@ -98,19 +98,19 @@ var components
 try {
   components = {
     uniSignIn: function() {
-      return Promise.all(/*! import() | uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in.vue */ 447))
+      return Promise.all(/*! import() | uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in.vue */ 463))
     },
     uImage: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-image/u-image */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-image/u-image")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-image/u-image.vue */ 455))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-image/u-image */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-image/u-image")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-image/u-image.vue */ 471))
     },
     uniList: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list/uni-list */ "uni_modules/uni-list/components/uni-list/uni-list").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list/uni-list.vue */ 463))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list/uni-list */ "uni_modules/uni-list/components/uni-list/uni-list").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list/uni-list.vue */ 479))
     },
     uniListItem: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list-item/uni-list-item */ "uni_modules/uni-list/components/uni-list-item/uni-list-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list-item/uni-list-item.vue */ 470))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list-item/uni-list-item */ "uni_modules/uni-list/components/uni-list-item/uni-list-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list-item/uni-list-item.vue */ 486))
     },
     uActionSheet: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-action-sheet/u-action-sheet */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-action-sheet/u-action-sheet")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-action-sheet/u-action-sheet.vue */ 477))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-action-sheet/u-action-sheet */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-action-sheet/u-action-sheet")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-action-sheet/u-action-sheet.vue */ 493))
     }
   }
 } catch (e) {
@@ -284,17 +284,18 @@ var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js 
         "title": "收藏",
         "to": '/pages/ucenter/collection/collection',
         "icon": "flag" },
-      {
-        "title": this.$t('mine.signIn'),
-        "event": 'signIn',
-        "icon": "compose" },
 
-      {
-        "title": this.$t('mine.myScore'),
-        "to": '',
-        "event": 'getScore',
-        "icon": "paperplane" },
-
+      // {
+      // 	"title": this.$t('mine.signIn'),
+      // 	"event": 'signIn',
+      // 	"icon": "compose"
+      // },
+      // {
+      // 	"title": this.$t('mine.myScore'),
+      // 	"to": '',
+      // 	"event": 'getScore',
+      // 	"icon": "paperplane"
+      // },
       {
         "title": this.$t('mine.feedback'),
         "to": '/uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback',
@@ -307,7 +308,12 @@ var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js 
       {
         "title": this.$t('mine.about'),
         "to": '/pages/ucenter/about/about',
-        "icon": "info" }]],
+        "icon": "info" },
+
+      {
+        "title": "更多小程序",
+        "to": '/pages/ucenter/about/more_app',
+        "icon": "more" }]],
 
 
 

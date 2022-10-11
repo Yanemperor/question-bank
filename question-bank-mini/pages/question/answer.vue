@@ -31,9 +31,11 @@
 					</view>
 					<view class="grid col-5 ">
 						<view class="margin-tb-sm text-center" v-for="(subject,index) in subjectList" :key="index">
-							<button class="cu-btn round" :class="[subject.userAnswer.length===0?'line-grey':'bg-red']"
+							<button v-if="subject.userAnswer.length===0" class="cu-btn round line-grey"
 								@click="AppointedSubject(index)">{{index+1}}</button>
-
+							<button v-if="subject.userAnswer.length!=0" class="cu-btn round"
+								:class="[subject.userAnswer==subject.answer?'bg-green':'bg-red']"
+								@click="AppointedSubject(index)">{{index+1}}</button>
 						</view>
 					</view>
 
@@ -187,7 +189,6 @@
 				</view>
 				<view class="text-gray">纠错</view>
 			</view>
-
 		</view>
 		<u-popup :show="show" mode="bottom" @close="close" @open="open">
 			<view class="padding-sm">
@@ -317,7 +318,10 @@
 				this.modalCard = null
 			},
 			showErrorModal: function(e) {
-				this.modalError = e.currentTarget.dataset.target
+				// this.modalError = e.currentTarget.dataset.target
+				uni.navigateTo({
+					url: '/uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback'
+				})
 			},
 			hideErrorModal: function(e) {
 				this.modalError = null
@@ -350,10 +354,15 @@
 				var values = e.detail.value;
 				console.log(values);
 				this.subjectList[this.subjectIndex].userAnswer = values;
-				if (this.autoRadioNext && this.subjectIndex < this.subjectList.length - 1) {
-					this.subjectIndex += 1;
-				};
-
+				if (values == this.subjectList[this.subjectIndex].answer) {
+					// 答对切换到下一题
+					if (this.autoRadioNext && this.subjectIndex < this.subjectList.length - 1) {
+						this.subjectIndex += 1;
+					};
+				} else {
+					// 答错显示答案
+					this.ShowAnswerChange()
+				}
 			},
 			CheckboxChange: function(e) { //复选选中
 

@@ -98,13 +98,13 @@ var components
 try {
   components = {
     uButton: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-button/u-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-button/u-button")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-button/u-button.vue */ 512))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-button/u-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-button/u-button")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-button/u-button.vue */ 528))
     },
     uPopup: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-popup/u-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-popup/u-popup")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-popup/u-popup.vue */ 520))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-popup/u-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-popup/u-popup")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-popup/u-popup.vue */ 536))
     },
     uModal: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-modal/u-modal */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-modal/u-modal")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-modal/u-modal.vue */ 528))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-modal/u-modal */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-modal/u-modal")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-modal/u-modal.vue */ 544))
     }
   }
 } catch (e) {
@@ -231,6 +231,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni, uniCloud) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
 
 
 
@@ -633,6 +634,7 @@ var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js 
 //
 //
 //
+//
 var _default = { data: function data() {return { modalShow: false, show: false, article: "", // 文章
       isShowArticle: false, userFavor: false, //是否已收藏
       currentType: "", //当前题型
@@ -656,9 +658,12 @@ var _default = { data: function data() {return { modalShow: false, show: false, 
       // 	// this.$set(details[i], "showAnswer", false);
       // 	details[i].showAnswer = false;
       // }
-      var temps = [];details.map(function (item, index) {temps.push(Object.assign(item, { "showAnswer": false, "userAnswer": "" }));});console.log("detail:", JSON.stringify(temps));this.subjectList = temps;this.currentType = this.subjectList[0].typeName;this.userFavor = this.subjectList[0].userFavor;var title = this.subjectList[0].title;if (this.subjectList[0].article) {this.article = this.subjectList[0].article;this.isShowArticle = true;} else if (title.length > 500) {this.article = title;this.isShowArticle = true;} else {this.isShowArticle = false;}}}, methods: { userInfo: function userInfo() {return _store.store.userInfo;}, hasLogin: function hasLogin() {return _store.store.hasLogin;}, showCardModal: function showCardModal(e) {this.modalCard = e.currentTarget.dataset.target;}, hideCardModal: function hideCardModal(e) {this.modalCard = null;}, showErrorModal: function showErrorModal(e) {this.modalError = e.currentTarget.dataset.target;}, hideErrorModal: function hideErrorModal(e) {this.modalError = null;}, SwiperChange: function SwiperChange(e) {//滑动事件
+      var temps = [];details.map(function (item, index) {temps.push(Object.assign(item, { "showAnswer": false, "userAnswer": "" }));});console.log("detail:", JSON.stringify(temps));this.subjectList = temps;this.currentType = this.subjectList[0].typeName;this.userFavor = this.subjectList[0].userFavor;var title = this.subjectList[0].title;if (this.subjectList[0].article) {this.article = this.subjectList[0].article;this.isShowArticle = true;} else if (title.length > 500) {this.article = title;this.isShowArticle = true;} else {this.isShowArticle = false;}}}, methods: { userInfo: function userInfo() {return _store.store.userInfo;}, hasLogin: function hasLogin() {return _store.store.hasLogin;}, showCardModal: function showCardModal(e) {this.modalCard = e.currentTarget.dataset.target;}, hideCardModal: function hideCardModal(e) {this.modalCard = null;}, showErrorModal: function showErrorModal(e) {// this.modalError = e.currentTarget.dataset.target
+      uni.navigateTo({ url: '/uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback' });}, hideErrorModal: function hideErrorModal(e) {this.modalError = null;}, SwiperChange: function SwiperChange(e) {//滑动事件
       var index = e.target.current;if (index != undefined) {this.subjectIndex = index;this.currentType = this.subjectList[index].typeName;this.userFavor = this.subjectList[index].userFavor;this.article = this.subjectList[index].article;var title = this.subjectList[index].title;console.log("titleCount", title.length);if (this.subjectList[index].type === 6) {this.article = this.subjectList[index].title;this.isShowArticle = true;} else if (title.length > 500) {this.article = title;this.isShowArticle = true;} else {this.isShowArticle = false;}}}, RadioboxChange: function RadioboxChange(e) {//单选选中
-      var items = this.subjectList[this.subjectIndex].options;var values = e.detail.value;console.log(values);this.subjectList[this.subjectIndex].userAnswer = values;if (this.autoRadioNext && this.subjectIndex < this.subjectList.length - 1) {this.subjectIndex += 1;};}, CheckboxChange: function CheckboxChange(e) {//复选选中
+      var items = this.subjectList[this.subjectIndex].options;var values = e.detail.value;console.log(values);this.subjectList[this.subjectIndex].userAnswer = values;if (values == this.subjectList[this.subjectIndex].answer) {// 答对切换到下一题
+        if (this.autoRadioNext && this.subjectIndex < this.subjectList.length - 1) {this.subjectIndex += 1;};} else {// 答错显示答案
+        this.ShowAnswerChange();}}, CheckboxChange: function CheckboxChange(e) {//复选选中
       var items = this.subjectList[this.subjectIndex].options;var values = e.detail.value;this.subjectList[this.subjectIndex].userAnswer = "";for (var i = 0, lenI = items.length; i < lenI; ++i) {for (var j = 0, lenJ = values.length; j < lenJ; ++j) {if (items[i].key == values[j]) {this.subjectList[this.subjectIndex].userAnswer += items[i].key;break;}}}}, textInput: function textInput(e) {//填空题
       this.subjectList[this.subjectIndex].userAnswer = e.detail.value;}, ShowAnswerChange: function ShowAnswerChange(e) {//显示答案
       if (this.subjectList[this.subjectIndex].showAnswer) {this.subjectList[this.subjectIndex].showAnswer = false;} else {this.subjectList[this.subjectIndex].showAnswer = true;}}, modalConfirm: function modalConfirm() {console.log("去登录");uni.redirectTo({ url: '/uni_modules/uni-id-pages/pages/login/login-withoutpwd' });}, FavorSubject: function FavorSubject(e) {//收藏题
@@ -666,7 +671,11 @@ var _default = { data: function data() {return { modalShow: false, show: false, 
         // this.subjectList[this.subjectIndex].userFavor = false;
       } else {this.collect(userInfo, topic, true); // this.userFavor = true;
         // this.subjectList[this.subjectIndex].userFavor = true;
-      }}, collect: function collect(userInfo, topic, isCollect) {var _this = this;var db = uniCloud.database();console.log("开始请求topic-collect：", this.paper_id);console.log("topic-collect:", userInfo._id);console.log("topic-collect:", topic._id);console.log("topic-collect:", topic.paper_type);console.log("topic-collect:", topic.type);if (isCollect) {db.collection("topic-collect").add({ "user_id": userInfo._id, "topic_id": topic._id, "paper_type": topic.paper_type, "topic_type": topic.type }).then(function (res) {console.log("获取topic-collect成功", JSON.stringify(res.result.data));_this.userFavor = true;_this.subjectList[_this.subjectIndex].userFavor = true;}).catch(function (e) {console.log("获取topic-collect失败", e);});} else {db.collection("topic-collect").where({ "user_id": userInfo._id, "topic_id": topic._id }).remove().then(function (res) {
+      }}, collect: function collect(userInfo, topic, isCollect) {var _this = this;var db = uniCloud.database();console.log("开始请求topic-collect：", this.paper_id);console.log("topic-collect:", userInfo._id);console.log("topic-collect:", topic._id);console.log("topic-collect:", topic.paper_type);console.log("topic-collect:", topic.type);if (isCollect) {db.collection("topic-collect").add({ "user_id": userInfo._id, "topic_id": topic._id, "paper_type": topic.paper_type, "topic_type": topic.type }).then(function (res) {console.log("获取topic-collect成功", JSON.stringify(res.result.data));_this.userFavor = true;_this.subjectList[_this.subjectIndex].userFavor = true;}).catch(function (e) {console.log("获取topic-collect失败", e);});} else {
+        db.collection("topic-collect").where({
+          "user_id": userInfo._id,
+          "topic_id": topic._id }).
+        remove().then(function (res) {
           console.log("获取topic-collect成功", JSON.stringify(res.result.data));
           _this.userFavor = false;
           _this.subjectList[_this.subjectIndex].userFavor = false;

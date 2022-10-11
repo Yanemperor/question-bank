@@ -135,7 +135,7 @@
 		{
 			"path": "pages/ucenter/about/more_app",
 			"style": {
-				"navigationBarTitleText": "更多APP",
+				"navigationBarTitleText": "更多小程序",
 				"navigationBarBackgroundColor": "#ffffff"
 			}
 		},

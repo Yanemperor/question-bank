@@ -1,8 +1,8 @@
 <template>
 	<view class="container">
-		<view class="ad-banner">
+		<!-- <view class="ad-banner">
 			<ad unit-id="adunit-3a28792b1a5747d3"></ad>
-		</view>
+		</view> -->
 		<view class="subject-bg">
 			<view v-for="(item,index) in subjects" :key="index" class="subject-cell">
 				<view class="subject-cell-content" @click="itemClick(item)">
@@ -80,7 +80,7 @@
 					})
 					interstitialAd.onLoad(() => {
 						console.log('onLoad event emit')
-						this.showAd()
+						// this.showAd()
 					})
 					interstitialAd.onError((err) => {
 						console.log('onError event emit', err)

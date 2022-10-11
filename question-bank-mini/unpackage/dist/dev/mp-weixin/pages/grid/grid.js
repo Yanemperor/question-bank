@@ -98,19 +98,19 @@ var components
 try {
   components = {
     unicloudDb: function() {
-      return Promise.all(/*! import() | node-modules/@dcloudio/uni-cli-shared/components/unicloud-db */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/@dcloudio/uni-cli-shared/components/unicloud-db")]).then(__webpack_require__.bind(null, /*! @dcloudio/uni-cli-shared/components/unicloud-db.vue */ 555))
+      return Promise.all(/*! import() | node-modules/@dcloudio/uni-cli-shared/components/unicloud-db */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/@dcloudio/uni-cli-shared/components/unicloud-db")]).then(__webpack_require__.bind(null, /*! @dcloudio/uni-cli-shared/components/unicloud-db.vue */ 571))
     },
     uniSwiperDot: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-swiper-dot/components/uni-swiper-dot/uni-swiper-dot */ "uni_modules/uni-swiper-dot/components/uni-swiper-dot/uni-swiper-dot").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-swiper-dot/components/uni-swiper-dot/uni-swiper-dot.vue */ 589))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-swiper-dot/components/uni-swiper-dot/uni-swiper-dot */ "uni_modules/uni-swiper-dot/components/uni-swiper-dot/uni-swiper-dot").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-swiper-dot/components/uni-swiper-dot/uni-swiper-dot.vue */ 605))
     },
     uniSection: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-section/components/uni-section/uni-section */ "uni_modules/uni-section/components/uni-section/uni-section").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-section/components/uni-section/uni-section.vue */ 596))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-section/components/uni-section/uni-section */ "uni_modules/uni-section/components/uni-section/uni-section").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-section/components/uni-section/uni-section.vue */ 612))
     },
     uniGrid: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-grid/components/uni-grid/uni-grid */ "uni_modules/uni-grid/components/uni-grid/uni-grid").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-grid/components/uni-grid/uni-grid.vue */ 603))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-grid/components/uni-grid/uni-grid */ "uni_modules/uni-grid/components/uni-grid/uni-grid").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-grid/components/uni-grid/uni-grid.vue */ 619))
     },
     uniGridItem: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-grid/components/uni-grid-item/uni-grid-item */ "uni_modules/uni-grid/components/uni-grid-item/uni-grid-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-grid/components/uni-grid-item/uni-grid-item.vue */ 610))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-grid/components/uni-grid-item/uni-grid-item */ "uni_modules/uni-grid/components/uni-grid-item/uni-grid-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-grid/components/uni-grid-item/uni-grid-item.vue */ 626))
     }
   }
 } catch (e) {
@@ -220,7 +220,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uniCloud, uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var statusBar = function statusBar() {__webpack_require__.e(/*! require.ensure | uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar */ "uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar").then((function () {return resolve(__webpack_require__(/*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar */ 582));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uniCloud, uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var statusBar = function statusBar() {__webpack_require__.e(/*! require.ensure | uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar */ "uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar").then((function () {return resolve(__webpack_require__(/*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar */ 598));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 

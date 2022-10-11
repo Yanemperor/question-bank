@@ -81,17 +81,18 @@
 							"title": "收藏",
 							"to": '/pages/ucenter/collection/collection',
 							"icon": "flag"
-						}, {
-							"title": this.$t('mine.signIn'),
-							"event": 'signIn',
-							"icon": "compose"
 						},
-						{
-							"title": this.$t('mine.myScore'),
-							"to": '',
-							"event": 'getScore',
-							"icon": "paperplane"
-						},
+						// {
+						// 	"title": this.$t('mine.signIn'),
+						// 	"event": 'signIn',
+						// 	"icon": "compose"
+						// },
+						// {
+						// 	"title": this.$t('mine.myScore'),
+						// 	"to": '',
+						// 	"event": 'getScore',
+						// 	"icon": "paperplane"
+						// },
 						{
 							"title": this.$t('mine.feedback'),
 							"to": '/uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback',
@@ -105,6 +106,11 @@
 							"title": this.$t('mine.about'),
 							"to": '/pages/ucenter/about/about',
 							"icon": "info"
+						},
+						{
+							"title": "更多小程序",
+							"to": '/pages/ucenter/about/more_app',
+							"icon": "more"
 						}
 					],
 				],
