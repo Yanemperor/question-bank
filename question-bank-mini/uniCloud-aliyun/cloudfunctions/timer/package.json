@@ -1,0 +1,16 @@
+{
+	"name": "timer",
+	"dependencies": {
+		"uni-id": "file:../../../uni_modules/uni-id/uniCloud/cloudfunctions/common/uni-id"
+	},
+	"extensions": {
+		"uni-cloud-jql": {}
+	},
+	"cloudfunction-config": {
+		"triggers": [{
+			"name": "FreeAd-Time",
+			"type": "timer",
+			"config": "0 0 */1 * * * *"
+		}]
+	}
+}

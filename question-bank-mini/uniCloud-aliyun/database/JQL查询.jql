@@ -6,4 +6,18 @@
 // 详细JQL语法，请参考 https://uniapp.dcloud.net.cn/uniCloud/clientdb?id=jsquery
 
 // 下面示例查询uni-id-users表的所有数据
-db.collection('uni-id-users').get();
+
+const dbCmd = db.command
+
+const SEARCHLOG_timeZone = 100000000; // 归纳搜索记录时间间隔，毫秒数，默认为最近7天
+const timeEnd = Date.now() - SEARCHLOG_timeZone;
+
+db.collection('uni-id-users').where({
+	is_hidden_ad: true,
+	last_look_ad_time: dbCmd.lt(timeEnd)
+}).get()
+
+
+// update({
+// 	is_hidden_ad: false,
+// })

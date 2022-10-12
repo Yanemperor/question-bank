@@ -207,14 +207,14 @@ var interstitialAd = null;var _default =
         url: "/pages/question/selected?paper_id=" + item.paper_id });
 
     },
-    initAd: function initAd() {var _this = this;
+    initAd: function initAd() {
       if (wx.createInterstitialAd) {
         interstitialAd = wx.createInterstitialAd({
           adUnitId: 'adunit-3a5ff13e60d7adaf' });
 
         interstitialAd.onLoad(function () {
           console.log('onLoad event emit');
-          _this.showAd();
+          // this.showAd()
         });
         interstitialAd.onError(function (err) {
           console.log('onError event emit', err);

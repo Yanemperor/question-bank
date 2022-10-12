@@ -116,6 +116,8 @@ async function postRegister(params = {}) {
 
   user.register_date = Date.now()
   user.dcloud_appid = [appId]
+  user.is_hidden_ad = false
+  user.last_look_ad_time = Date.now()
 
   if (user.username) {
     user.username = user.username.toLowerCase()

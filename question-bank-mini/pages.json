@@ -126,6 +126,13 @@
 
 		},
 		{
+			"path": "pages/ucenter/ad/index",
+			"style": {
+				"navigationBarTitleText": "广告管理",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		},
+		{
 			"path": "pages/ucenter/about/business_cooperation",
 			"style": {
 				"navigationBarTitleText": "商务合作",
@@ -270,7 +277,7 @@
 				"navigationBarTitleText": "注册管理员账号"
 			}
 		}
-	],
+    ],
 	"globalStyle": {
 		// #ifdef H5
 		"h5": {
@@ -324,7 +331,9 @@
 	"uniIdRouter": {
 		"loginPage": "uni_modules/uni-id-pages/pages/login/login-withoutpwd",
 		"needLogin": [
-			"/uni_modules/uni-id-pages/pages/userinfo/userinfo"
+			"/uni_modules/uni-id-pages/pages/userinfo/userinfo",
+			"/pages/ucenter/ad/index",
+			"/pages/ucenter/collection/collection"
 		],
 		"resToLogin": true
 	}

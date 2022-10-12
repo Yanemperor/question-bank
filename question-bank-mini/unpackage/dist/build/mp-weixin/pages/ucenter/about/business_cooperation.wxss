@@ -1,0 +1,1 @@
+.container{background-color:#fff}.head{padding:16px}.head-title{font-size:16px;font-weight:500;color:#000;line-height:24px}.head-text{padding-top:24px;font-size:16px;font-weight:500;color:#666;line-height:24px}.head-mail-bg{display:flex}.head-mail{font-size:16px;font-weight:500;color:#00e;line-height:24px}.head-mail-btn{padding-left:16px}

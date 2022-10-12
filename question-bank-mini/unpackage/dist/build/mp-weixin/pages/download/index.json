@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "下载",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "u-navbar": "/uni_modules/uview-ui/components/u-navbar/u-navbar"
+  }
+}

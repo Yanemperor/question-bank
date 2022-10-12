@@ -98,7 +98,7 @@ var components
 try {
   components = {
     uNavbar: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-navbar/u-navbar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-navbar/u-navbar")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-navbar/u-navbar.vue */ 552))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-navbar/u-navbar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-navbar/u-navbar")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-navbar/u-navbar.vue */ 560))
     }
   }
 } catch (e) {
@@ -305,7 +305,7 @@ var _default =
       }
       return {
         title: '成考真题', //分享的名称
-        path: '/pages/question/index',
+        path: '/pages/download/index',
         mpId: 'wx1b87633653856f3e' //此处配置微信小程序的AppId
       };
     },

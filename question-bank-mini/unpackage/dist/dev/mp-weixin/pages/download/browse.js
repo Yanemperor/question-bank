@@ -153,7 +153,8 @@ var _default =
   data: function data() {
     return {
       url: "",
-      tempFilePath: "" };
+      tempFilePath: "",
+      title: "" };
 
   },
   onLoad: function onLoad(options) {
@@ -167,9 +168,9 @@ var _default =
   methods: {
     initData: function initData(options) {
       this.url = options.url;
-      var title = options.title;
+      this.title = options.title;
       uni.setNavigationBarTitle({
-        title: title });
+        title: this.title });
 
       console.log('url:', this.url);
     },
@@ -217,7 +218,7 @@ var _default =
       }
       return {
         title: '成考真题', //分享的名称
-        path: '/pages/question/index',
+        path: '/pages/download/browse?title=' + this.title + "&url=" + this.url,
         mpId: 'wx1b87633653856f3e' //此处配置微信小程序的AppId
       };
     },

@@ -169,7 +169,7 @@
 				}
 				return {
 					title: '成考真题', //分享的名称
-					path: '/pages/question/index',
+					path: "/pages/question/selected?paper_id=" + this.paper_id,
 					mpId: 'wx1b87633653856f3e' //此处配置微信小程序的AppId
 				}
 			},

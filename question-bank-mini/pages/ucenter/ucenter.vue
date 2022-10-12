@@ -105,6 +105,11 @@
 							"icon": "gear"
 						},
 						{
+							"title": "免广告",
+							"to": '/pages/ucenter/ad/index',
+							"icon": "vip"
+						},
+						{
 							"title": "更多小程序",
 							"to": '/pages/ucenter/about/more_app',
 							"icon": "more"

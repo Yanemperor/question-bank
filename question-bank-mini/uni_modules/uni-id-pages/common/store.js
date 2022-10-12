@@ -17,6 +17,7 @@ console.log('data', data);
 export const mutations = {
 	// data不为空，表示传递要更新的值(注意不是覆盖是合并),什么也不传时，直接查库获取更新
 	async updateUserInfo(data = false) {
+		console.log("updateUserInfo:", data)
 		if (data) {
 			usersTable.where('_id==$env.uid').update(data).then(e => {
 				console.log(e);

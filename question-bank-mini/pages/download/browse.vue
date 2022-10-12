@@ -19,7 +19,8 @@
 		data() {
 			return {
 				url: "",
-				tempFilePath: ""
+				tempFilePath: "",
+				title: ""
 			}
 		},
 		onLoad(options) {
@@ -33,9 +34,9 @@
 		methods: {
 			initData(options) {
 				this.url = options.url
-				const title = options.title
+				this.title = options.title
 				uni.setNavigationBarTitle({
-				  title: title
+				  title: this.title
 				});
 				console.log('url:', this.url)
 			},
@@ -83,7 +84,7 @@
 				}
 				return {
 					title: '成考真题', //分享的名称
-					path: '/pages/question/index',
+					path: '/pages/download/browse?title=' + this.title + "&url=" + this.url,
 					mpId: 'wx1b87633653856f3e' //此处配置微信小程序的AppId
 				}
 			},
