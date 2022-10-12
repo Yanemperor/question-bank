@@ -1,8 +1,8 @@
 <template>
 	<view class="container">
-		<!-- <view class="ad-banner">
+		<view class="ad-banner">
 			<ad unit-id="adunit-3a28792b1a5747d3"></ad>
-		</view> -->
+		</view>
 		<view class="subject-bg">
 			<view v-for="(item,index) in subjects" :key="index" class="subject-cell">
 				<view class="subject-cell-content" @click="itemClick(item)">
@@ -23,37 +23,37 @@
 			return {
 				subjects: [{
 						img: "/static/subject/yuwen.png",
-						title: "类型1",
+						title: "大学语文",
 						paper_id: "top_up_language"
 					},
 					{
 						img: "/static/subject/english.png",
-						title: "类型2",
+						title: "大学英语",
 						paper_id: "top_up_english"
 					},
 					{
 						img: "/static/subject/zhengzhi.png",
-						title: "类型3",
+						title: "政治",
 						paper_id: "top_up_political"
 					},
 					{
 						img: "/static/subject/jiaoyu.png",
-						title: "类型4",
+						title: "教育理论",
 						paper_id: "top_up_educational_theory"
 					},
 					{
 						img: "/static/subject/minfa.png",
-						title: "类型5",
+						title: "民法",
 						paper_id: "top_up_civil_law"
 					},
 					{
 						img: "/static/subject/yishu.png",
-						title: "类型6",
+						title: "艺术概论",
 						paper_id: "top_up_introduction_art"
 					},
 					{
 						img: "/static/subject/shengtai.png",
-						title: "类型6",
+						title: "生态学",
 						paper_id: "top_up_ecology"
 					}
 				]
@@ -80,7 +80,7 @@
 					})
 					interstitialAd.onLoad(() => {
 						console.log('onLoad event emit')
-						// this.showAd()
+						this.showAd()
 					})
 					interstitialAd.onError((err) => {
 						console.log('onError event emit', err)

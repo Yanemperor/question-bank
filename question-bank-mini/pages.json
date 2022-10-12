@@ -1,5 +1,11 @@
 {
 	"pages": [{
+			"path": "pages/question/index",
+			"style": {
+				"navigationBarTitleText": "专升本",
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+		}, {
 			"path": "pages/ucenter/ucenter",
 			"style": {
 				"navigationStyle": "custom"
@@ -11,12 +17,6 @@
 				"navigationBarTitleText": "我的",
 				"navigationBarBackgroundColor": "#ffffff",
 				"navigationStyle": "custom"
-			}
-		}, {
-			"path": "pages/question/index",
-			"style": {
-				"navigationBarTitleText": "首页",
-				"navigationBarBackgroundColor": "#ffffff"
 			}
 		},
 		{

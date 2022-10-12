@@ -33,7 +33,7 @@
     "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.26.1",
+  "libVersion": "",
   "appid": "wx1b87633653856f3e",
   "projectname": "question-bank-mini",
   "condition": {},

@@ -82,6 +82,7 @@
 							"to": '/pages/ucenter/collection/collection',
 							"icon": "flag"
 						},
+
 						// {
 						// 	"title": this.$t('mine.signIn'),
 						// 	"event": 'signIn',
@@ -97,20 +98,21 @@
 							"title": this.$t('mine.feedback'),
 							"to": '/uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback',
 							"icon": "help"
-						}, {
+						},
+						 {
 							"title": this.$t('mine.settings'),
 							"to": '/pages/ucenter/settings/settings',
 							"icon": "gear"
 						},
 						{
-							"title": this.$t('mine.about'),
-							"to": '/pages/ucenter/about/about',
-							"icon": "info"
-						},
-						{
 							"title": "更多小程序",
 							"to": '/pages/ucenter/about/more_app',
 							"icon": "more"
+						},
+						{
+							"title": this.$t('mine.about'),
+							"to": '/pages/ucenter/about/about',
+							"icon": "info"
 						}
 					],
 				],
