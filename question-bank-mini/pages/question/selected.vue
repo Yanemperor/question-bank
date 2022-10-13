@@ -31,7 +31,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="ad-banner">
+		<view class="ad-banner" v-if="!userInfo.is_hidden_ad">
 			<ad unit-id="adunit-ecb09927d4519a06" ad-type="video" ad-theme="white"></ad>
 		</view>
 	</view>
@@ -43,6 +43,11 @@
 		mutations
 	} from '@/uni_modules/uni-id-pages/common/store.js'
 	export default {
+		computed: {
+			userInfo() {
+				return store.userInfo
+			}
+		},
 		data() {
 			return {
 				list: ['题型练习', '套卷练习'],
@@ -61,9 +66,6 @@
 			this.initData(options)
 		},
 		methods: {
-			userInfo() {
-				return store.userInfo
-			},
 			initData(options) {
 				this.paper_id = options.paper_id
 				this.getTypeData()
@@ -112,12 +114,11 @@
 				// 	console.log("获取answer_questions失败", e);
 				// });
 				
-				let userInfo = this.userInfo()
 				uniCloud.callFunction({
 					name: "full-answer",
 					data: {
 						"paper_id": item.id,
-						"user_id": userInfo._id
+						"user_id": store.userInfo._id
 					},
 					success(res) {						
 						// console.log("openTest", JSON.stringify(res.result.data))
@@ -138,7 +139,6 @@
 				this.current = index;
 			},
 			cellClick(item) {
-				let userInfo = this.userInfo()
 				uniCloud.callFunction({
 					name: "answer-random",
 					data: {
@@ -146,7 +146,7 @@
 						"type": item.type,
 						"typeName": item.typeName,
 						"count": item.count,
-						"user_id": userInfo._id
+						"user_id": store.userInfo._id
 					},
 					success(res) {						
 						// console.log("openTest", JSON.stringify(res.result.data))

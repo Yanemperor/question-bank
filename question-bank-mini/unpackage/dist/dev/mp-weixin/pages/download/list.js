@@ -158,64 +158,73 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni, uniCloud) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
-{
-  data: function data() {
-    return {
-      paper_id: "",
-      types: [],
-      questionList: [] };
+/* WEBPACK VAR INJECTION */(function(uni, uniCloud) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
-  },
-  onLoad: function onLoad(options) {
-    wx.showShareMenu({
-      withShareTicket: true,
-      //设置下方的Menus菜单，才能够让发送给朋友与分享到朋友圈两个按钮可以点击
-      menus: ["shareAppMessage", "shareTimeline"] });
 
-    this.initData(options);
-  },
-  methods: {
-    initData: function initData(options) {
-      this.paper_id = options.paper_id;
-      this.getDownloadList();
-    },
 
-    cellClick: function cellClick(item, index, row) {
-      uni.navigateTo({
-        url: "/pages/download/browse?title=" + item.name + "&url=" + item.url });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js */ 153); //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = { computed: { userInfo: function userInfo() {return _store.store.userInfo;} }, data: function data() {return { paper_id: "", types: [], questionList: [] };}, onLoad: function onLoad(options) {wx.showShareMenu({ withShareTicket: true, //设置下方的Menus菜单，才能够让发送给朋友与分享到朋友圈两个按钮可以点击
+      menus: ["shareAppMessage", "shareTimeline"] });this.initData(options);}, methods: { initData: function initData(options) {this.paper_id = options.paper_id;this.getDownloadList();}, cellClick: function cellClick(item, index, row) {uni.navigateTo({ url: "/pages/download/browse?title=" + item.name + "&url=" + item.url });
 
     },
     getDownloadList: function getDownloadList() {var _this = this;

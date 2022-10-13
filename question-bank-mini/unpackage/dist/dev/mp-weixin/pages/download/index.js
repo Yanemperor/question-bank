@@ -155,53 +155,62 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
-{
-  data: function data() {
-    return {
-      subjects: [],
-      changeIndex: true,
-      currentChangeName: "类型一",
-      changes: [{
-        name: "专升本",
-        subjects: [{
-          img: "/static/subject/yuwen.png",
-          title: "大学语文",
-          paper_id: "top_up_language" },
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
-        {
-          img: "/static/subject/shuxue.png",
-          title: "高数一",
-          paper_id: "top_up_advanced_mathematics_1" },
 
-        {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js */ 153); //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = { computed: { userInfo: function userInfo() {return _store.store.userInfo;} }, data: function data() {return { subjects: [], changeIndex: true, currentChangeName: "专升本", changes: [{ name: "专升本", subjects: [{ img: "/static/subject/yuwen.png", title: "大学语文", paper_id: "top_up_language" }, { img: "/static/subject/shuxue.png", title: "高数一", paper_id: "top_up_advanced_mathematics_1" }, {
           img: "/static/subject/shuxue.png",
           title: "高数二",
           paper_id: "top_up_advanced_mathematics_2" },

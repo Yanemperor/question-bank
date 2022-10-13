@@ -154,7 +154,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js */ 163); //
+
+var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js */ 153); //
 //
 //
 //
@@ -174,18 +175,55 @@ var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js 
 //
 //
 //
-var db = uniCloud.database();var _default = { computed: { userInfo: function userInfo() {return _store.store.userInfo;} }, data: function data() {return {};}, onLoad: function onLoad(options) {}, methods: { cancelAd: function cancelAd() {
+var rewardedVideoAd = null;var db = uniCloud.database();var _default = { computed: { userInfo: function userInfo() {return _store.store.userInfo;} }, data: function data() {return {};}, onLoad: function onLoad(options) {this.initAd();}, methods: { initAd: function initAd() {var _this = this;if (wx.createRewardedVideoAd) {
+        rewardedVideoAd = wx.createRewardedVideoAd({
+          adUnitId: 'adunit-769c67caa7356c80' });
+
+        rewardedVideoAd.onLoad(function () {
+          console.log('onLoad event emit');
+        });
+        rewardedVideoAd.onError(function (err) {
+          console.log('onError event emit', err);
+        });
+        rewardedVideoAd.onClose(function (res) {
+          // 用户点击了【关闭广告】按钮
+          if (res && res.isEnded) {
+            // 正常播放结束，可以下发游戏奖励
+            _this.cancelAd();
+          } else {
+            // 播放中途退出，不下发游戏奖励
+          }
+        });
+      }
+    },
+    playAd: function playAd() {
+      if (rewardedVideoAd) {
+        rewardedVideoAd.show().catch(function () {
+          // 失败重试
+          rewardedVideoAd.load().
+          then(function () {return rewardedVideoAd.show();}).
+          catch(function (err) {
+            console.log('激励视频 广告显示失败');
+          });
+        });
+      }
+    },
+    cancelAd: function cancelAd() {
       this.setIsHiddenAd(true);
       this.setLastLookAdTime(Date.now());
       _store.mutations.updateUserInfo();
     },
     setIsHiddenAd: function setIsHiddenAd(is_hidden_ad) {
       console.log(is_hidden_ad);
-      _store.mutations.updateUserInfo({ is_hidden_ad: is_hidden_ad });
+      _store.mutations.updateUserInfo({
+        is_hidden_ad: is_hidden_ad });
+
     },
     setLastLookAdTime: function setLastLookAdTime(last_look_ad_time) {
       console.log(last_look_ad_time);
-      _store.mutations.updateUserInfo({ last_look_ad_time: last_look_ad_time });
+      _store.mutations.updateUserInfo({
+        last_look_ad_time: last_look_ad_time });
+
     },
     test: function test() {
       uniCloud.callFunction({

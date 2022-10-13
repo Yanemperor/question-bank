@@ -8,7 +8,7 @@
 				</view>
 			</view>
 		</u-navbar>
-		<view class="ad-banner">
+		<view class="ad-banner" v-if="!userInfo.is_hidden_ad">
 			<ad unit-id="adunit-faa8bf5c01819ee8" ad-type="video" ad-theme="white"></ad>
 		</view>
 		<view class="subject-bg">
@@ -26,12 +26,21 @@
 </template>
 
 <script>
+	import {
+		store,
+		mutations
+	} from '@/uni_modules/uni-id-pages/common/store.js'
 	export default {
+		computed: {
+			userInfo() {
+				return store.userInfo
+			}
+		},
 		data() {
 			return {
 				subjects: [],
 				changeIndex: true,
-				currentChangeName: "类型一",
+				currentChangeName: "专升本",
 				changes: [{
 						name: "专升本",
 						subjects: [{

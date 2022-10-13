@@ -38,7 +38,7 @@ export const mutations = {
 		} else {
 			try {
 				let res = await usersTable.where("'_id' == $cloudEnv_uid")
-						.field('mobile,nickname,user_name,email,avatar_file')
+						.field('mobile,nickname,user_name,email,avatar_file,is_hidden_ad,last_look_ad_time')
 						.get()
 				console.log('fromDbData',res.result.data);
 				this.setUserInfo(res.result.data[0])

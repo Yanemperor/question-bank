@@ -94,16 +94,7 @@
 						// 	"event": 'getScore',
 						// 	"icon": "paperplane"
 						// },
-						{
-							"title": this.$t('mine.feedback'),
-							"to": '/uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback',
-							"icon": "help"
-						},
-						 {
-							"title": this.$t('mine.settings'),
-							"to": '/pages/ucenter/settings/settings',
-							"icon": "gear"
-						},
+						
 						{
 							"title": "免广告",
 							"to": '/pages/ucenter/ad/index',
@@ -113,6 +104,16 @@
 							"title": "更多小程序",
 							"to": '/pages/ucenter/about/more_app',
 							"icon": "more"
+						},
+						{
+							"title": this.$t('mine.feedback'),
+							"to": '/uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback',
+							"icon": "help"
+						},
+						 {
+							"title": this.$t('mine.settings'),
+							"to": '/pages/ucenter/settings/settings',
+							"icon": "gear"
 						},
 						{
 							"title": this.$t('mine.about'),

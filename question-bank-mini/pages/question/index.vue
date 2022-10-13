@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
-		<view class="ad-banner">
-			<!-- <ad unit-id="adunit-3a28792b1a5747d3"></ad> -->
+		<view class="ad-banner" v-if="!userInfo.is_hidden_ad">
+			<ad unit-id="adunit-3a28792b1a5747d3"></ad>
 		</view>
 		<view class="subject-bg">
 			<view v-for="(item,index) in subjects" :key="index" class="subject-cell">
@@ -13,12 +13,26 @@
 				</view>
 			</view>
 		</view>
+		<view class="view-btn" @click="toAd">
+			<view class="view-btn-text">
+				广告太多？ 试试免广告功能吧！
+			</view>
+		</view>
 	</view>
 </template>
 
 <script>
 	let interstitialAd = null
+	import {
+		store,
+		mutations
+	} from '@/uni_modules/uni-id-pages/common/store.js'
 	export default {
+		computed: {
+			userInfo() {
+				return store.userInfo
+			}
+		},
 		data() {
 			return {
 				subjects: [{
@@ -74,13 +88,19 @@
 				})
 			},
 			initAd() {
+				mutations.updateUserInfo()
+				console.log("####", store.userInfo.is_hidden_ad)
+				if (store.userInfo.is_hidden_ad) {
+					return
+				}
+				
 				if (wx.createInterstitialAd) {
 					interstitialAd = wx.createInterstitialAd({
 						adUnitId: 'adunit-3a5ff13e60d7adaf'
 					})
 					interstitialAd.onLoad(() => {
 						console.log('onLoad event emit')
-						// this.showAd()
+						this.showAd()
 					})
 					interstitialAd.onError((err) => {
 						console.log('onError event emit', err)
@@ -96,6 +116,11 @@
 						console.error(err)
 					})
 				}
+			},
+			toAd() {
+				uni.navigateTo({
+					url: "/pages/ucenter/ad/index"
+				})
 			},
 			onShareAppMessage(res) {
 				if (res.from === 'button') { // 来自页面内分享按钮
@@ -156,5 +181,23 @@
 		padding-top: 6rpx;
 		color: #333333;
 		font-size: 28rpx;
+	}
+	
+	.view-btn {
+		margin-top: 40rpx;
+		margin-left: 40rpx;
+		margin-right: 40rpx;
+		height: 88rpx;
+		background-color: #2979ff;
+		border-radius: 12rpx;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	.view-btn-text {
+		font-size: 32rpx;
+		font-weight: 500;
+		color: #FFFFFF;
 	}
 </style>

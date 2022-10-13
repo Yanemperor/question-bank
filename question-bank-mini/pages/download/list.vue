@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
 		<view>
-			<view class="ad-banner">
+			<view class="ad-banner" v-if="!userInfo.is_hidden_ad">
 				<ad unit-id="adunit-b7f7f9f78c0c32b9"></ad>
 			</view>
 			<view class="">
@@ -31,7 +31,16 @@
 </template>
 
 <script>
+	import {
+		store,
+		mutations
+	} from '@/uni_modules/uni-id-pages/common/store.js'
 	export default {
+		computed: {
+			userInfo() {
+				return store.userInfo
+			}
+		},
 		data() {
 			return {
 				paper_id: "",

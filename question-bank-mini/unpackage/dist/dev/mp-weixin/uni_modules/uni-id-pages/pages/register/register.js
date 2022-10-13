@@ -234,7 +234,7 @@ __webpack_require__.r(__webpack_exports__);
 var _validator = _interopRequireDefault(__webpack_require__(/*! ./validator.js */ 421));
 var _loginPageMixin = _interopRequireDefault(__webpack_require__(/*! @/uni_modules/uni-id-pages/common/login-page.mixin.js */ 396));
 var _config = _interopRequireDefault(__webpack_require__(/*! @/uni_modules/uni-id-pages/config.js */ 395));
-var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js */ 163);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js */ 153);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
 //
 //

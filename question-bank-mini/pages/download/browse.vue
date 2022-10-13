@@ -1,26 +1,46 @@
 <template>
 	<view class="container">
-		<ad unit-id="adunit-13e1b5fb5b226b0e" ad-type="video" ad-theme="white"></ad>
+		<view class="ad-banner" v-if="!userInfo.is_hidden_ad">
+			<ad unit-id="adunit-13e1b5fb5b226b0e" ad-type="video" ad-theme="white"></ad>
+		</view>
 		<view class="view-btn" @click="viewBtnClick">
 			<view class="view-btn-text">
 				查看
 			</view>
 		</view>
-		<view v-if="tempFilePath" class="save-btn" @click="saveBtnClick">
+		<view v-if="tempFilePath" class="save-btn" @click="playAd">
 			<view class="save-btn-text">
-				保存
+				观看广告，即可保存文件
+			</view>
+		</view>
+
+		<view v-if="isLookAd" class="save-btn" @click="saveBtnClick">
+			<view class="save-btn-text">
+				保存文件
 			</view>
 		</view>
 	</view>
 </template>
 
 <script>
+	import {
+		store,
+		mutations
+	} from '@/uni_modules/uni-id-pages/common/store.js'
+	let rewardedVideoAd = null
+
 	export default {
+		computed: {
+			userInfo() {
+				return store.userInfo
+			}
+		},
 		data() {
 			return {
 				url: "",
 				tempFilePath: "",
-				title: ""
+				title: "",
+				isLookAd: false
 			}
 		},
 		onLoad(options) {
@@ -30,13 +50,54 @@
 				menus: ["shareAppMessage", "shareTimeline"]
 			});
 			this.initData(options);
+			this.initAd();
 		},
 		methods: {
+			initAd() {
+				if (wx.createRewardedVideoAd) {
+					rewardedVideoAd = wx.createRewardedVideoAd({
+						adUnitId: 'adunit-b392486bb2b18ada'
+					})
+					rewardedVideoAd.onLoad(() => {
+						console.log('onLoad event emit')
+					})
+					rewardedVideoAd.onError((err) => {
+						console.log('onError event emit', err)
+					})
+					rewardedVideoAd.onClose(res => {
+						// 用户点击了【关闭广告】按钮
+						if (res && res.isEnded) {
+							this.isLookAd = true
+							// 正常播放结束，可以下发游戏奖励
+							this.saveBtnClick()
+						} else {
+							// 播放中途退出，不下发游戏奖励
+						}
+					})
+				}
+			},
+			playAd() {
+				if (this.isLookAd) {
+					this.saveBtnClick()
+				} else {
+					if (rewardedVideoAd) {
+						rewardedVideoAd.show().catch(() => {
+							// 失败重试
+							rewardedVideoAd.load()
+								.then(() => rewardedVideoAd.show())
+								.catch(err => {
+									console.log('激励视频 广告显示失败')
+								})
+						})
+					}
+				}
+
+			},
 			initData(options) {
 				this.url = options.url
 				this.title = options.title
 				uni.setNavigationBarTitle({
-				  title: this.title
+					title: this.title
 				});
 				console.log('url:', this.url)
 			},
@@ -69,14 +130,23 @@
 								}
 							});
 						}
-					}, fail: function(err) {
+					},
+					fail: function(err) {
 						console.log('下载失败原因', err);
 						uni.hideLoading();
 					}
 				});
 			},
 			saveBtnClick() {
-				
+				wx.shareFileMessage({
+					filePath: this.tempFilePath,
+					success() {
+						console.log("转发成功");
+					},
+					fail(fail) {
+						console.log(fail);
+					},
+				})
 			},
 			onShareAppMessage(res) {
 				if (res.from === 'button') { // 来自页面内分享按钮
@@ -104,6 +174,7 @@
 	.container {
 		padding: 32rpx;
 	}
+
 	.view-btn {
 		margin-top: 40rpx;
 		margin-left: 40rpx;
@@ -115,13 +186,13 @@
 		justify-content: center;
 		align-items: center;
 	}
-	
+
 	.view-btn-text {
 		font-size: 32rpx;
 		font-weight: 500;
 		color: #FFFFFF;
 	}
-	
+
 	.save-btn {
 		margin-top: 30rpx;
 		margin-left: 40rpx;
@@ -133,7 +204,7 @@
 		justify-content: center;
 		align-items: center;
 	}
-	
+
 	.save-btn-text {
 		font-size: 32rpx;
 		font-weight: 500;

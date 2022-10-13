@@ -13,7 +13,7 @@
 				<u-line color="#f5f5f5"></u-line>
 			</view>
 		</view>
-		<view class="ad-banner">
+		<view class="ad-banner" v-if="!userInfo.is_hidden_ad">
 			<ad unit-id="adunit-a02c90eb01b74a15" ad-type="video" ad-theme="white"></ad>
 		</view>
 	</view>
@@ -26,6 +26,11 @@
 		store
 	} from '@/uni_modules/uni-id-pages/common/store.js'
 	export default {
+		computed: {
+			userInfo() {
+				return store.userInfo
+			}
+		},
 		data() {
 			return {
 				items: []
@@ -35,14 +40,10 @@
 			this.getTopicCollect();
 		},
 		methods: {
-			userInfo() {
-				return store.userInfo
-			},
 			getTopicCollect() {
-				let userInfo = this.userInfo();
 				console.log("开始请求topic-collect：", this.paper_id);
 				db.collection("topic-collect").where({
-					"user_id": userInfo._id,
+					"user_id": store.userInfo._id,
 				}).groupBy('paper_type').get().then((res) => {
 					console.log("获取topic-collect成功", JSON.stringify(res.result.data));
 					console.log("获取topic-collect成功", res.result.data);
@@ -59,13 +60,12 @@
 				});
 			},
 			cellClick(item) {
-				let userInfo = this.userInfo();
 				console.log("开始请求topic-collect：", item);
 				uniCloud.callFunction({
 					name: "collect-answer",
 					data: {
 						"paper_type": item.paper_type,
-						"user_id": userInfo._id
+						"user_id": store.userInfo._id
 					},
 					success(res) {						
 						// console.log("openTest", JSON.stringify(res.result.data))

@@ -132,40 +132,101 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default =
-{
-  data: function data() {
-    return {
-      url: "",
-      tempFilePath: "",
-      title: "" };
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
-  },
-  onLoad: function onLoad(options) {
-    wx.showShareMenu({
-      withShareTicket: true,
-      //设置下方的Menus菜单，才能够让发送给朋友与分享到朋友圈两个按钮可以点击
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js */ 153); //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var rewardedVideoAd = null;var _default = { computed: { userInfo: function userInfo() {return _store.store.userInfo;} }, data: function data() {return { url: "", tempFilePath: "", title: "", isLookAd: false };}, onLoad: function onLoad(options) {wx.showShareMenu({ withShareTicket: true, //设置下方的Menus菜单，才能够让发送给朋友与分享到朋友圈两个按钮可以点击
       menus: ["shareAppMessage", "shareTimeline"] });
-
     this.initData(options);
+    this.initAd();
   },
   methods: {
+    initAd: function initAd() {var _this = this;
+      if (wx.createRewardedVideoAd) {
+        rewardedVideoAd = wx.createRewardedVideoAd({
+          adUnitId: 'adunit-b392486bb2b18ada' });
+
+        rewardedVideoAd.onLoad(function () {
+          console.log('onLoad event emit');
+        });
+        rewardedVideoAd.onError(function (err) {
+          console.log('onError event emit', err);
+        });
+        rewardedVideoAd.onClose(function (res) {
+          // 用户点击了【关闭广告】按钮
+          if (res && res.isEnded) {
+            _this.isLookAd = true;
+            // 正常播放结束，可以下发游戏奖励
+            _this.saveBtnClick();
+          } else {
+            // 播放中途退出，不下发游戏奖励
+          }
+        });
+      }
+    },
+    playAd: function playAd() {
+      if (this.isLookAd) {
+        this.saveBtnClick();
+      } else {
+        if (rewardedVideoAd) {
+          rewardedVideoAd.show().catch(function () {
+            // 失败重试
+            rewardedVideoAd.load().
+            then(function () {return rewardedVideoAd.show();}).
+            catch(function (err) {
+              console.log('激励视频 广告显示失败');
+            });
+          });
+        }
+      }
+
+    },
     initData: function initData(options) {
       this.url = options.url;
       this.title = options.title;
@@ -203,13 +264,22 @@ var _default =
               } });
 
           }
-        }, fail: function fail(err) {
+        },
+        fail: function fail(err) {
           console.log('下载失败原因', err);
           uni.hideLoading();
         } });
 
     },
     saveBtnClick: function saveBtnClick() {
+      wx.shareFileMessage({
+        filePath: this.tempFilePath,
+        success: function success() {
+          console.log("转发成功");
+        },
+        fail: function fail(_fail) {
+          console.log(_fail);
+        } });
 
     },
     onShareAppMessage: function onShareAppMessage(res) {

@@ -182,7 +182,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js */ 163); //
+var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js */ 153); //
 //
 //
 //
@@ -203,7 +203,8 @@ var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js 
 //
 //
 //
-var db = uniCloud.database();var _default = { data: function data() {return { items: [] };}, onLoad: function onLoad(options) {this.getTopicCollect();}, methods: { userInfo: function userInfo() {return _store.store.userInfo;}, getTopicCollect: function getTopicCollect() {var _this = this;var userInfo = this.userInfo();console.log("开始请求topic-collect：", this.paper_id);db.collection("topic-collect").where({ "user_id": userInfo._id }).groupBy('paper_type').get().then(function (res) {
+var db = uniCloud.database();var _default = { computed: { userInfo: function userInfo() {return _store.store.userInfo;} }, data: function data() {return { items: [] };}, onLoad: function onLoad(options) {this.getTopicCollect();}, methods: { getTopicCollect: function getTopicCollect() {var _this = this;console.log("开始请求topic-collect：", this.paper_id);db.collection("topic-collect").where({ "user_id": _store.store.userInfo._id }).
+      groupBy('paper_type').get().then(function (res) {
         console.log("获取topic-collect成功", JSON.stringify(res.result.data));
         console.log("获取topic-collect成功", res.result.data);
         // this.items = res.result.data
@@ -219,13 +220,12 @@ var db = uniCloud.database();var _default = { data: function data() {return { it
       });
     },
     cellClick: function cellClick(item) {
-      var userInfo = this.userInfo();
       console.log("开始请求topic-collect：", item);
       uniCloud.callFunction({
         name: "collect-answer",
         data: {
           "paper_type": item.paper_type,
-          "user_id": userInfo._id },
+          "user_id": _store.store.userInfo._id },
 
         success: function success(res) {
           // console.log("openTest", JSON.stringify(res.result.data))

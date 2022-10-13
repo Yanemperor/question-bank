@@ -201,7 +201,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js */ 163); //
+var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js */ 153); //
 //
 //
 //
@@ -240,8 +240,10 @@ var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js 
 //
 //
 //
-var _default = { data: function data() {return { list: ['题型练习', '套卷练习'], current: 0, paper_id: "", types: [], questionList: [] };}, onLoad: function onLoad(options) {wx.showShareMenu({ withShareTicket: true, //设置下方的Menus菜单，才能够让发送给朋友与分享到朋友圈两个按钮可以点击
-      menus: ["shareAppMessage", "shareTimeline"] });this.initData(options);}, methods: { userInfo: function userInfo() {return _store.store.userInfo;}, initData: function initData(options) {this.paper_id = options.paper_id;this.getTypeData();this.getQuestionList();}, getTypeData: function getTypeData() {var _this = this;var db = uniCloud.database();console.log("开始请求topic_type：", this.paper_id);db.collection("topic_type").where({ "_id": this.paper_id }).get().then(function (res) {console.log("获取topic_type成功", JSON.stringify(res.result.data));_this.types = res.result.data[0].types;}).catch(function (e) {
+var _default = { computed: { userInfo: function userInfo() {return _store.store.userInfo;} }, data: function data() {return { list: ['题型练习', '套卷练习'], current: 0, paper_id: "", types: [], questionList: [] };}, onLoad: function onLoad(options) {wx.showShareMenu({ withShareTicket: true, //设置下方的Menus菜单，才能够让发送给朋友与分享到朋友圈两个按钮可以点击
+      menus: ["shareAppMessage", "shareTimeline"] });this.initData(options);}, methods: { initData: function initData(options) {this.paper_id = options.paper_id;this.getTypeData();this.getQuestionList();}, getTypeData: function getTypeData() {var _this = this;var db = uniCloud.database();console.log("开始请求topic_type：", this.paper_id);db.collection("topic_type").where({ "_id": this.paper_id }).get().then(function (res) {console.log("获取topic_type成功", JSON.stringify(res.result.data));
+        _this.types = res.result.data[0].types;
+      }).catch(function (e) {
         console.log("获取topic_type失败", e);
       });
     },
@@ -275,12 +277,11 @@ var _default = { data: function data() {return { list: ['题型练习', '套卷�
       // 	console.log("获取answer_questions失败", e);
       // });
 
-      var userInfo = this.userInfo();
       uniCloud.callFunction({
         name: "full-answer",
         data: {
           "paper_id": item.id,
-          "user_id": userInfo._id },
+          "user_id": _store.store.userInfo._id },
 
         success: function success(res) {
           // console.log("openTest", JSON.stringify(res.result.data))
@@ -301,7 +302,6 @@ var _default = { data: function data() {return { list: ['题型练习', '套卷�
       this.current = index;
     },
     cellClick: function cellClick(item) {
-      var userInfo = this.userInfo();
       uniCloud.callFunction({
         name: "answer-random",
         data: {
@@ -309,7 +309,7 @@ var _default = { data: function data() {return { list: ['题型练习', '套卷�
           "type": item.type,
           "typeName": item.typeName,
           "count": item.count,
-          "user_id": userInfo._id },
+          "user_id": _store.store.userInfo._id },
 
         success: function success(res) {
           // console.log("openTest", JSON.stringify(res.result.data))
