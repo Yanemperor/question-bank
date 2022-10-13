@@ -3,7 +3,7 @@ const db = uniCloud.database();
 const dbCmd = db.command
 exports.main = async (event, context) => {
 	// 6小时 21600000  1小时 3600000
-	const SEARCHLOG_timeZone = 3600000; // 归纳搜索记录时间间隔，毫秒数，默认为最近7天
+	const SEARCHLOG_timeZone = 21600000; // 归纳搜索记录时间间隔，毫秒数
 	const timeEnd = Date.now() - SEARCHLOG_timeZone;
 
 	let res = await db.collection('uni-id-users').where({

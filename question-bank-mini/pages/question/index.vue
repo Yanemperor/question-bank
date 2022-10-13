@@ -35,6 +35,7 @@
 		},
 		data() {
 			return {
+				hasLogin: false,
 				subjects: [{
 						img: "/static/subject/yuwen.png",
 						title: "大学语文",
@@ -88,12 +89,17 @@
 				})
 			},
 			initAd() {
-				mutations.updateUserInfo()
-				console.log("####", store.userInfo.is_hidden_ad)
-				if (store.userInfo.is_hidden_ad) {
-					return
+				this.hasLogin = uniCloud.getCurrentUserInfo().tokenExpired > Date.now()
+				console.log("是否登录", this.hasLogin)
+				if (this.hasLogin) {
+					mutations.updateUserInfo()
+					console.log("####", store.userInfo.is_hidden_ad)
+					if (store.userInfo.is_hidden_ad) {
+						console.log("不显示广告")
+						return
+					}
 				}
-				
+
 				if (wx.createInterstitialAd) {
 					interstitialAd = wx.createInterstitialAd({
 						adUnitId: 'adunit-3a5ff13e60d7adaf'

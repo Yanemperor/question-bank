@@ -132,7 +132,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni, uniCloud) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
@@ -180,7 +180,8 @@ var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js 
 //
 //
 //
-var interstitialAd = null;var _default = { computed: { userInfo: function userInfo() {return _store.store.userInfo;} }, data: function data() {return { subjects: [{ img: "/static/subject/yuwen.png", title: "大学语文", paper_id: "top_up_language" }, { img: "/static/subject/english.png", title: "大学英语", paper_id: "top_up_english" }, { img: "/static/subject/zhengzhi.png",
+var interstitialAd = null;var _default = { computed: { userInfo: function userInfo() {return _store.store.userInfo;} }, data: function data() {return { hasLogin: false, subjects: [{ img: "/static/subject/yuwen.png", title: "大学语文", paper_id: "top_up_language" }, { img: "/static/subject/english.png", title: "大学英语", paper_id: "top_up_english" }, {
+        img: "/static/subject/zhengzhi.png",
         title: "政治",
         paper_id: "top_up_political" },
 
@@ -222,10 +223,15 @@ var interstitialAd = null;var _default = { computed: { userInfo: function userIn
 
     },
     initAd: function initAd() {var _this = this;
-      _store.mutations.updateUserInfo();
-      console.log("####", _store.store.userInfo.is_hidden_ad);
-      if (_store.store.userInfo.is_hidden_ad) {
-        return;
+      this.hasLogin = uniCloud.getCurrentUserInfo().tokenExpired > Date.now();
+      console.log("是否登录", this.hasLogin);
+      if (this.hasLogin) {
+        _store.mutations.updateUserInfo();
+        console.log("####", _store.store.userInfo.is_hidden_ad);
+        if (_store.store.userInfo.is_hidden_ad) {
+          console.log("不显示广告");
+          return;
+        }
       }
 
       if (wx.createInterstitialAd) {
@@ -274,7 +280,7 @@ var interstitialAd = null;var _default = { computed: { userInfo: function userIn
         summary: "" };
 
     } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 6)["default"]))
 
 /***/ }),
 

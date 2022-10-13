@@ -15,6 +15,7 @@
     "pages/list/search/search",
     "pages/list/detail",
     "pages/ucenter/about/about",
+    "pages/ucenter/ad/index",
     "pages/ucenter/about/business_cooperation",
     "pages/ucenter/about/more_app",
     "uni_modules/uni-upgrade-center-app/pages/upgrade-popup",
