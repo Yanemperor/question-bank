@@ -172,12 +172,21 @@
 				<view class="text-gray">下一题</view>
 			</view>
 
-			<view class="action" @click="FavorSubject">
+			<view v-if="!isUserWrong" class="action" @click="FavorSubject">
 				<view class="cuIcon-cu-image">
 					<text class="lg cuIcon-favor" :class="[userFavor?'text-red':'text-gray']"></text>
 				</view>
 				<view :class="[userFavor?'text-red':'text-gray']">收藏</view>
 			</view>
+			
+			<view v-else class="action" @click="wrongSubject">
+				<view class="cuIcon-cu-image">
+					<text class="lg cuIcon-favor" :class="[isUserWrong?'text-red':'text-gray']"></text>
+				</view>
+				<view :class="[isUserWrong?'text-red':'text-gray']">错题</view>
+			</view>
+			
+			
 
 			<view class="action" @click="ShowAnswerChange">
 				<view class="cuIcon-cu-image">
@@ -248,7 +257,8 @@
 				errorList: ['题目不完整', '答案不正确', '含有错别字', '图片不存在', '解析不完整', '其他错误'],
 				correctCount: 0,
 				wrongTopics: [],
-				modelTitle: "请登录后再收藏题目吧"
+				modelTitle: "请登录后再收藏题目吧",
+				isUserWrong: false,
 			}
 		},
 		onReady() {
@@ -295,6 +305,10 @@
 			uni.setNavigationBarTitle({
 				title: this.title
 			});
+			if (options.isUserWrong) {
+				this.isUserWrong = true
+			}
+			
 			if (options.json) {
 
 				let json = decodeURIComponent(options.json)
@@ -318,6 +332,7 @@
 				this.subjectList = temps;
 				this.currentType = this.subjectList[0].typeName;
 				this.userFavor = this.subjectList[0].userFavor;
+				this.isUserWrong = this.subjectList[0].isUserWrong;
 				let title = this.subjectList[0].title;
 				if (this.subjectList[0].article) {
 					this.article = this.subjectList[0].article;
@@ -360,6 +375,7 @@
 					this.subjectIndex = index;
 					this.currentType = this.subjectList[index].typeName;
 					this.userFavor = this.subjectList[index].userFavor;
+					this.isUserWrong = this.subjectList[index].isUserWrong;
 					this.article = this.subjectList[index].article;
 					let title = this.subjectList[index].title;
 					console.log("titleCount", title.length)
@@ -587,6 +603,50 @@
 						console.log("获取wrong-topic失败", e);
 					}
 				})
+			},
+			wrongSubject() {
+				if (!this.hasLogin()) {
+					this.modelTitle = "请登录后再添加错题吧"
+					this.modalShow = true
+					return
+				}
+				let userInfo = this.userInfo()
+				let topic = this.subjectList[this.subjectIndex]
+				console.log("userInfo:", JSON.stringify(userInfo))
+				
+				if (this.isUserWrong) {
+					this.wrongCollect(userInfo, topic, false)
+				} else {
+					this.wrongCollect(userInfo, topic, true)
+				}
+			},
+			wrongCollect(userInfo, topic, isCollect) {
+				const db = uniCloud.database();
+				if (isCollect) {
+					db.collection("wrong-topic").add({
+						"user_id": userInfo._id,
+						"topic_id": topic._id,
+						"paper_type": topic.paper_type,
+						"topic_type": topic.type
+					}).then((res) => {
+						console.log("获取wrong-topic成功", JSON.stringify(res.result.data));
+						this.isUserWrong = true;
+						this.subjectList[this.subjectIndex].isUserWrong = true;
+					}).catch((e) => {
+						console.log("获取wrong-topic失败", e);
+					});
+				} else {
+					db.collection("wrong-topic").where({
+						"user_id": userInfo._id,
+						"topic_id": topic._id
+					}).remove().then((res) => {
+						console.log("获取wrong-topic成功", JSON.stringify(res.result.data));
+						this.isUserWrong = false;
+						this.subjectList[this.subjectIndex].isUserWrong = false;
+					}).catch((e) => {
+						console.log("获取wrong-topic失败", e);
+					});
+				}
 			},
 			// 返回
 			toBack() {

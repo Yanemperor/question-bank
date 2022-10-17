@@ -285,6 +285,11 @@ var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js 
         "to": '/pages/ucenter/collection/collection',
         "icon": "flag" },
 
+      {
+        "title": "错题集",
+        "to": '/pages/ucenter/wrong-topic/wrong-topic',
+        "icon": "minus" },
+
 
       // {
       // 	"title": this.$t('mine.signIn'),

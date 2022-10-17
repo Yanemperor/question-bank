@@ -277,6 +277,15 @@
 				"navigationBarTitleText": "注册管理员账号"
 			}
 		}
+        ,{
+            "path" : "pages/ucenter/wrong-topic/wrong-topic",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "错题集",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		// #ifdef H5

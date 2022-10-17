@@ -82,6 +82,11 @@
 							"to": '/pages/ucenter/collection/collection',
 							"icon": "flag"
 						},
+						{
+							"title": "错题集",
+							"to": '/pages/ucenter/wrong-topic/wrong-topic',
+							"icon": "minus"
+						},
 
 						// {
 						// 	"title": this.$t('mine.signIn'),
@@ -94,7 +99,7 @@
 						// 	"event": 'getScore',
 						// 	"icon": "paperplane"
 						// },
-						
+
 						{
 							"title": "免广告",
 							"to": '/pages/ucenter/ad/index',
@@ -110,7 +115,7 @@
 							"to": '/uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback',
 							"icon": "help"
 						},
-						 {
+						{
 							"title": this.$t('mine.settings'),
 							"to": '/pages/ucenter/settings/settings',
 							"icon": "gear"

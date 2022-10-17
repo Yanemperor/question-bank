@@ -465,7 +465,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
 var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js */ 153); //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -697,7 +715,7 @@ var _default = { data: function data() {return { modalShow: false, submitShow: f
       swiperHeight: '800px', //
       title: '', subjectList: [], modalCard: null, //显示答题卡
       modalError: null, //纠错卡
-      errorList: ['题目不完整', '答案不正确', '含有错别字', '图片不存在', '解析不完整', '其他错误'], correctCount: 0, wrongTopics: [], modelTitle: "请登录后再收藏题目吧" };}, onReady: function onReady() {var tempHeight = 800;var _me = this;uni.getSystemInfo({ //获取手机屏幕高度信息，让swiper的高度和手机屏幕一样高                
+      errorList: ['题目不完整', '答案不正确', '含有错别字', '图片不存在', '解析不完整', '其他错误'], correctCount: 0, wrongTopics: [], modelTitle: "请登录后再收藏题目吧", isUserWrong: false };}, onReady: function onReady() {var tempHeight = 800;var _me = this;uni.getSystemInfo({ //获取手机屏幕高度信息，让swiper的高度和手机屏幕一样高                
       success: function success(res) {// console.log(res.model);                    
         // console.log(res.pixelRatio);                    
         // console.log(res.windowWidth);                    
@@ -706,14 +724,14 @@ var _default = { data: function data() {return { modalShow: false, submitShow: f
         // console.log(res.language);                    
         // console.log(res.version);                    
         // console.log(res.platform);                    
-        tempHeight = res.windowHeight;console.log("屏幕可用高度 " + tempHeight);uni.createSelectorQuery().select("#top-box").fields({ size: true, scrollOffset: true }, function (data) {tempHeight -= data.height;console.log("减掉顶部后的高度 " + tempHeight);uni.createSelectorQuery().select("#foot-box").fields({ size: true, scrollOffset: true }, function (data) {tempHeight -= data.height;console.log("减掉底部后的高度 " + tempHeight);_me.swiperHeight = tempHeight + 'px';console.log("滑屏最后高度 " + _me.swiperHeight);}).exec();}).exec();} });}, onLoad: function onLoad(options) {uni.setNavigationBarTitle({ title: this.title });if (options.json) {var json = decodeURIComponent(options.json);console.log("options.json:", JSON.stringify(json));var details = JSON.parse(json); //添加用户显示答案字段
+        tempHeight = res.windowHeight;console.log("屏幕可用高度 " + tempHeight);uni.createSelectorQuery().select("#top-box").fields({ size: true, scrollOffset: true }, function (data) {tempHeight -= data.height;console.log("减掉顶部后的高度 " + tempHeight);uni.createSelectorQuery().select("#foot-box").fields({ size: true, scrollOffset: true }, function (data) {tempHeight -= data.height;console.log("减掉底部后的高度 " + tempHeight);_me.swiperHeight = tempHeight + 'px';console.log("滑屏最后高度 " + _me.swiperHeight);}).exec();}).exec();} });}, onLoad: function onLoad(options) {uni.setNavigationBarTitle({ title: this.title });if (options.isUserWrong) {this.isUserWrong = true;}if (options.json) {var json = decodeURIComponent(options.json);console.log("options.json:", JSON.stringify(json));var details = JSON.parse(json); //添加用户显示答案字段
       // for (var i = 0; i < details.length; i++) {
       // 	// this.$set(details[i], "showAnswer", false);
       // 	details[i].showAnswer = false;
       // }
-      var temps = [];details.map(function (item, index) {temps.push(Object.assign(item, { "showAnswer": false, "userAnswer": "" }));});console.log("detail:", JSON.stringify(temps));this.subjectList = temps;this.currentType = this.subjectList[0].typeName;this.userFavor = this.subjectList[0].userFavor;var title = this.subjectList[0].title;if (this.subjectList[0].article) {this.article = this.subjectList[0].article;this.isShowArticle = true;} else if (title.length > 500) {this.article = title;this.isShowArticle = true;} else {this.isShowArticle = false;}}}, methods: { userInfo: function userInfo() {return _store.store.userInfo;}, hasLogin: function hasLogin() {return _store.store.hasLogin;}, showCardModal: function showCardModal(e) {this.modalCard = e.currentTarget.dataset.target;}, hideCardModal: function hideCardModal(e) {this.modalCard = null;}, showErrorModal: function showErrorModal(e) {// this.modalError = e.currentTarget.dataset.target
+      var temps = [];details.map(function (item, index) {temps.push(Object.assign(item, { "showAnswer": false, "userAnswer": "" }));});console.log("detail:", JSON.stringify(temps));this.subjectList = temps;this.currentType = this.subjectList[0].typeName;this.userFavor = this.subjectList[0].userFavor;this.isUserWrong = this.subjectList[0].isUserWrong;var title = this.subjectList[0].title;if (this.subjectList[0].article) {this.article = this.subjectList[0].article;this.isShowArticle = true;} else if (title.length > 500) {this.article = title;this.isShowArticle = true;} else {this.isShowArticle = false;}}}, methods: { userInfo: function userInfo() {return _store.store.userInfo;}, hasLogin: function hasLogin() {return _store.store.hasLogin;}, showCardModal: function showCardModal(e) {this.modalCard = e.currentTarget.dataset.target;}, hideCardModal: function hideCardModal(e) {this.modalCard = null;}, showErrorModal: function showErrorModal(e) {// this.modalError = e.currentTarget.dataset.target
       uni.navigateTo({ url: '/uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback' });}, hideErrorModal: function hideErrorModal(e) {this.modalError = null;}, SwiperChange: function SwiperChange(e) {//滑动事件
-      var index = e.target.current;if (index != undefined) {this.subjectIndex = index;this.currentType = this.subjectList[index].typeName;this.userFavor = this.subjectList[index].userFavor;this.article = this.subjectList[index].article;var title = this.subjectList[index].title;console.log("titleCount", title.length);if (this.subjectList[index].type === 6) {this.article = this.subjectList[index].title;this.isShowArticle = true;} else if (title.length > 500) {this.article = title;this.isShowArticle = true;} else {this.isShowArticle = false;}}}, RadioboxChange: function RadioboxChange(e) {//单选选中
+      var index = e.target.current;if (index != undefined) {this.subjectIndex = index;this.currentType = this.subjectList[index].typeName;this.userFavor = this.subjectList[index].userFavor;this.isUserWrong = this.subjectList[index].isUserWrong;this.article = this.subjectList[index].article;var title = this.subjectList[index].title;console.log("titleCount", title.length);if (this.subjectList[index].type === 6) {this.article = this.subjectList[index].title;this.isShowArticle = true;} else if (title.length > 500) {this.article = title;this.isShowArticle = true;} else {this.isShowArticle = false;}}}, RadioboxChange: function RadioboxChange(e) {//单选选中
       var items = this.subjectList[this.subjectIndex].options;var values = e.detail.value;console.log(values);this.subjectList[this.subjectIndex].userAnswer = values;if (values == this.subjectList[this.subjectIndex].answer) {// 答对切换到下一题
         if (this.autoRadioNext && this.subjectIndex < this.subjectList.length - 1) {this.subjectIndex += 1;};} else {// 答错显示答案
         this.ShowAnswerChange();}}, CheckboxChange: function CheckboxChange(e) {//复选选中
@@ -721,9 +739,7 @@ var _default = { data: function data() {return { modalShow: false, submitShow: f
       this.subjectList[this.subjectIndex].userAnswer = e.detail.value;}, ShowAnswerChange: function ShowAnswerChange(e) {//显示答案
       if (this.subjectList[this.subjectIndex].showAnswer) {this.subjectList[this.subjectIndex].showAnswer = false;} else {this.subjectList[this.subjectIndex].showAnswer = true;}}, modalConfirm: function modalConfirm() {console.log("去登录");uni.redirectTo({ url: '/uni_modules/uni-id-pages/pages/login/login-withoutpwd' });}, FavorSubject: function FavorSubject(e) {//收藏题
       if (!this.hasLogin()) {this.modelTitle = "请登录后再收藏题目吧";this.modalShow = true;return;}var userInfo = this.userInfo();var topic = this.subjectList[this.subjectIndex];console.log("userInfo:", JSON.stringify(userInfo));if (this.userFavor) {this.collect(userInfo, topic, false);} else {this.collect(userInfo, topic, true);}}, collect: function collect(userInfo, topic, isCollect) {var _this = this;var db = uniCloud.database();console.log("开始请求topic-collect：", this.paper_id);console.log("topic-collect:", userInfo._id);console.log("topic-collect:", topic._id);console.log("topic-collect:", topic.paper_type);console.log("topic-collect:", topic.type);if (isCollect) {db.collection("topic-collect").add({ "user_id": userInfo._id, "topic_id": topic._id, "paper_type": topic.paper_type, "topic_type": topic.type }).then(function (res) {console.log("获取topic-collect成功", JSON.stringify(res.result.data));_this.userFavor = true;_this.subjectList[_this.subjectIndex].userFavor = true;}).catch(function (e) {console.log("获取topic-collect失败", e);});} else {db.collection("topic-collect").where({ "user_id": userInfo._id, "topic_id": topic._id }).remove().then(function (res) {console.log("获取topic-collect成功", JSON.stringify(res.result.data));_this.userFavor = false;_this.subjectList[_this.subjectIndex].userFavor = false;}).catch(function (e) {console.log("获取topic-collect失败", e);});}}, MoveSubject: function MoveSubject(e) {//上一题、下一题
-      if (e === -1 && this.subjectIndex != 0) {this.subjectIndex -= 1;}
-      if (e === 1 && this.subjectIndex < this.subjectList.length - 1) {
-        this.subjectIndex += 1;
+      if (e === -1 && this.subjectIndex != 0) {this.subjectIndex -= 1;}if (e === 1 && this.subjectIndex < this.subjectList.length - 1) {this.subjectIndex += 1;
       }
     },
 
@@ -830,6 +846,50 @@ var _default = { data: function data() {return { modalShow: false, submitShow: f
           console.log("获取wrong-topic失败", e);
         } });
 
+    },
+    wrongSubject: function wrongSubject() {
+      if (!this.hasLogin()) {
+        this.modelTitle = "请登录后再添加错题吧";
+        this.modalShow = true;
+        return;
+      }
+      var userInfo = this.userInfo();
+      var topic = this.subjectList[this.subjectIndex];
+      console.log("userInfo:", JSON.stringify(userInfo));
+
+      if (this.isUserWrong) {
+        this.wrongCollect(userInfo, topic, false);
+      } else {
+        this.wrongCollect(userInfo, topic, true);
+      }
+    },
+    wrongCollect: function wrongCollect(userInfo, topic, isCollect) {var _this2 = this;
+      var db = uniCloud.database();
+      if (isCollect) {
+        db.collection("wrong-topic").add({
+          "user_id": userInfo._id,
+          "topic_id": topic._id,
+          "paper_type": topic.paper_type,
+          "topic_type": topic.type }).
+        then(function (res) {
+          console.log("获取wrong-topic成功", JSON.stringify(res.result.data));
+          _this2.isUserWrong = true;
+          _this2.subjectList[_this2.subjectIndex].isUserWrong = true;
+        }).catch(function (e) {
+          console.log("获取wrong-topic失败", e);
+        });
+      } else {
+        db.collection("wrong-topic").where({
+          "user_id": userInfo._id,
+          "topic_id": topic._id }).
+        remove().then(function (res) {
+          console.log("获取wrong-topic成功", JSON.stringify(res.result.data));
+          _this2.isUserWrong = false;
+          _this2.subjectList[_this2.subjectIndex].isUserWrong = false;
+        }).catch(function (e) {
+          console.log("获取wrong-topic失败", e);
+        });
+      }
     },
     // 返回
     toBack: function toBack() {
