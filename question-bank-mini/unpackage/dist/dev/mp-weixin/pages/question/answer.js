@@ -105,6 +105,9 @@ try {
     },
     uModal: function() {
       return Promise.all(/*! import() | uni_modules/uview-ui/components/u-modal/u-modal */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-modal/u-modal")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-modal/u-modal.vue */ 552))
+    },
+    uText: function() {
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-text/u-text */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-text/u-text")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-text/u-text.vue */ 959))
     }
   }
 } catch (e) {
@@ -187,6 +190,14 @@ var render = function() {
     _vm.e1 = function($event) {
       _vm.modalShow = false
     }
+
+    _vm.e2 = function($event) {
+      _vm.submitShow = false
+    }
+
+    _vm.e3 = function($event) {
+      _vm.submitShow = false
+    }
   }
 
   _vm.$mp.data = Object.assign(
@@ -231,6 +242,27 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni, uniCloud) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -635,7 +667,28 @@ var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js 
 //
 //
 //
-var _default = { data: function data() {return { modalShow: false, show: false, article: "", // 文章
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+var _default = { data: function data() {return { modalShow: false, submitShow: false, conclusionShow: false, show: false, article: "", // 文章
       isShowArticle: false, userFavor: false, //是否已收藏
       currentType: "", //当前题型
       subjectIndex: 0, //跳转索引
@@ -644,7 +697,7 @@ var _default = { data: function data() {return { modalShow: false, show: false, 
       swiperHeight: '800px', //
       title: '', subjectList: [], modalCard: null, //显示答题卡
       modalError: null, //纠错卡
-      errorList: ['题目不完整', '答案不正确', '含有错别字', '图片不存在', '解析不完整', '其他错误'] };}, onReady: function onReady() {var tempHeight = 800;var _me = this;uni.getSystemInfo({ //获取手机屏幕高度信息，让swiper的高度和手机屏幕一样高                
+      errorList: ['题目不完整', '答案不正确', '含有错别字', '图片不存在', '解析不完整', '其他错误'], correctCount: 0, wrongTopics: [], modelTitle: "请登录后再收藏题目吧" };}, onReady: function onReady() {var tempHeight = 800;var _me = this;uni.getSystemInfo({ //获取手机屏幕高度信息，让swiper的高度和手机屏幕一样高                
       success: function success(res) {// console.log(res.model);                    
         // console.log(res.pixelRatio);                    
         // console.log(res.windowWidth);                    
@@ -667,29 +720,8 @@ var _default = { data: function data() {return { modalShow: false, show: false, 
       var items = this.subjectList[this.subjectIndex].options;var values = e.detail.value;this.subjectList[this.subjectIndex].userAnswer = "";for (var i = 0, lenI = items.length; i < lenI; ++i) {for (var j = 0, lenJ = values.length; j < lenJ; ++j) {if (items[i].key == values[j]) {this.subjectList[this.subjectIndex].userAnswer += items[i].key;break;}}}}, textInput: function textInput(e) {//填空题
       this.subjectList[this.subjectIndex].userAnswer = e.detail.value;}, ShowAnswerChange: function ShowAnswerChange(e) {//显示答案
       if (this.subjectList[this.subjectIndex].showAnswer) {this.subjectList[this.subjectIndex].showAnswer = false;} else {this.subjectList[this.subjectIndex].showAnswer = true;}}, modalConfirm: function modalConfirm() {console.log("去登录");uni.redirectTo({ url: '/uni_modules/uni-id-pages/pages/login/login-withoutpwd' });}, FavorSubject: function FavorSubject(e) {//收藏题
-      if (!this.hasLogin()) {this.modalShow = true;return;}var userInfo = this.userInfo();var topic = this.subjectList[this.subjectIndex];console.log("userInfo:", JSON.stringify(userInfo));if (this.userFavor) {this.collect(userInfo, topic, false); // this.userFavor = false;
-        // this.subjectList[this.subjectIndex].userFavor = false;
-      } else {this.collect(userInfo, topic, true); // this.userFavor = true;
-        // this.subjectList[this.subjectIndex].userFavor = true;
-      }}, collect: function collect(userInfo, topic, isCollect) {var _this = this;var db = uniCloud.database();console.log("开始请求topic-collect：", this.paper_id);console.log("topic-collect:", userInfo._id);console.log("topic-collect:", topic._id);console.log("topic-collect:", topic.paper_type);console.log("topic-collect:", topic.type);if (isCollect) {db.collection("topic-collect").add({ "user_id": userInfo._id, "topic_id": topic._id, "paper_type": topic.paper_type, "topic_type": topic.type }).then(function (res) {console.log("获取topic-collect成功", JSON.stringify(res.result.data));_this.userFavor = true;_this.subjectList[_this.subjectIndex].userFavor = true;}).catch(function (e) {console.log("获取topic-collect失败", e);});} else {
-        db.collection("topic-collect").where({
-          "user_id": userInfo._id,
-          "topic_id": topic._id }).
-        remove().then(function (res) {
-          console.log("获取topic-collect成功", JSON.stringify(res.result.data));
-          _this.userFavor = false;
-          _this.subjectList[_this.subjectIndex].userFavor = false;
-        }).catch(function (e) {
-          console.log("获取topic-collect失败", e);
-        });
-      }
-    },
-
-    MoveSubject: function MoveSubject(e) {//上一题、下一题
-
-      if (e === -1 && this.subjectIndex != 0) {
-        this.subjectIndex -= 1;
-      }
+      if (!this.hasLogin()) {this.modelTitle = "请登录后再收藏题目吧";this.modalShow = true;return;}var userInfo = this.userInfo();var topic = this.subjectList[this.subjectIndex];console.log("userInfo:", JSON.stringify(userInfo));if (this.userFavor) {this.collect(userInfo, topic, false);} else {this.collect(userInfo, topic, true);}}, collect: function collect(userInfo, topic, isCollect) {var _this = this;var db = uniCloud.database();console.log("开始请求topic-collect：", this.paper_id);console.log("topic-collect:", userInfo._id);console.log("topic-collect:", topic._id);console.log("topic-collect:", topic.paper_type);console.log("topic-collect:", topic.type);if (isCollect) {db.collection("topic-collect").add({ "user_id": userInfo._id, "topic_id": topic._id, "paper_type": topic.paper_type, "topic_type": topic.type }).then(function (res) {console.log("获取topic-collect成功", JSON.stringify(res.result.data));_this.userFavor = true;_this.subjectList[_this.subjectIndex].userFavor = true;}).catch(function (e) {console.log("获取topic-collect失败", e);});} else {db.collection("topic-collect").where({ "user_id": userInfo._id, "topic_id": topic._id }).remove().then(function (res) {console.log("获取topic-collect成功", JSON.stringify(res.result.data));_this.userFavor = false;_this.subjectList[_this.subjectIndex].userFavor = false;}).catch(function (e) {console.log("获取topic-collect失败", e);});}}, MoveSubject: function MoveSubject(e) {//上一题、下一题
+      if (e === -1 && this.subjectIndex != 0) {this.subjectIndex -= 1;}
       if (e === 1 && this.subjectIndex < this.subjectList.length - 1) {
         this.subjectIndex += 1;
       }
@@ -712,6 +744,96 @@ var _default = { data: function data() {return { modalShow: false, show: false, 
     close: function close() {
       this.show = false;
       // console.log('close');
+    },
+    // 交卷
+    submit: function submit() {
+      this.modalCard = null;
+      var isDone = true;
+      for (var i = 0; i < this.subjectList.length; i++) {
+        var item = this.subjectList[i];
+        if (item.userAnswer === "") {
+          isDone = false;
+          break;
+        }
+      }
+      if (isDone) {
+        // 全部完成
+        this.showConclusion();
+      } else {
+        // 还有未完成
+        this.submitShow = true;
+      }
+    },
+    submitConfirm: function submitConfirm() {
+      this.submitShow = false;
+      this.showConclusion();
+    },
+    showConclusion: function showConclusion() {
+      var temps = [];
+      for (var i = 0; i < this.subjectList.length; i++) {
+        var item = this.subjectList[i];
+        console.log("item:", item);
+        if (item.answer == item.userAnswer) {
+          continue;
+        }
+        if (item.userAnswer === "") {
+          temps.push(item);
+        } else if (item.type === 0 || item.type === 1 || item.type === 3 || item.type === 6 || item.type === 7) {
+          item.userAnswer = "";
+          item.showAnswer = false;
+          temps.push(item);
+        }
+      }
+      this.wrongTopics = temps;
+      this.correctCount = this.subjectList.length - this.wrongTopics.length;
+      this.conclusionShow = true;
+    },
+    // 错题再战
+    wrongTopicNext: function wrongTopicNext() {
+      this.subjectList = this.wrongTopics;
+      this.subjectIndex = 0;
+      this.conclusionShow = false;
+    },
+    // 保存错题
+    saveWrongTopic: function saveWrongTopic() {
+      if (!this.hasLogin()) {
+        this.modelTitle = "请登录后再保存错题吧";
+        this.conclusionShow = false;
+        this.modalShow = true;
+        return;
+      }
+      var userInfo = this.userInfo();
+      var temps = [];
+      this.wrongTopics.map(function (item, index) {
+        var temp = {
+          "user_id": userInfo._id,
+          "topic_id": item._id,
+          "paper_type": item.paper_type,
+          "topic_type": item.type };
+
+        temps.push(temp);
+      });
+      var that = this;
+      uniCloud.callFunction({
+        name: "wrong-topic",
+        data: {
+          "user_id": _store.store.userInfo._id,
+          "wrongTopics": temps },
+
+        success: function success(res) {
+          // console.log("openTest", JSON.stringify(res.result.data))
+          console.log("获取wrong-topic成功", JSON.stringify(res.result.data));
+          that.conclusionShow = false;
+          that.toBack();
+        },
+        fail: function fail(e) {
+          console.log("获取wrong-topic失败", e);
+        } });
+
+    },
+    // 返回
+    toBack: function toBack() {
+      uni.navigateBack();
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 6)["default"]))
 

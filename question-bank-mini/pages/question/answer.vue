@@ -28,6 +28,8 @@
 						<view class="action">
 							<text class="cuIcon-title text-red"></text>答题卡
 						</view>
+
+						<button class="cu-btn bg-green shadow" @tap="submit" data-target="modalCard">交卷</button>
 					</view>
 					<view class="grid col-5 ">
 						<view class="margin-tb-sm text-center" v-for="(subject,index) in subjectList" :key="index">
@@ -195,8 +197,27 @@
 				<text>{{ article }}</text>
 			</view>
 		</u-popup>
-		<u-modal :show="modalShow" title='请登录后再收藏题目吧' showCancelButton="true" confirmText="去登录"
+		<u-modal :show="modalShow" :title='modelTitle' showCancelButton="true" confirmText="去登录"
 			@cancel="modalShow=false" @confirm="modalConfirm"></u-modal>
+		<u-modal :show="submitShow" title='您还有未完成的题目,是否提交？' showCancelButton="true" @cancel="submitShow=false"
+			@confirm="submitConfirm"></u-modal>
+		<u-popup :show="conclusionShow" mode="center" :round="10" @close="submitShow=false">
+			<view class="conclusion-content">
+				<view class="conclusion-content-title">
+					<text>共答对:<text style="color: #5ac725;">{{ correctCount }}</text>题, 答错:<text style="color: #f56c6c;">{{ wrongTopics.length }}</text>题, 总共:<text style="color: #3c9cff;">{{ subjectList.length }}</text>题</text>
+				</view>
+				<u-text text="(注意：简答题无法统计, 只要回答都会统计为正确)" type="info"></u-text>
+				<view class="" style="margin-top: 40rpx">
+					<u-button type="primary" text="错题再战" @click="wrongTopicNext"></u-button>
+				</view>
+				<view class="" style="margin-top: 20rpx">
+					<u-button type="primary" text="保存到错题集" @click="saveWrongTopic"></u-button>
+				</view>
+				<view class="" style="margin-top: 20rpx">
+					<u-button type="primary" text="休息一会" @click="toBack"></u-button>
+				</view>
+			</view>
+		</u-popup>
 	</view>
 </template>
 
@@ -209,6 +230,8 @@
 		data() {
 			return {
 				modalShow: false,
+				submitShow: false,
+				conclusionShow: false,
 				show: false,
 				article: "", // 文章
 				isShowArticle: false,
@@ -222,7 +245,10 @@
 				subjectList: [],
 				modalCard: null, //显示答题卡
 				modalError: null, //纠错卡
-				errorList: ['题目不完整', '答案不正确', '含有错别字', '图片不存在', '解析不完整', '其他错误']
+				errorList: ['题目不完整', '答案不正确', '含有错别字', '图片不存在', '解析不完整', '其他错误'],
+				correctCount: 0,
+				wrongTopics: [],
+				modelTitle: "请登录后再收藏题目吧"
 			}
 		},
 		onReady() {
@@ -380,9 +406,7 @@
 				}
 			},
 			textInput: function(e) { //填空题
-
 				this.subjectList[this.subjectIndex].userAnswer = e.detail.value;
-
 			},
 			ShowAnswerChange: function(e) { //显示答案
 
@@ -401,6 +425,7 @@
 			},
 			FavorSubject: function(e) { //收藏题
 				if (!this.hasLogin()) {
+					this.modelTitle = "请登录后再收藏题目吧"
 					this.modalShow = true
 					return
 				}
@@ -410,12 +435,8 @@
 
 				if (this.userFavor) {
 					this.collect(userInfo, topic, false)
-					// this.userFavor = false;
-					// this.subjectList[this.subjectIndex].userFavor = false;
 				} else {
 					this.collect(userInfo, topic, true)
-					// this.userFavor = true;
-					// this.subjectList[this.subjectIndex].userFavor = true;
 				}
 
 			},
@@ -480,7 +501,98 @@
 			close() {
 				this.show = false
 				// console.log('close');
+			},
+			// 交卷
+			submit() {
+				this.modalCard = null;
+				var isDone = true
+				for (var i = 0; i < this.subjectList.length; i++) {
+					let item = this.subjectList[i]
+					if (item.userAnswer === "") {
+						isDone = false
+						break;
+					}
+				}
+				if (isDone) {
+					// 全部完成
+					this.showConclusion()
+				} else {
+					// 还有未完成
+					this.submitShow = true
+				}
+			},
+			submitConfirm() {
+				this.submitShow = false
+				this.showConclusion()
+			},
+			showConclusion() {
+				var temps = []
+				for (var i = 0; i < this.subjectList.length; i++) {
+					let item = this.subjectList[i]
+					console.log("item:", item)
+					if (item.answer == item.userAnswer) {
+						continue
+					}
+					if (item.userAnswer === "") {
+						temps.push(item)
+					} else if (item.type===0 || item.type===1 || item.type===3 || item.type===6 || item.type===7) {
+						item.userAnswer = ""
+						item.showAnswer = false
+						temps.push(item)
+					}
+				}
+				this.wrongTopics = temps
+				this.correctCount = this.subjectList.length - this.wrongTopics.length
+				this.conclusionShow = true
+			},
+			// 错题再战
+			wrongTopicNext() {
+				this.subjectList = this.wrongTopics
+				this.subjectIndex = 0
+				this.conclusionShow = false
+			},
+			// 保存错题
+			saveWrongTopic() {
+				if (!this.hasLogin()) {
+					this.modelTitle = "请登录后再保存错题吧"
+					this.conclusionShow = false
+					this.modalShow = true
+					return
+				}
+				let userInfo = this.userInfo()
+				var temps = []
+				this.wrongTopics.map((item, index) => {
+					var temp = {
+						"user_id": userInfo._id,
+						"topic_id": item._id,
+						"paper_type": item.paper_type,
+						"topic_type": item.type
+					}
+					temps.push(temp)
+				})
+				var that = this;
+				uniCloud.callFunction({
+					name: "wrong-topic",
+					data: {
+						"user_id": store.userInfo._id,
+						"wrongTopics": temps
+					},
+					success(res) {						
+						// console.log("openTest", JSON.stringify(res.result.data))
+						console.log("获取wrong-topic成功", JSON.stringify(res.result.data));
+						that.conclusionShow = false
+						that.toBack()
+					},
+					fail(e) {
+						console.log("获取wrong-topic失败", e);
+					}
+				})
+			},
+			// 返回
+			toBack() {
+				uni.navigateBack()
 			}
+
 		}
 	}
 </script>
@@ -511,5 +623,12 @@
 
 	.cu-list.menu>.cu-item-error {
 		justify-content: flex-start;
+	}
+	
+	.conclusion-content {
+		padding: 40rpx 60rpx;
+	}
+	.conclusion-content-title {
+		display: flex;
 	}
 </style>

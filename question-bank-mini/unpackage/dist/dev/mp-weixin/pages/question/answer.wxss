@@ -324,4 +324,10 @@ page {
 .cu-list.menu>.cu-item-error {
 	justify-content: flex-start;
 }
+.conclusion-content {
+	padding: 40rpx 60rpx;
+}
+.conclusion-content-title {
+	display: flex;
+}
 

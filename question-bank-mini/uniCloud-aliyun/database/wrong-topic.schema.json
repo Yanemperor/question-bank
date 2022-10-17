@@ -1,0 +1,31 @@
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": true,
+		"create": true,
+		"update": true,
+		"delete": true
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"user_id": {
+			"bsonType": "string",
+			"description": "用户id，参考uni-id-users表"
+		},
+		"topic_id": {
+			"bsonType": "int",
+			"description": "题目id"
+		},
+		"topic_type": {
+			"bsonType": "int",
+			"description": "题目类型"
+		},
+		"paper_type": {
+			"bsonType": "string",
+			"description": "科目类型"
+		}
+	}
+}
