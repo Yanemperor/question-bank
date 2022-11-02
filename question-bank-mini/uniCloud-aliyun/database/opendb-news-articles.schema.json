@@ -160,6 +160,18 @@
 			"bsonType": "number",
 			"title": "排版显示模式",
 			"description": "排版显示模式,如左图右文、上图下文等"
+		},
+		"isAd": {
+			"bsonType": "bool",
+			"title": "是否显示广告"
+		},
+		"is_show_ad": {
+			"bsonType": "bool",
+			"title": "是否显示广告",
+			"description": "是否显示广告",
+			"permission": {
+				"write": false
+			}
 		}
 	}
 }

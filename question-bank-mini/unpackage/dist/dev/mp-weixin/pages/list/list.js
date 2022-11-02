@@ -99,23 +99,14 @@ __webpack_require__.r(__webpack_exports__);
 var components
 try {
   components = {
-    uniSearchBar: function() {
-      return Promise.all(/*! import() | uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar.vue */ 568))
-    },
     unicloudDb: function() {
-      return Promise.all(/*! import() | node-modules/@dcloudio/uni-cli-shared/components/unicloud-db */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/@dcloudio/uni-cli-shared/components/unicloud-db")]).then(__webpack_require__.bind(null, /*! @dcloudio/uni-cli-shared/components/unicloud-db.vue */ 579))
+      return Promise.all(/*! import() | node-modules/@dcloudio/uni-cli-shared/components/unicloud-db */[__webpack_require__.e("common/vendor"), __webpack_require__.e("node-modules/@dcloudio/uni-cli-shared/components/unicloud-db")]).then(__webpack_require__.bind(null, /*! @dcloudio/uni-cli-shared/components/unicloud-db.vue */ 593))
     },
     uniList: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list/uni-list */ "uni_modules/uni-list/components/uni-list/uni-list").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list/uni-list.vue */ 487))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list/uni-list */ "uni_modules/uni-list/components/uni-list/uni-list").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list/uni-list.vue */ 503))
     },
     uniListItem: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list-item/uni-list-item */ "uni_modules/uni-list/components/uni-list-item/uni-list-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list-item/uni-list-item.vue */ 494))
-    },
-    uniDateformat: function() {
-      return Promise.all(/*! import() | uni_modules/uni-dateformat/components/uni-dateformat/uni-dateformat */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-dateformat/components/uni-dateformat/uni-dateformat")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-dateformat/components/uni-dateformat/uni-dateformat.vue */ 590))
-    },
-    uniLoadState: function() {
-      return Promise.all(/*! import() | components/uni-load-state/uni-load-state */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-load-state/uni-load-state")]).then(__webpack_require__.bind(null, /*! @/components/uni-load-state/uni-load-state.vue */ 596))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list-item/uni-list-item */ "uni_modules/uni-list/components/uni-list-item/uni-list-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list-item/uni-list-item.vue */ 510))
     }
   }
 } catch (e) {
@@ -139,30 +130,27 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  var m0 = _vm.$hasScopedSlotsParams("2e637200-3")
+  var m0 = _vm.$hasScopedSlotsParams("2e637200-1")
   var l0 = m0
-    ? _vm.$getScopedSlotsParams("2e637200-3", "default", "data")
-    : null
-  var a0 = m0
-    ? {
-        data: _vm.$getScopedSlotsParams("2e637200-3", "default", "data"),
-        pagination: _vm.$getScopedSlotsParams(
-          "2e637200-3",
-          "default",
-          "pagination"
-        ),
-        hasMore: _vm.$getScopedSlotsParams("2e637200-3", "default", "hasMore"),
-        loading: _vm.$getScopedSlotsParams("2e637200-3", "default", "loading"),
-        error: _vm.$getScopedSlotsParams("2e637200-3", "default", "error")
-      }
+    ? _vm.__map(
+        _vm.$getScopedSlotsParams("2e637200-1", "default", "data"),
+        function(item, index) {
+          var $orig = _vm.__get_orig(item)
+
+          var m1 = _vm.getDate(item.last_modify_date)
+          return {
+            $orig: $orig,
+            m1: m1
+          }
+        }
+      )
     : null
   _vm.$mp.data = Object.assign(
     {},
     {
       $root: {
         m0: m0,
-        l0: l0,
-        a0: a0
+        l0: l0
       }
     }
   )
@@ -200,31 +188,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uniCloud, uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 7));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -362,39 +325,45 @@ var _gps = _interopRequireDefault(__webpack_require__(/*! @/uni_modules/json-gps
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var cdbRef;var statusBar = function statusBar() {__webpack_require__.e(/*! require.ensure | uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar */ "uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar").then((function () {return resolve(__webpack_require__(/*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar */ 606));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var gps = new _gps.default(),db = uniCloud.database();var _default = { components: { statusBar: statusBar }, computed: { inputPlaceholder: function inputPlaceholder(e) {if (uni.getStorageSync('CURRENT_LANG') == "en") {return 'Please enter the search content';} else {return '请输入搜索内容';}}, colList: function colList() {return [db.collection('opendb-news-articles').where(this.where).field('avatar,title,last_modify_date,user_id').getTemp(), db.collection('uni-id-users').field('_id,username').getTemp()];} }, data: function data() {return { where: '"article_status" == 1', keyword: "", showRefresh: false, listHight: 0 };}, watch: { keyword: function keyword(_keyword, oldValue) {var where = '"article_status" == 1 ';if (_keyword) {this.where = where + "&& /".concat(_keyword, "/.test(title)");} else {this.where = where;}} }, onReady: function onReady() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_this.listHight = 'auto';cdbRef = _this.$refs.udb;case 2:case "end":return _context.stop();}}}, _callee);}))();}, onShow: function onShow() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var location;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_this2.keyword = getApp().globalData.searchText;getApp().globalData.searchText = ''; //这里仅演示如何，在onShow生命周期获取设备位置，并在设备或者应用没有权限时自动引导。设置完毕自动重新获取。
+var cdbRef;var statusBar = function statusBar() {__webpack_require__.e(/*! require.ensure | uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar */ "uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar").then((function () {return resolve(__webpack_require__(/*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-status-bar */ 604));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var gps = new _gps.default(),db = uniCloud.database();var _default = { components: { statusBar: statusBar }, computed: { inputPlaceholder: function inputPlaceholder(e) {if (uni.getStorageSync('CURRENT_LANG') == "en") {return 'Please enter the search content';} else {return '请输入搜索内容';}}, colList: function colList() {return [db.collection('opendb-news-articles').where(this.where).field('avatar,title,last_modify_date,user_id,is_show_ad').getTemp(), db.collection('uni-id-users').field('_id,username').getTemp()];} }, data: function data() {return { where: '"article_status" == 1', keyword: "", showRefresh: false, listHight: 0 };}, watch: { keyword: function keyword(_keyword, oldValue) {var where = '"article_status" == 1 ';if (_keyword) {this.where = where + "&& /".concat(_keyword, "/.test(title)");} else {this.where = where;}} }, onReady: function onReady() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_this.listHight = 'auto';cdbRef = _this.$refs.udb;case 2:case "end":return _context.stop();}}}, _callee);}))();}, onShow: function onShow() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_this2.keyword = getApp().globalData.searchText;getApp().globalData.searchText = ''; //这里仅演示如何，在onShow生命周期获取设备位置，并在设备或者应用没有权限时自动引导。设置完毕自动重新获取。
               //你可以基于他做自己的业务，比如：根据距离由近到远排序列表数据等
               // uni.showLoading({
               // 	title:"获取定位中"
               // });
               //默认h5端不获取定位
-              _context2.next = 4;return gps.getLocation({ geocode: true });case 4:location = _context2.sent;case 5:case "end":return _context2.stop();}}}, _callee2);}))();}, methods: { searchClick: function searchClick(e) {//点击搜索框
-      uni.hideKeyboard();uni.navigateTo({ url: '/pages/list/search/search', animationType: 'fade-in' });}, retry: function retry() {this.refresh();}, refresh: function refresh() {cdbRef.loadData({ clear: true }, function () {uni.stopPullDownRefresh();console.log('end');});console.log('refresh');}, loadMore: function loadMore() {cdbRef.loadMore();}, onqueryerror: function onqueryerror(e) {
+              //
+              // let location = await gps.getLocation({
+              // 	geocode: true
+              // })
+              // // console.log(location);
+              //
+              // if(location){
+              // 	uni.showToast({
+              // 		title: JSON.stringify(location),
+              // 		icon: 'none'
+              // 	});
+              // }
+              // uni.hideLoading()
+            case 2:case "end":return _context2.stop();}}}, _callee2);}))();}, methods: { getDate: function getDate(date) {return uni.$u.timeFrom(date);}, searchClick: function searchClick(e) {//点击搜索框
+      uni.hideKeyboard();uni.navigateTo({ url: '/pages/list/search/search', animationType: 'fade-in' });}, retry: function retry() {
+      this.refresh();
+    },
+    refresh: function refresh() {
+      cdbRef.loadData({
+        clear: true },
+      function () {
+        uni.stopPullDownRefresh();
+
+
+
+        console.log('end');
+      });
+      console.log('refresh');
+    },
+    loadMore: function loadMore() {
+      cdbRef.loadMore();
+    },
+    onqueryerror: function onqueryerror(e) {
       console.error(e);
     },
     onpullingdown: function onpullingdown(e) {

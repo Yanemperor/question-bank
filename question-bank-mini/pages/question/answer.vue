@@ -578,14 +578,18 @@
 				let userInfo = this.userInfo()
 				var temps = []
 				this.wrongTopics.map((item, index) => {
-					var temp = {
-						"user_id": userInfo._id,
-						"topic_id": item._id,
-						"paper_type": item.paper_type,
-						"topic_type": item.type
+					if (item.type===0 || item.type===1 || item.type===3 || item.type===6 || item.type===7) {
+						var temp = {
+							"user_id": userInfo._id,
+							"topic_id": item._id,
+							"paper_type": item.paper_type,
+							"topic_type": item.type
+						}
+						temps.push(temp)
 					}
-					temps.push(temp)
 				})
+				console.log("temps", temps)
+				
 				var that = this;
 				uniCloud.callFunction({
 					name: "wrong-topic",

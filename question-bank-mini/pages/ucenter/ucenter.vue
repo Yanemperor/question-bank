@@ -100,10 +100,15 @@
 						// 	"icon": "paperplane"
 						// },
 
+						// {
+						// 	"title": "免广告",
+						// 	"to": '/pages/ucenter/ad/index',
+						// 	"icon": "vip"
+						// },
 						{
-							"title": "免广告",
-							"to": '/pages/ucenter/ad/index',
-							"icon": "vip"
+							"title": "需求墙",
+							"to": '/pages/ucenter/demand/demand',
+							"icon": "calendar"
 						},
 						{
 							"title": "更多小程序",

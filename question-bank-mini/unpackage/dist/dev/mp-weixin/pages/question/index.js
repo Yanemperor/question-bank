@@ -228,10 +228,6 @@ var interstitialAd = null;var _default = { computed: { userInfo: function userIn
       if (this.hasLogin) {
         _store.mutations.updateUserInfo();
         console.log("####", _store.store.userInfo.is_hidden_ad);
-        if (_store.store.userInfo.is_hidden_ad) {
-          console.log("不显示广告");
-          return;
-        }
       }
 
       if (wx.createInterstitialAd) {

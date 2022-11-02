@@ -98,13 +98,13 @@ var components
 try {
   components = {
     uniEasyinput: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput */ "uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue */ 681))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput */ "uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-easyinput/components/uni-easyinput/uni-easyinput.vue */ 706))
     },
     uniIdPagesAgreements: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-id-pages/components/uni-id-pages-agreements/uni-id-pages-agreements */ "uni_modules/uni-id-pages/components/uni-id-pages-agreements/uni-id-pages-agreements").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-id-pages/components/uni-id-pages-agreements/uni-id-pages-agreements.vue */ 743))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-id-pages/components/uni-id-pages-agreements/uni-id-pages-agreements */ "uni_modules/uni-id-pages/components/uni-id-pages-agreements/uni-id-pages-agreements").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-id-pages/components/uni-id-pages-agreements/uni-id-pages-agreements.vue */ 768))
     },
     uniIdPagesFabLogin: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-id-pages/components/uni-id-pages-fab-login/uni-id-pages-fab-login */ "uni_modules/uni-id-pages/components/uni-id-pages-fab-login/uni-id-pages-fab-login").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-id-pages/components/uni-id-pages-fab-login/uni-id-pages-fab-login.vue */ 750))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-id-pages/components/uni-id-pages-fab-login/uni-id-pages-fab-login */ "uni_modules/uni-id-pages/components/uni-id-pages-fab-login/uni-id-pages-fab-login").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-id-pages/components/uni-id-pages-fab-login/uni-id-pages-fab-login.vue */ 775))
     }
   }
 } catch (e) {

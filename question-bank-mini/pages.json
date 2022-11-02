@@ -71,10 +71,8 @@
 		}, {
 			"path": "pages/list/list",
 			"style": {
-				// #ifndef APP-PLUS
-				"enablePullDownRefresh": true,
-				// #endif
-				"navigationStyle": "custom"
+				"navigationBarTitleText": "资讯",
+				"navigationBarBackgroundColor": "#ffffff"
 			}
 		},
 		{
@@ -286,6 +284,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/ucenter/demand/demand",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "需求墙",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		// #ifdef H5
@@ -331,6 +338,11 @@
 			"selectedIconPath": "static/tabbar/download_selected.png",
 			"text": "下载"
 		}, {
+			"pagePath": "pages/list/list",
+			"iconPath": "static/tabbar/news.png",
+			"selectedIconPath": "static/tabbar/news_selected.png",
+			"text": "资讯"
+		}, {
 			"pagePath": "pages/ucenter/ucenter",
 			"iconPath": "static/tabbar/my.png",
 			"selectedIconPath": "static/tabbar/my_selected.png",
@@ -342,7 +354,8 @@
 		"needLogin": [
 			"/uni_modules/uni-id-pages/pages/userinfo/userinfo",
 			"/pages/ucenter/ad/index",
-			"/pages/ucenter/collection/collection"
+			"/pages/ucenter/collection/collection",
+			"/pages/ucenter/wrong-topic/wrong-topic"
 		],
 		"resToLogin": true
 	}

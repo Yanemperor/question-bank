@@ -13,11 +13,11 @@
 				</view>
 			</view>
 		</view>
-		<view class="view-btn" @click="toAd">
+		<!-- <view class="view-btn" @click="toAd">
 			<view class="view-btn-text">
 				广告太多？ 试试免广告功能吧！
 			</view>
-		</view>
+		</view> -->
 	</view>
 </template>
 
@@ -94,10 +94,6 @@
 				if (this.hasLogin) {
 					mutations.updateUserInfo()
 					console.log("####", store.userInfo.is_hidden_ad)
-					if (store.userInfo.is_hidden_ad) {
-						console.log("不显示广告")
-						return
-					}
 				}
 
 				if (wx.createInterstitialAd) {

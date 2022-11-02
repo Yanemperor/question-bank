@@ -98,19 +98,19 @@ var components
 try {
   components = {
     uniSignIn: function() {
-      return Promise.all(/*! import() | uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in.vue */ 471))
+      return Promise.all(/*! import() | uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-sign-in/components/uni-sign-in/uni-sign-in.vue */ 487))
     },
     uImage: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-image/u-image */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-image/u-image")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-image/u-image.vue */ 479))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-image/u-image */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-image/u-image")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-image/u-image.vue */ 495))
     },
     uniList: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list/uni-list */ "uni_modules/uni-list/components/uni-list/uni-list").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list/uni-list.vue */ 487))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list/uni-list */ "uni_modules/uni-list/components/uni-list/uni-list").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list/uni-list.vue */ 503))
     },
     uniListItem: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list-item/uni-list-item */ "uni_modules/uni-list/components/uni-list-item/uni-list-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list-item/uni-list-item.vue */ 494))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-list/components/uni-list-item/uni-list-item */ "uni_modules/uni-list/components/uni-list-item/uni-list-item").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-list/components/uni-list-item/uni-list-item.vue */ 510))
     },
     uActionSheet: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-action-sheet/u-action-sheet */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-action-sheet/u-action-sheet")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-action-sheet/u-action-sheet.vue */ 501))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-action-sheet/u-action-sheet */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-action-sheet/u-action-sheet")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-action-sheet/u-action-sheet.vue */ 517))
     }
   }
 } catch (e) {
@@ -303,10 +303,15 @@ var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js 
       // 	"icon": "paperplane"
       // },
 
+      // {
+      // 	"title": "免广告",
+      // 	"to": '/pages/ucenter/ad/index',
+      // 	"icon": "vip"
+      // },
       {
-        "title": "免广告",
-        "to": '/pages/ucenter/ad/index',
-        "icon": "vip" },
+        "title": "需求墙",
+        "to": '/pages/ucenter/demand/demand',
+        "icon": "calendar" },
 
       {
         "title": "更多小程序",

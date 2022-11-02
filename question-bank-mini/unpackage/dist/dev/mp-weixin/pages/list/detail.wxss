@@ -41,7 +41,7 @@
 .banner.data-v-ed2c8c0e {
 	position: relative;
 	margin: 0 15px;
-	height: 180px;
+	/* height: 180px; */
 	overflow: hidden;
 }
 .banner-img.data-v-ed2c8c0e {

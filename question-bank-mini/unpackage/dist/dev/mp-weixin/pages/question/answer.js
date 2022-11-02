@@ -98,16 +98,16 @@ var components
 try {
   components = {
     uButton: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-button/u-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-button/u-button")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-button/u-button.vue */ 536))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-button/u-button */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-button/u-button")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-button/u-button.vue */ 552))
     },
     uPopup: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-popup/u-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-popup/u-popup")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-popup/u-popup.vue */ 544))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-popup/u-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-popup/u-popup")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-popup/u-popup.vue */ 560))
     },
     uModal: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-modal/u-modal */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-modal/u-modal")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-modal/u-modal.vue */ 552))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-modal/u-modal */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-modal/u-modal")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-modal/u-modal.vue */ 568))
     },
     uText: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-text/u-text */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-text/u-text")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-text/u-text.vue */ 959))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-text/u-text */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-text/u-text")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-text/u-text.vue */ 576))
     }
   }
 } catch (e) {
@@ -821,14 +821,18 @@ var _default = { data: function data() {return { modalShow: false, submitShow: f
       var userInfo = this.userInfo();
       var temps = [];
       this.wrongTopics.map(function (item, index) {
-        var temp = {
-          "user_id": userInfo._id,
-          "topic_id": item._id,
-          "paper_type": item.paper_type,
-          "topic_type": item.type };
+        if (item.type === 0 || item.type === 1 || item.type === 3 || item.type === 6 || item.type === 7) {
+          var temp = {
+            "user_id": userInfo._id,
+            "topic_id": item._id,
+            "paper_type": item.paper_type,
+            "topic_type": item.type };
 
-        temps.push(temp);
+          temps.push(temp);
+        }
       });
+      console.log("temps", temps);
+
       var that = this;
       uniCloud.callFunction({
         name: "wrong-topic",

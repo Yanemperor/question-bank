@@ -38,7 +38,9 @@
     "uni_modules/uni-id-pages/pages/userinfo/change_pwd/change_pwd",
     "uni_modules/uni-id-pages/pages/register/register-by-email",
     "uni_modules/uni-id-pages/pages/retrieve/retrieve-by-email",
-    "uni_modules/uni-id-pages/pages/register/register-admin"
+    "uni_modules/uni-id-pages/pages/register/register-admin",
+    "pages/ucenter/wrong-topic/wrong-topic",
+    "pages/ucenter/demand/demand"
   ],
   "subPackages": [],
   "window": {
@@ -67,6 +69,12 @@
         "iconPath": "static/tabbar/download.png",
         "selectedIconPath": "static/tabbar/download_selected.png",
         "text": "下载"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "iconPath": "static/tabbar/news.png",
+        "selectedIconPath": "static/tabbar/news_selected.png",
+        "text": "资讯"
       },
       {
         "pagePath": "pages/ucenter/ucenter",

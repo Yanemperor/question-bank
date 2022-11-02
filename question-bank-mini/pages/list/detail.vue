@@ -35,11 +35,13 @@
 				</uni-list>
 				<view class="banner">
 					<!-- 文章开头，缩略图 -->
-					<image class="banner-img" :src="data.avatar" mode="widthFix"></image>
+					<!-- <image class="banner-img" :src="data.avatar" mode="widthFix"></image> -->
+					<!-- <ad unit-id="adunit-fcac3dc02fc5313d" ad-type="video" ad-theme="white"></ad> -->
+					<ad-custom unit-id="adunit-343525c00b9935cb"></ad-custom>
 					<!-- 文章摘要 -->
-					<view class="banner-title">
+					<!-- <view class="banner-title">
 						<text class="uni-ellipsis">{{data.excerpt}}</text>
-					</view>
+					</view> -->
 				</view>
 				<view class="article-content">
 					<rich-text :nodes="data.content"></rich-text>
@@ -328,7 +330,7 @@
 	.banner {
 		position: relative;
 		margin: 0 15px;
-		height: 180px;
+		/* height: 180px; */
 		overflow: hidden;
 	}
 

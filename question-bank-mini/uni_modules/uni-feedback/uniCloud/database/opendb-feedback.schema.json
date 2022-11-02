@@ -67,6 +67,14 @@
 			"bsonType": "int",
 			"title": "被回复条数",
 			"defaultValue": 0
+		},
+		"isShow": {
+			"bsonType": "bool",
+			"title": "是否显示"
+		},
+		"state": {
+			"bsonType": "int",
+			"title": "状态"
 		}
 	}
 }

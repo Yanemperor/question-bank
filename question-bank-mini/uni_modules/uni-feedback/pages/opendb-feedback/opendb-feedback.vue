@@ -68,6 +68,8 @@
 					mask: true
 				})
 				this.$refs.form.validate().then((res) => {
+					res.isShow = false
+					res.state = 0
 					this.submitForm(res)
 				}).catch(() => {
 					uni.hideLoading()
