@@ -157,6 +157,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
 var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js */ 153); //
 //
 //
@@ -180,14 +187,14 @@ var _store = __webpack_require__(/*! @/uni_modules/uni-id-pages/common/store.js 
 //
 //
 //
-var interstitialAd = null;var _default = { computed: { userInfo: function userInfo() {return _store.store.userInfo;} }, data: function data() {return { hasLogin: false, subjects: [{ img: "/static/subject/yuwen.png", title: "大学语文", paper_id: "top_up_language" }, { img: "/static/subject/english.png", title: "大学英语", paper_id: "top_up_english" }, {
-        img: "/static/subject/zhengzhi.png",
-        title: "政治",
-        paper_id: "top_up_political" },
-
-      {
-        img: "/static/subject/jiaoyu.png",
-        title: "教育理论",
+//
+//
+//
+//
+//
+//
+//
+var interstitialAd = null;var _default = { computed: { userInfo: function userInfo() {return _store.store.userInfo;} }, data: function data() {return { hasLogin: false, subjects: [{ img: "/static/subject/yuwen.png", title: "大学语文", paper_id: "top_up_language" }, { img: "/static/subject/english.png", title: "大学英语", paper_id: "top_up_english" }, { img: "/static/subject/zhengzhi.png", title: "政治", paper_id: "top_up_political" }, { img: "/static/subject/jiaoyu.png", title: "教育理论",
         paper_id: "top_up_educational_theory" },
 
       {
@@ -256,6 +263,12 @@ var interstitialAd = null;var _default = { computed: { userInfo: function userIn
     toAd: function toAd() {
       uni.navigateTo({
         url: "/pages/ucenter/ad/index" });
+
+    },
+    toHot: function toHot(type) {
+      var subjects = JSON.stringify(this.subjects);
+      uni.navigateTo({
+        url: "/pages/hot/hot?subjects=" + subjects + "&type=" + type });
 
     },
     onShareAppMessage: function onShareAppMessage(res) {

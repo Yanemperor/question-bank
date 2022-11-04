@@ -293,6 +293,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/hot/hot",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		// #ifdef H5

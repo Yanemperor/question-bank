@@ -9,15 +9,47 @@
 
 const dbCmd = db.command
 
-const SEARCHLOG_timeZone = 100000000; // 归纳搜索记录时间间隔，毫秒数，默认为最近7天
-const timeEnd = Date.now() - SEARCHLOG_timeZone;
+// const SEARCHLOG_timeZone = 100000; // 归纳搜索记录时间间隔，毫秒数，默认为最近7天
+// const timeEnd = Date.now() - SEARCHLOG_timeZone;
 
-db.collection('uni-id-users').where({
-	is_hidden_ad: true,
-	last_look_ad_time: dbCmd.lt(timeEnd)
-}).get()
+// db.collection("topic-collect")
+// 	.where({
+// 		"paper_type": "top_up_english"
+// 	})
+// 	.groupBy("paper_type, topic_id")
+// 	.groupField('count(*) as count')
+// 	.orderBy('count desc')
+// 	.limit(50)
+// 	.get()
+
+// db.collection('answer_questions').where({
+//   _id: dbCmd.in([2, 7, 10])
+// }).get()
+	
+db.collection('topic-collect').where({
+		user_id: "634653d290a11e0001f16aca",
+		paper_type: "top_up_civil_law",
+		topic_id: dbCmd.in([2, 7, 1937])
+	}).get()
 
 
-// update({
-// 	is_hidden_ad: false,
-// })
+// const wrong = db.collection("topic-collect")
+// 	.where({
+// 		"paper_type": "top_up_english"
+// 	})
+// 	// .groupBy("paper_type, topic_id")
+// 	// .groupField('count(*) as count')
+// 	// .orderBy('count desc')
+// 	// .limit(50)
+// 	.getTemp()
+// const answer = db.collection("answer_questions").getTemp()
+// db.collection(wrong, answer)
+// 	// .field('title, answer')
+// 	.get()
+
+// db.collection('topic-collect,answer_questions')  
+// .where('answer_questions.paper_type=="top_up_english"')  
+// .field('answer_questions{title},_id')  
+// .get()
+
+// db.collection('topic-collect,answer_questions').where('answer_questions.paper_type=="top_up_english"').get()

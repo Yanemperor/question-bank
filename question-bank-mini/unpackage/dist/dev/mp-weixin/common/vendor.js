@@ -9914,7 +9914,7 @@ if (hadRuntime) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": [{ "path": "pages/question/index", "style": { "navigationBarTitleText": "专升本", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/ucenter/ucenter", "style": { "navigationStyle": "custom" } }, { "path": "pages/my/index", "style": { "navigationBarTitleText": "我的", "navigationBarBackgroundColor": "#ffffff", "navigationStyle": "custom" } }, { "path": "pages/question/selected", "style": { "navigationBarTitleText": "选择", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/question/answer", "style": { "navigationBarTitleText": "答题", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/download/index", "style": { "navigationBarTitleText": "下载", "navigationBarBackgroundColor": "#ffffff", "navigationStyle": "custom", "navigationBarTextStyle": "white" } }, { "path": "pages/download/list", "style": { "navigationBarTitleText": "历年真题", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/download/browse", "style": { "navigationBarTitleText": "真题", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/ucenter/collection/collection", "style": { "navigationBarTitleText": "收藏", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/ucenter/ticket/ticket", "style": { "navigationBarTitleText": "下载券", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/list/list", "style": { "navigationBarTitleText": "资讯", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/grid/grid", "style": {} }, { "path": "pages/list/search/search", "style": { "navigationBarTitleText": "搜索" } }, { "path": "pages/list/detail", "style": { "app-plus": { "titleNView": { "buttons": [{ "type": "share" }], "type": "transparent" } }, "h5": { "titleNView": { "type": "transparent" } }, "navigationBarTitleText": "文章详情" } }, { "path": "pages/ucenter/about/about", "style": { "navigationBarTitleText": "关于" } }, { "path": "pages/ucenter/ad/index", "style": { "navigationBarTitleText": "广告管理", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/ucenter/about/business_cooperation", "style": { "navigationBarTitleText": "商务合作", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/ucenter/about/more_app", "style": { "navigationBarTitleText": "更多小程序", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "uni_modules/uni-upgrade-center-app/pages/upgrade-popup", "style": { "disableScroll": true, "app-plus": { "backgroundColorTop": "transparent", "background": "transparent", "titleNView": false, "scrollIndicator": false, "popGesture": "none", "animationType": "fade-in", "animationDuration": 200 } } }, { "path": "pages/uni-agree/uni-agree", "style": { "navigationStyle": "custom", "app-plus": { "popGesture": "none" } } }, { "path": "pages/ucenter/settings/settings", "style": { "navigationBarTitleText": "设置" } }, { "path": "pages/common/webview/webview", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }, { "path": "pages/ucenter/read-news-log/read-news-log", "style": { "navigationBarTitleText": "阅读记录", "enablePullDownRefresh": true } }, { "path": "pages/ucenter/invite/invite", "style": { "navigationStyle": "custom", "enablePullDownRefresh": false } }, { "path": "uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback", "style": { "navigationBarTitleText": "意见反馈", "enablePullDownRefresh": false } }, { "path": "uni_modules/uni-id-pages/pages/userinfo/deactivate/deactivate", "style": { "navigationBarTitleText": "注销账号" } }, { "path": "uni_modules/uni-id-pages/pages/userinfo/userinfo", "style": { "navigationBarTitleText": "个人资料" } }, { "path": "uni_modules/uni-id-pages/pages/userinfo/bind-mobile/bind-mobile", "style": { "navigationBarTitleText": "绑定手机号码" } }, { "path": "uni_modules/uni-id-pages/pages/userinfo/cropImage/cropImage", "style": { "navigationBarTitleText": "" } }, { "path": "uni_modules/uni-id-pages/pages/login/login-withoutpwd", "style": { "navigationBarTitleText": "" } }, { "path": "uni_modules/uni-id-pages/pages/login/login-withpwd", "style": { "navigationBarTitleText": "" } }, { "path": "uni_modules/uni-id-pages/pages/login/login-smscode", "style": { "navigationBarTitleText": "手机验证码登录" } }, { "path": "uni_modules/uni-id-pages/pages/register/register", "style": { "navigationBarTitleText": "注册" } }, { "path": "uni_modules/uni-id-pages/pages/retrieve/retrieve", "style": { "navigationBarTitleText": "重置密码" } }, { "path": "uni_modules/uni-id-pages/pages/common/webview/webview", "style": { "enablePullDownRefresh": false, "navigationBarTitleText": "" } }, { "path": "uni_modules/uni-id-pages/pages/userinfo/change_pwd/change_pwd", "style": { "enablePullDownRefresh": false, "navigationBarTitleText": "修改密码" } }, { "path": "uni_modules/uni-id-pages/pages/register/register-by-email", "style": { "navigationBarTitleText": "邮箱验证码注册" } }, { "path": "uni_modules/uni-id-pages/pages/retrieve/retrieve-by-email", "style": { "navigationBarTitleText": "通过邮箱重置密码" } }, { "path": "uni_modules/uni-id-pages/pages/register/register-admin", "style": { "enablePullDownRefresh": false, "navigationBarTitleText": "注册管理员账号" } }, { "path": "pages/ucenter/wrong-topic/wrong-topic", "style": { "navigationBarTitleText": "错题集", "enablePullDownRefresh": false } }, { "path": "pages/ucenter/demand/demand", "style": { "navigationBarTitleText": "需求墙", "enablePullDownRefresh": false } }], "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-starter", "navigationBarBackgroundColor": "#FFFFFF", "backgroundColor": "#F8F8F8", "enablePullDownRefresh": false, "rpxCalcMaxDeviceWidth": 375, "rpxCalcBaseDeviceWidth": 375 }, "condition": { "list": [{ "path": "pages/list/detail" }, { "path": "pages/list/list" }, { "path": "pages/ucenter/settings/settings" }], "current": 1 }, "tabBar": { "color": "#7A7E83", "selectedColor": "#111111", "borderStyle": "black", "backgroundColor": "#FFFFFF", "list": [{ "pagePath": "pages/question/index", "iconPath": "static/tabbar/index.png", "selectedIconPath": "static/tabbar/index_selected.png", "text": "首页" }, { "pagePath": "pages/download/index", "iconPath": "static/tabbar/download.png", "selectedIconPath": "static/tabbar/download_selected.png", "text": "下载" }, { "pagePath": "pages/list/list", "iconPath": "static/tabbar/news.png", "selectedIconPath": "static/tabbar/news_selected.png", "text": "资讯" }, { "pagePath": "pages/ucenter/ucenter", "iconPath": "static/tabbar/my.png", "selectedIconPath": "static/tabbar/my_selected.png", "text": "我的" }] }, "uniIdRouter": { "loginPage": "uni_modules/uni-id-pages/pages/login/login-withoutpwd", "needLogin": ["/uni_modules/uni-id-pages/pages/userinfo/userinfo", "/pages/ucenter/ad/index", "/pages/ucenter/collection/collection", "/pages/ucenter/wrong-topic/wrong-topic"], "resToLogin": true } };exports.default = _default;
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = { "pages": [{ "path": "pages/question/index", "style": { "navigationBarTitleText": "专升本", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/ucenter/ucenter", "style": { "navigationStyle": "custom" } }, { "path": "pages/my/index", "style": { "navigationBarTitleText": "我的", "navigationBarBackgroundColor": "#ffffff", "navigationStyle": "custom" } }, { "path": "pages/question/selected", "style": { "navigationBarTitleText": "选择", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/question/answer", "style": { "navigationBarTitleText": "答题", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/download/index", "style": { "navigationBarTitleText": "下载", "navigationBarBackgroundColor": "#ffffff", "navigationStyle": "custom", "navigationBarTextStyle": "white" } }, { "path": "pages/download/list", "style": { "navigationBarTitleText": "历年真题", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/download/browse", "style": { "navigationBarTitleText": "真题", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/ucenter/collection/collection", "style": { "navigationBarTitleText": "收藏", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/ucenter/ticket/ticket", "style": { "navigationBarTitleText": "下载券", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/list/list", "style": { "navigationBarTitleText": "资讯", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/grid/grid", "style": {} }, { "path": "pages/list/search/search", "style": { "navigationBarTitleText": "搜索" } }, { "path": "pages/list/detail", "style": { "app-plus": { "titleNView": { "buttons": [{ "type": "share" }], "type": "transparent" } }, "h5": { "titleNView": { "type": "transparent" } }, "navigationBarTitleText": "文章详情" } }, { "path": "pages/ucenter/about/about", "style": { "navigationBarTitleText": "关于" } }, { "path": "pages/ucenter/ad/index", "style": { "navigationBarTitleText": "广告管理", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/ucenter/about/business_cooperation", "style": { "navigationBarTitleText": "商务合作", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "pages/ucenter/about/more_app", "style": { "navigationBarTitleText": "更多小程序", "navigationBarBackgroundColor": "#ffffff" } }, { "path": "uni_modules/uni-upgrade-center-app/pages/upgrade-popup", "style": { "disableScroll": true, "app-plus": { "backgroundColorTop": "transparent", "background": "transparent", "titleNView": false, "scrollIndicator": false, "popGesture": "none", "animationType": "fade-in", "animationDuration": 200 } } }, { "path": "pages/uni-agree/uni-agree", "style": { "navigationStyle": "custom", "app-plus": { "popGesture": "none" } } }, { "path": "pages/ucenter/settings/settings", "style": { "navigationBarTitleText": "设置" } }, { "path": "pages/common/webview/webview", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }, { "path": "pages/ucenter/read-news-log/read-news-log", "style": { "navigationBarTitleText": "阅读记录", "enablePullDownRefresh": true } }, { "path": "pages/ucenter/invite/invite", "style": { "navigationStyle": "custom", "enablePullDownRefresh": false } }, { "path": "uni_modules/uni-feedback/pages/opendb-feedback/opendb-feedback", "style": { "navigationBarTitleText": "意见反馈", "enablePullDownRefresh": false } }, { "path": "uni_modules/uni-id-pages/pages/userinfo/deactivate/deactivate", "style": { "navigationBarTitleText": "注销账号" } }, { "path": "uni_modules/uni-id-pages/pages/userinfo/userinfo", "style": { "navigationBarTitleText": "个人资料" } }, { "path": "uni_modules/uni-id-pages/pages/userinfo/bind-mobile/bind-mobile", "style": { "navigationBarTitleText": "绑定手机号码" } }, { "path": "uni_modules/uni-id-pages/pages/userinfo/cropImage/cropImage", "style": { "navigationBarTitleText": "" } }, { "path": "uni_modules/uni-id-pages/pages/login/login-withoutpwd", "style": { "navigationBarTitleText": "" } }, { "path": "uni_modules/uni-id-pages/pages/login/login-withpwd", "style": { "navigationBarTitleText": "" } }, { "path": "uni_modules/uni-id-pages/pages/login/login-smscode", "style": { "navigationBarTitleText": "手机验证码登录" } }, { "path": "uni_modules/uni-id-pages/pages/register/register", "style": { "navigationBarTitleText": "注册" } }, { "path": "uni_modules/uni-id-pages/pages/retrieve/retrieve", "style": { "navigationBarTitleText": "重置密码" } }, { "path": "uni_modules/uni-id-pages/pages/common/webview/webview", "style": { "enablePullDownRefresh": false, "navigationBarTitleText": "" } }, { "path": "uni_modules/uni-id-pages/pages/userinfo/change_pwd/change_pwd", "style": { "enablePullDownRefresh": false, "navigationBarTitleText": "修改密码" } }, { "path": "uni_modules/uni-id-pages/pages/register/register-by-email", "style": { "navigationBarTitleText": "邮箱验证码注册" } }, { "path": "uni_modules/uni-id-pages/pages/retrieve/retrieve-by-email", "style": { "navigationBarTitleText": "通过邮箱重置密码" } }, { "path": "uni_modules/uni-id-pages/pages/register/register-admin", "style": { "enablePullDownRefresh": false, "navigationBarTitleText": "注册管理员账号" } }, { "path": "pages/ucenter/wrong-topic/wrong-topic", "style": { "navigationBarTitleText": "错题集", "enablePullDownRefresh": false } }, { "path": "pages/ucenter/demand/demand", "style": { "navigationBarTitleText": "需求墙", "enablePullDownRefresh": false } }, { "path": "pages/hot/hot", "style": { "navigationBarTitleText": "", "enablePullDownRefresh": false } }], "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "uni-starter", "navigationBarBackgroundColor": "#FFFFFF", "backgroundColor": "#F8F8F8", "enablePullDownRefresh": false, "rpxCalcMaxDeviceWidth": 375, "rpxCalcBaseDeviceWidth": 375 }, "condition": { "list": [{ "path": "pages/list/detail" }, { "path": "pages/list/list" }, { "path": "pages/ucenter/settings/settings" }], "current": 1 }, "tabBar": { "color": "#7A7E83", "selectedColor": "#111111", "borderStyle": "black", "backgroundColor": "#FFFFFF", "list": [{ "pagePath": "pages/question/index", "iconPath": "static/tabbar/index.png", "selectedIconPath": "static/tabbar/index_selected.png", "text": "首页" }, { "pagePath": "pages/download/index", "iconPath": "static/tabbar/download.png", "selectedIconPath": "static/tabbar/download_selected.png", "text": "下载" }, { "pagePath": "pages/list/list", "iconPath": "static/tabbar/news.png", "selectedIconPath": "static/tabbar/news_selected.png", "text": "资讯" }, { "pagePath": "pages/ucenter/ucenter", "iconPath": "static/tabbar/my.png", "selectedIconPath": "static/tabbar/my_selected.png", "text": "我的" }] }, "uniIdRouter": { "loginPage": "uni_modules/uni-id-pages/pages/login/login-withoutpwd", "needLogin": ["/uni_modules/uni-id-pages/pages/userinfo/userinfo", "/pages/ucenter/ad/index", "/pages/ucenter/collection/collection", "/pages/ucenter/wrong-topic/wrong-topic"], "resToLogin": true } };exports.default = _default;
 
 /***/ }),
 /* 11 */
@@ -22802,7 +22802,15 @@ function getPwdRules() {var pwdName = arguments.length > 0 && arguments[0] !== u
 /* 489 */,
 /* 490 */,
 /* 491 */,
-/* 492 */
+/* 492 */,
+/* 493 */,
+/* 494 */,
+/* 495 */,
+/* 496 */,
+/* 497 */,
+/* 498 */,
+/* 499 */,
+/* 500 */
 /*!***********************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-sign-in/utils/ad.js ***!
   \***********************************************************************************************************/
@@ -23066,14 +23074,14 @@ new AdHelper();exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 493 */,
-/* 494 */,
-/* 495 */,
-/* 496 */,
-/* 497 */,
-/* 498 */,
-/* 499 */,
-/* 500 */
+/* 501 */,
+/* 502 */,
+/* 503 */,
+/* 504 */,
+/* 505 */,
+/* 506 */,
+/* 507 */,
+/* 508 */
 /*!************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-image/props.js ***!
   \************************************************************************************************************************/
@@ -23165,14 +23173,6 @@ new AdHelper();exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 501 */,
-/* 502 */,
-/* 503 */,
-/* 504 */,
-/* 505 */,
-/* 506 */,
-/* 507 */,
-/* 508 */,
 /* 509 */,
 /* 510 */,
 /* 511 */,
@@ -23186,7 +23186,15 @@ new AdHelper();exports.default = _default;
 /* 519 */,
 /* 520 */,
 /* 521 */,
-/* 522 */
+/* 522 */,
+/* 523 */,
+/* 524 */,
+/* 525 */,
+/* 526 */,
+/* 527 */,
+/* 528 */,
+/* 529 */,
+/* 530 */
 /*!*******************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/libs/mixin/openType.js ***!
   \*******************************************************************************************************************/
@@ -23219,7 +23227,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     } } };exports.default = _default;
 
 /***/ }),
-/* 523 */
+/* 531 */
 /*!*****************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/libs/mixin/button.js ***!
   \*****************************************************************************************************************/
@@ -23240,7 +23248,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     openType: String } };exports.default = _default;
 
 /***/ }),
-/* 524 */
+/* 532 */
 /*!*******************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-action-sheet/props.js ***!
   \*******************************************************************************************************************************/
@@ -23302,14 +23310,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 525 */,
-/* 526 */,
-/* 527 */,
-/* 528 */,
-/* 529 */,
-/* 530 */,
-/* 531 */,
-/* 532 */
+/* 533 */,
+/* 534 */,
+/* 535 */,
+/* 536 */,
+/* 537 */,
+/* 538 */,
+/* 539 */,
+/* 540 */
 /*!***********************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-icon/icons.js ***!
   \***********************************************************************************************************************/
@@ -23532,7 +23540,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   'uicon-en': "\uE692" };exports.default = _default;
 
 /***/ }),
-/* 533 */
+/* 541 */
 /*!***********************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-icon/props.js ***!
   \***********************************************************************************************************************/
@@ -23629,14 +23637,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 534 */,
-/* 535 */,
-/* 536 */,
-/* 537 */,
-/* 538 */,
-/* 539 */,
-/* 540 */,
-/* 541 */
+/* 542 */,
+/* 543 */,
+/* 544 */,
+/* 545 */,
+/* 546 */,
+/* 547 */,
+/* 548 */,
+/* 549 */
 /*!***********************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-line/props.js ***!
   \***********************************************************************************************************************/
@@ -23677,14 +23685,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 542 */,
-/* 543 */,
-/* 544 */,
-/* 545 */,
-/* 546 */,
-/* 547 */,
-/* 548 */,
-/* 549 */
+/* 550 */,
+/* 551 */,
+/* 552 */,
+/* 553 */,
+/* 554 */,
+/* 555 */,
+/* 556 */,
+/* 557 */
 /*!*****************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-subsection/props.js ***!
   \*****************************************************************************************************************************/
@@ -23741,14 +23749,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 550 */,
-/* 551 */,
-/* 552 */,
-/* 553 */,
-/* 554 */,
-/* 555 */,
-/* 556 */,
-/* 557 */
+/* 558 */,
+/* 559 */,
+/* 560 */,
+/* 561 */,
+/* 562 */,
+/* 563 */,
+/* 564 */,
+/* 565 */
 /*!*************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-button/props.js ***!
   \*************************************************************************************************************************/
@@ -23917,14 +23925,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 558 */,
-/* 559 */,
-/* 560 */,
-/* 561 */,
-/* 562 */,
-/* 563 */,
-/* 564 */,
-/* 565 */
+/* 566 */,
+/* 567 */,
+/* 568 */,
+/* 569 */,
+/* 570 */,
+/* 571 */,
+/* 572 */,
+/* 573 */
 /*!************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-popup/props.js ***!
   \************************************************************************************************************************/
@@ -24011,14 +24019,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 566 */,
-/* 567 */,
-/* 568 */,
-/* 569 */,
-/* 570 */,
-/* 571 */,
-/* 572 */,
-/* 573 */
+/* 574 */,
+/* 575 */,
+/* 576 */,
+/* 577 */,
+/* 578 */,
+/* 579 */,
+/* 580 */,
+/* 581 */
 /*!************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-modal/props.js ***!
   \************************************************************************************************************************/
@@ -24110,14 +24118,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 574 */,
-/* 575 */,
-/* 576 */,
-/* 577 */,
-/* 578 */,
-/* 579 */,
-/* 580 */,
-/* 581 */
+/* 582 */,
+/* 583 */,
+/* 584 */,
+/* 585 */,
+/* 586 */,
+/* 587 */,
+/* 588 */,
+/* 589 */
 /*!***********************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-text/value.js ***!
   \***********************************************************************************************************************/
@@ -24211,7 +24219,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 582 */
+/* 590 */
 /*!***********************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-text/props.js ***!
   \***********************************************************************************************************************/
@@ -24329,14 +24337,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 583 */,
-/* 584 */,
-/* 585 */,
-/* 586 */,
-/* 587 */,
-/* 588 */,
-/* 589 */,
-/* 590 */
+/* 591 */,
+/* 592 */,
+/* 593 */,
+/* 594 */,
+/* 595 */,
+/* 596 */,
+/* 597 */,
+/* 598 */
 /*!*************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-navbar/props.js ***!
   \*************************************************************************************************************************/
@@ -24428,14 +24436,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 591 */,
-/* 592 */,
-/* 593 */,
-/* 594 */,
-/* 595 */,
-/* 596 */,
-/* 597 */,
-/* 598 */
+/* 599 */,
+/* 600 */,
+/* 601 */,
+/* 602 */,
+/* 603 */,
+/* 604 */,
+/* 605 */,
+/* 606 */
 /*!************************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/index.js ***!
   \************************************************************************/
@@ -24444,16 +24452,16 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _en_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./en.json */ 599);
-var _en_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./en.json */ 599, 1);
-/* harmony import */ var _es_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./es.json */ 600);
-var _es_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./es.json */ 600, 1);
-/* harmony import */ var _fr_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./fr.json */ 601);
-var _fr_json__WEBPACK_IMPORTED_MODULE_2___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./fr.json */ 601, 1);
-/* harmony import */ var _zh_Hans_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./zh-Hans.json */ 602);
-var _zh_Hans_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./zh-Hans.json */ 602, 1);
-/* harmony import */ var _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./zh-Hant.json */ 603);
-var _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./zh-Hant.json */ 603, 1);
+/* harmony import */ var _en_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./en.json */ 607);
+var _en_json__WEBPACK_IMPORTED_MODULE_0___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./en.json */ 607, 1);
+/* harmony import */ var _es_json__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./es.json */ 608);
+var _es_json__WEBPACK_IMPORTED_MODULE_1___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./es.json */ 608, 1);
+/* harmony import */ var _fr_json__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./fr.json */ 609);
+var _fr_json__WEBPACK_IMPORTED_MODULE_2___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./fr.json */ 609, 1);
+/* harmony import */ var _zh_Hans_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./zh-Hans.json */ 610);
+var _zh_Hans_json__WEBPACK_IMPORTED_MODULE_3___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./zh-Hans.json */ 610, 1);
+/* harmony import */ var _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./zh-Hant.json */ 611);
+var _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpack_require__.t(/*! ./zh-Hant.json */ 611, 1);
 
 
 
@@ -24469,7 +24477,7 @@ var _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpac
 
 
 /***/ }),
-/* 599 */
+/* 607 */
 /*!***********************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/en.json ***!
   \***********************************************************************/
@@ -24479,7 +24487,7 @@ var _zh_Hant_json__WEBPACK_IMPORTED_MODULE_4___namespace = /*#__PURE__*/__webpac
 module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"Success\",\"uniCloud.component.update.success\":\"Success\",\"uniCloud.component.remove.showModal.title\":\"Tips\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
 
 /***/ }),
-/* 600 */
+/* 608 */
 /*!***********************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/es.json ***!
   \***********************************************************************/
@@ -24489,7 +24497,7 @@ module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"Success\",\"u
 module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
 
 /***/ }),
-/* 601 */
+/* 609 */
 /*!***********************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/fr.json ***!
   \***********************************************************************/
@@ -24499,7 +24507,7 @@ module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\
 module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
 
 /***/ }),
-/* 602 */
+/* 610 */
 /*!****************************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/zh-Hans.json ***!
   \****************************************************************************/
@@ -24509,7 +24517,7 @@ module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\
 module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否删除该数据\"}");
 
 /***/ }),
-/* 603 */
+/* 611 */
 /*!****************************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-cli-shared/components/i18n/zh-Hant.json ***!
   \****************************************************************************/
@@ -24519,14 +24527,6 @@ module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\
 module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\",\"uniCloud.component.update.success\":\"修改成功\",\"uniCloud.component.remove.showModal.title\":\"提示\",\"uniCloud.component.remove.showModal.content\":\"是否刪除數據\"}");
 
 /***/ }),
-/* 604 */,
-/* 605 */,
-/* 606 */,
-/* 607 */,
-/* 608 */,
-/* 609 */,
-/* 610 */,
-/* 611 */,
 /* 612 */,
 /* 613 */,
 /* 614 */,
@@ -24559,7 +24559,15 @@ module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\
 /* 641 */,
 /* 642 */,
 /* 643 */,
-/* 644 */
+/* 644 */,
+/* 645 */,
+/* 646 */,
+/* 647 */,
+/* 648 */,
+/* 649 */,
+/* 650 */,
+/* 651 */,
+/* 652 */
 /*!******************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-search-bar/components/uni-search-bar/i18n/index.js ***!
   \******************************************************************************************************************************************/
@@ -24567,16 +24575,16 @@ module.exports = JSON.parse("{\"uniCloud.component.add.success\":\"新增成功\
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 645));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 646));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 647));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 653));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 654));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 655));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
   en: _en.default,
   'zh-Hans': _zhHans.default,
   'zh-Hant': _zhHant.default };exports.default = _default;
 
 /***/ }),
-/* 645 */
+/* 653 */
 /*!*****************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-search-bar/components/uni-search-bar/i18n/en.json ***!
   \*****************************************************************************************************************************************/
@@ -24586,7 +24594,7 @@ var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 6
 module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"Search enter content\"}");
 
 /***/ }),
-/* 646 */
+/* 654 */
 /*!**********************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-search-bar/components/uni-search-bar/i18n/zh-Hans.json ***!
   \**********************************************************************************************************************************************/
@@ -24596,7 +24604,7 @@ module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-
 module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"请输入搜索内容\"}");
 
 /***/ }),
-/* 647 */
+/* 655 */
 /*!**********************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-search-bar/components/uni-search-bar/i18n/zh-Hant.json ***!
   \**********************************************************************************************************************************************/
@@ -24606,14 +24614,14 @@ module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-
 module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"請輸入搜索內容\"}");
 
 /***/ }),
-/* 648 */,
-/* 649 */,
-/* 650 */,
-/* 651 */,
-/* 652 */,
-/* 653 */,
-/* 654 */,
-/* 655 */
+/* 656 */,
+/* 657 */,
+/* 658 */,
+/* 659 */,
+/* 660 */,
+/* 661 */,
+/* 662 */,
+/* 663 */
 /*!***************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \***************************************************************************************************************************/
@@ -25789,14 +25797,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     "unicode_decimal": 58929 }] };exports.default = _default;
 
 /***/ }),
-/* 656 */,
-/* 657 */,
-/* 658 */,
-/* 659 */,
-/* 660 */,
-/* 661 */,
-/* 662 */,
-/* 663 */
+/* 664 */,
+/* 665 */,
+/* 666 */,
+/* 667 */,
+/* 668 */,
+/* 669 */,
+/* 670 */,
+/* 671 */
 /*!*******************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-dateformat/components/uni-dateformat/date-format.js ***!
   \*******************************************************************************************************************************************/
@@ -26006,19 +26014,19 @@ function friendlyDate(time, _ref)
 }
 
 /***/ }),
-/* 664 */,
-/* 665 */,
-/* 666 */,
-/* 667 */,
-/* 668 */,
-/* 669 */,
-/* 670 */,
-/* 671 */,
 /* 672 */,
 /* 673 */,
 /* 674 */,
 /* 675 */,
-/* 676 */
+/* 676 */,
+/* 677 */,
+/* 678 */,
+/* 679 */,
+/* 680 */,
+/* 681 */,
+/* 682 */,
+/* 683 */,
+/* 684 */
 /*!***************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/components/uni-load-state/i18n/index.js ***!
   \***************************************************************************************************************/
@@ -26026,14 +26034,14 @@ function friendlyDate(time, _ref)
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 677));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 678));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 685));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 686));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
   en: _en.default,
   'zh-Hans': _zhHans.default };exports.default = _default;
 
 /***/ }),
-/* 677 */
+/* 685 */
 /*!**************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/components/uni-load-state/i18n/en.json ***!
   \**************************************************************************************************************/
@@ -26043,7 +26051,7 @@ var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 6
 module.exports = JSON.parse("{\"noData\":\"No Data\",\"noNetwork\":\"Network error\",\"toSet\":\"Go to settings\",\"error\":\"error\"}");
 
 /***/ }),
-/* 678 */
+/* 686 */
 /*!*******************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/components/uni-load-state/i18n/zh-Hans.json ***!
   \*******************************************************************************************************************/
@@ -26053,14 +26061,14 @@ module.exports = JSON.parse("{\"noData\":\"No Data\",\"noNetwork\":\"Network err
 module.exports = JSON.parse("{\"noData\":\"暂无数据\",\"noNetwork\":\"网络异常\",\"toSet\":\"前往设置\",\"error\":\"错误\"}");
 
 /***/ }),
-/* 679 */,
-/* 680 */,
-/* 681 */,
-/* 682 */,
-/* 683 */,
-/* 684 */,
-/* 685 */,
-/* 686 */
+/* 687 */,
+/* 688 */,
+/* 689 */,
+/* 690 */,
+/* 691 */,
+/* 692 */,
+/* 693 */,
+/* 694 */
 /*!******************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-forms/components/uni-forms/validate.js ***!
   \******************************************************************************************************************************/
@@ -26556,7 +26564,7 @@ SchemaValidator.message = new Message();var _default =
 SchemaValidator;exports.default = _default;
 
 /***/ }),
-/* 687 */
+/* 695 */
 /*!***************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-forms/components/uni-forms/utils.js ***!
   \***************************************************************************************************************************/
@@ -26859,21 +26867,21 @@ var isEqual = function isEqual(a, b) {
 };exports.isEqual = isEqual;
 
 /***/ }),
-/* 688 */,
-/* 689 */,
-/* 690 */,
-/* 691 */,
-/* 692 */,
-/* 693 */,
-/* 694 */,
-/* 695 */,
 /* 696 */,
 /* 697 */,
 /* 698 */,
 /* 699 */,
 /* 700 */,
 /* 701 */,
-/* 702 */
+/* 702 */,
+/* 703 */,
+/* 704 */,
+/* 705 */,
+/* 706 */,
+/* 707 */,
+/* 708 */,
+/* 709 */,
+/* 710 */
 /*!********************************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-file-picker/components/uni-file-picker/choose-and-upload-file.js ***!
   \********************************************************************************************************************************************************/
@@ -27103,7 +27111,7 @@ function chooseAndUploadFile()
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 6)["default"]))
 
 /***/ }),
-/* 703 */
+/* 711 */
 /*!***************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-file-picker/components/uni-file-picker/utils.js ***!
   \***************************************************************************************************************************************/
@@ -27222,14 +27230,6 @@ var get_file_data = /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#_
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 704 */,
-/* 705 */,
-/* 706 */,
-/* 707 */,
-/* 708 */,
-/* 709 */,
-/* 710 */,
-/* 711 */,
 /* 712 */,
 /* 713 */,
 /* 714 */,
@@ -27250,7 +27250,15 @@ var get_file_data = /*#__PURE__*/function () {var _ref = _asyncToGenerator( /*#_
 /* 729 */,
 /* 730 */,
 /* 731 */,
-/* 732 */
+/* 732 */,
+/* 733 */,
+/* 734 */,
+/* 735 */,
+/* 736 */,
+/* 737 */,
+/* 738 */,
+/* 739 */,
+/* 740 */
 /*!***************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-popup/components/uni-popup/popup.js ***!
   \***************************************************************************************************************************/
@@ -27284,7 +27292,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     } } };exports.default = _default;
 
 /***/ }),
-/* 733 */
+/* 741 */
 /*!********************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-popup/components/uni-popup/i18n/index.js ***!
   \********************************************************************************************************************************/
@@ -27292,16 +27300,16 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 734));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 735));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 736));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 742));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 743));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 744));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
   en: _en.default,
   'zh-Hans': _zhHans.default,
   'zh-Hant': _zhHant.default };exports.default = _default;
 
 /***/ }),
-/* 734 */
+/* 742 */
 /*!*******************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-popup/components/uni-popup/i18n/en.json ***!
   \*******************************************************************************************************************************/
@@ -27311,7 +27319,7 @@ var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 7
 module.exports = JSON.parse("{\"uni-popup.cancel\":\"cancel\",\"uni-popup.ok\":\"ok\",\"uni-popup.placeholder\":\"pleace enter\",\"uni-popup.title\":\"Hint\",\"uni-popup.shareTitle\":\"Share to\"}");
 
 /***/ }),
-/* 735 */
+/* 743 */
 /*!************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-popup/components/uni-popup/i18n/zh-Hans.json ***!
   \************************************************************************************************************************************/
@@ -27321,7 +27329,7 @@ module.exports = JSON.parse("{\"uni-popup.cancel\":\"cancel\",\"uni-popup.ok\":\
 module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\"确定\",\"uni-popup.placeholder\":\"请输入\",\"uni-popup.title\":\"提示\",\"uni-popup.shareTitle\":\"分享到\"}");
 
 /***/ }),
-/* 736 */
+/* 744 */
 /*!************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-popup/components/uni-popup/i18n/zh-Hant.json ***!
   \************************************************************************************************************************************/
@@ -27331,14 +27339,6 @@ module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\
 module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\"確定\",\"uni-popup.placeholder\":\"請輸入\",\"uni-popup.title\":\"提示\",\"uni-popup.shareTitle\":\"分享到\"}");
 
 /***/ }),
-/* 737 */,
-/* 738 */,
-/* 739 */,
-/* 740 */,
-/* 741 */,
-/* 742 */,
-/* 743 */,
-/* 744 */,
 /* 745 */,
 /* 746 */,
 /* 747 */,
@@ -27359,7 +27359,15 @@ module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\
 /* 762 */,
 /* 763 */,
 /* 764 */,
-/* 765 */
+/* 765 */,
+/* 766 */,
+/* 767 */,
+/* 768 */,
+/* 769 */,
+/* 770 */,
+/* 771 */,
+/* 772 */,
+/* 773 */
 /*!**********************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-id-pages/pages/userinfo/cropImage/limeClipper/utils.js ***!
   \**********************************************************************************************************************************************/
@@ -27614,14 +27622,6 @@ function imageTouchMoveOfCalcOffset(data, clientXForLeft, clientYForLeft) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 766 */,
-/* 767 */,
-/* 768 */,
-/* 769 */,
-/* 770 */,
-/* 771 */,
-/* 772 */,
-/* 773 */,
 /* 774 */,
 /* 775 */,
 /* 776 */,
@@ -27649,7 +27649,15 @@ function imageTouchMoveOfCalcOffset(data, clientXForLeft, clientYForLeft) {
 /* 798 */,
 /* 799 */,
 /* 800 */,
-/* 801 */
+/* 801 */,
+/* 802 */,
+/* 803 */,
+/* 804 */,
+/* 805 */,
+/* 806 */,
+/* 807 */,
+/* 808 */,
+/* 809 */
 /*!*****************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-transition/props.js ***!
   \*****************************************************************************************************************************/
@@ -27681,7 +27689,7 @@ function imageTouchMoveOfCalcOffset(data, clientXForLeft, clientYForLeft) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 802 */
+/* 810 */
 /*!**********************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-transition/transition.js ***!
   \**********************************************************************************************************************************/
@@ -27692,7 +27700,7 @@ function imageTouchMoveOfCalcOffset(data, clientXForLeft, clientYForLeft) {
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 7));
 
 
-var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 803));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
+var _nvueAniMap = _interopRequireDefault(__webpack_require__(/*! ./nvue.ani-map.js */ 811));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} // 定义一个一定时间后自动成功的promise，让调用nextTick方法处，进入下一个then方法
 var nextTick = function nextTick() {return new Promise(function (resolve) {return setTimeout(resolve, 1000 / 50);});}; // nvue动画模块实现细节抽离在外部文件
 
 // 定义类名，通过给元素动态切换类名，赋予元素一定的css动画样式
@@ -27846,7 +27854,7 @@ var getClassNames = function getClassNames(name) {return {
     } } };exports.default = _default;
 
 /***/ }),
-/* 803 */
+/* 811 */
 /*!************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-transition/nvue.ani-map.js ***!
   \************************************************************************************************************************************/
@@ -27922,21 +27930,21 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     'leave-to': { opacity: 0, transform: 'scale(0.95)' } } };exports.default = _default;
 
 /***/ }),
-/* 804 */,
-/* 805 */,
-/* 806 */,
-/* 807 */,
-/* 808 */,
-/* 809 */,
-/* 810 */,
-/* 811 */,
 /* 812 */,
 /* 813 */,
 /* 814 */,
 /* 815 */,
 /* 816 */,
 /* 817 */,
-/* 818 */
+/* 818 */,
+/* 819 */,
+/* 820 */,
+/* 821 */,
+/* 822 */,
+/* 823 */,
+/* 824 */,
+/* 825 */,
+/* 826 */
 /*!*******************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-loading-icon/props.js ***!
   \*******************************************************************************************************************************/
@@ -28003,14 +28011,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 819 */,
-/* 820 */,
-/* 821 */,
-/* 822 */,
-/* 823 */,
-/* 824 */,
-/* 825 */,
-/* 826 */
+/* 827 */,
+/* 828 */,
+/* 829 */,
+/* 830 */,
+/* 831 */,
+/* 832 */,
+/* 833 */,
+/* 834 */
 /*!**********************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-gap/props.js ***!
   \**********************************************************************************************************************/
@@ -28042,14 +28050,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 827 */,
-/* 828 */,
-/* 829 */,
-/* 830 */,
-/* 831 */,
-/* 832 */,
-/* 833 */,
-/* 834 */
+/* 835 */,
+/* 836 */,
+/* 837 */,
+/* 838 */,
+/* 839 */,
+/* 840 */,
+/* 841 */,
+/* 842 */
 /*!**************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-overlay/props.js ***!
   \**************************************************************************************************************************/
@@ -28081,14 +28089,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 835 */,
-/* 836 */,
-/* 837 */,
-/* 838 */,
-/* 839 */,
-/* 840 */,
-/* 841 */,
-/* 842 */
+/* 843 */,
+/* 844 */,
+/* 845 */,
+/* 846 */,
+/* 847 */,
+/* 848 */,
+/* 849 */,
+/* 850 */
 /*!*****************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-status-bar/props.js ***!
   \*****************************************************************************************************************************/
@@ -28104,14 +28112,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 843 */,
-/* 844 */,
-/* 845 */,
-/* 846 */,
-/* 847 */,
-/* 848 */,
-/* 849 */,
-/* 850 */
+/* 851 */,
+/* 852 */,
+/* 853 */,
+/* 854 */,
+/* 855 */,
+/* 856 */,
+/* 857 */,
+/* 858 */
 /*!******************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-safe-bottom/props.js ***!
   \******************************************************************************************************************************/
@@ -28123,14 +28131,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   props: {} };exports.default = _default;
 
 /***/ }),
-/* 851 */,
-/* 852 */,
-/* 853 */,
-/* 854 */,
-/* 855 */,
-/* 856 */,
-/* 857 */,
-/* 858 */
+/* 859 */,
+/* 860 */,
+/* 861 */,
+/* 862 */,
+/* 863 */,
+/* 864 */,
+/* 865 */,
+/* 866 */
 /*!***********************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uview-ui/components/u-link/props.js ***!
   \***********************************************************************************************************************/
@@ -28177,14 +28185,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 859 */,
-/* 860 */,
-/* 861 */,
-/* 862 */,
-/* 863 */,
-/* 864 */,
-/* 865 */,
-/* 866 */
+/* 867 */,
+/* 868 */,
+/* 869 */,
+/* 870 */,
+/* 871 */,
+/* 872 */,
+/* 873 */,
+/* 874 */
 /*!****************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-load-more/components/uni-load-more/i18n/index.js ***!
   \****************************************************************************************************************************************/
@@ -28192,16 +28200,16 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 867));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 868));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 869));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 875));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 876));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 877));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
   en: _en.default,
   'zh-Hans': _zhHans.default,
   'zh-Hant': _zhHant.default };exports.default = _default;
 
 /***/ }),
-/* 867 */
+/* 875 */
 /*!***************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-load-more/components/uni-load-more/i18n/en.json ***!
   \***************************************************************************************************************************************/
@@ -28211,7 +28219,7 @@ var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 8
 module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"Pull up to show more\",\"uni-load-more.contentrefresh\":\"loading...\",\"uni-load-more.contentnomore\":\"No more data\"}");
 
 /***/ }),
-/* 868 */
+/* 876 */
 /*!********************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hans.json ***!
   \********************************************************************************************************************************************/
@@ -28221,7 +28229,7 @@ module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"Pull up to show mo
 module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉显示更多\",\"uni-load-more.contentrefresh\":\"正在加载...\",\"uni-load-more.contentnomore\":\"没有更多数据了\"}");
 
 /***/ }),
-/* 869 */
+/* 877 */
 /*!********************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-load-more/components/uni-load-more/i18n/zh-Hant.json ***!
   \********************************************************************************************************************************************/
@@ -28231,14 +28239,6 @@ module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉显示更多
 module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉顯示更多\",\"uni-load-more.contentrefresh\":\"正在加載...\",\"uni-load-more.contentnomore\":\"沒有更多數據了\"}");
 
 /***/ }),
-/* 870 */,
-/* 871 */,
-/* 872 */,
-/* 873 */,
-/* 874 */,
-/* 875 */,
-/* 876 */,
-/* 877 */,
 /* 878 */,
 /* 879 */,
 /* 880 */,
@@ -28257,7 +28257,15 @@ module.exports = JSON.parse("{\"uni-load-more.contentdown\":\"上拉顯示更多
 /* 893 */,
 /* 894 */,
 /* 895 */,
-/* 896 */
+/* 896 */,
+/* 897 */,
+/* 898 */,
+/* 899 */,
+/* 900 */,
+/* 901 */,
+/* 902 */,
+/* 903 */,
+/* 904 */
 /*!***********************************************************************************************************************************************!*\
   !*** /Users/zilong.zhou/Desktop/小程序/question-bank/question-bank-mini/uni_modules/uni-transition/components/uni-transition/createAnimation.js ***!
   \***********************************************************************************************************************************************/

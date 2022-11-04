@@ -1,0 +1,7 @@
+{
+  "name": "hot-collect",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}

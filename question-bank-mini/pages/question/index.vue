@@ -13,11 +13,18 @@
 				</view>
 			</view>
 		</view>
-		<!-- <view class="view-btn" @click="toAd">
-			<view class="view-btn-text">
-				广告太多？ 试试免广告功能吧！
+		<view class="hot">
+			<view class="hot-left" @click="toHot(0)">
+				<view class="hot-text">
+					热门收藏
+				</view>
 			</view>
-		</view> -->
+			<view class="hot-right"  @click="toHot(1)">
+				<view class="hot-text">
+					热门错题
+				</view>
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -124,6 +131,12 @@
 					url: "/pages/ucenter/ad/index"
 				})
 			},
+			toHot(type) {
+				let subjects = JSON.stringify(this.subjects);
+				uni.navigateTo({
+					url: "/pages/hot/hot?subjects=" + subjects + "&type=" + type
+				})
+			},
 			onShareAppMessage(res) {
 				if (res.from === 'button') { // 来自页面内分享按钮
 					console.log(res.target)
@@ -184,7 +197,7 @@
 		color: #333333;
 		font-size: 28rpx;
 	}
-	
+
 	.view-btn {
 		margin-top: 40rpx;
 		margin-left: 40rpx;
@@ -196,10 +209,42 @@
 		justify-content: center;
 		align-items: center;
 	}
-	
+
 	.view-btn-text {
 		font-size: 32rpx;
 		font-weight: 500;
 		color: #FFFFFF;
+	}
+
+	.hot {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 30rpx;
+		height: 100rpx;
+	}
+
+	.hot-left {
+		border-radius: 8rpx;
+		background-color: #2979ff;
+		width: 48%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.hot-right {
+		border-radius: 8rpx;
+		background-color: #39b54a;
+		width: 48%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.hot-text {
+		color: #ffffff;
+		font-weight: 500;
+		font-size: 36rpx;
+		line-height: 60rpx;
 	}
 </style>

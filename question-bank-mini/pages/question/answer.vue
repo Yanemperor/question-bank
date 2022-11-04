@@ -375,6 +375,8 @@
 					this.subjectIndex = index;
 					this.currentType = this.subjectList[index].typeName;
 					this.userFavor = this.subjectList[index].userFavor;
+					console.log("userFavor", this.subjectList[index].userFavor)
+					console.log("index", index)
 					this.isUserWrong = this.subjectList[index].isUserWrong;
 					this.article = this.subjectList[index].article;
 					let title = this.subjectList[index].title;

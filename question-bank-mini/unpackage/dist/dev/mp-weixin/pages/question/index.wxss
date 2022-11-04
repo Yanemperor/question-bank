@@ -47,4 +47,32 @@
 	font-weight: 500;
 	color: #FFFFFF;
 }
+.hot {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 30rpx;
+	height: 100rpx;
+}
+.hot-left {
+	border-radius: 8rpx;
+	background-color: #2979ff;
+	width: 48%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.hot-right {
+	border-radius: 8rpx;
+	background-color: #39b54a;
+	width: 48%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.hot-text {
+	color: #ffffff;
+	font-weight: 500;
+	font-size: 36rpx;
+	line-height: 60rpx;
+}
 

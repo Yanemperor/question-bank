@@ -17,7 +17,8 @@
 		},
 		"topic_id": {
 			"bsonType": "int",
-			"description": "题目id"
+			"description": "题目id",
+			"foreignKey": "answer_questions._id"  
 		},
 		"topic_type": {
 			"bsonType": "int",

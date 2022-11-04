@@ -40,7 +40,8 @@
     "uni_modules/uni-id-pages/pages/retrieve/retrieve-by-email",
     "uni_modules/uni-id-pages/pages/register/register-admin",
     "pages/ucenter/wrong-topic/wrong-topic",
-    "pages/ucenter/demand/demand"
+    "pages/ucenter/demand/demand",
+    "pages/hot/hot"
   ],
   "subPackages": [],
   "window": {

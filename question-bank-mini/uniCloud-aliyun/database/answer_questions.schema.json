@@ -9,7 +9,9 @@
 	},
 	"properties": {
 		"_id": {
-			"description": "ID"
+			"description": "ID",
+			"foreignKey": "wrong-topic.topic_id",
+			"bsonType": "int"
 		},
 		"title": {
 			"bsonType": "string",
